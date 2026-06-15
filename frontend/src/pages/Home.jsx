@@ -15,16 +15,18 @@ function Home() {
 
     const switchSignInForm = () => setSignIn(!useSignIn);
 
-    return (<Flex bg='cyan.muted' w={"100vw"} minH={'100vh'} px={'5'} py={'2'} flexDir={'column'} position={'relative'}>
+    return (
+        <Flex bg='cyan.muted' w={"100vw"} minH={'100vh'} px={'5'} pb={'3rem'} flexDir={'column'} position={'relative'}>
 
-        <Headder onClick={switchSignInForm} />
-        <Voting />
-        <Statistics />
-        <History />
-        <Footer />
-        <SignIn display={useSignIn ? 'flex' : 'none'} />
+            <Headder onClick={switchSignInForm} />
+            <Voting />
+            <Statistics />
+            <History />
+            <Footer />
+            <SignIn show={useSignIn} />
 
-    </Flex >)
+        </Flex >
+    )
 }
 
 export default Home
