@@ -1,8 +1,12 @@
 import React from 'react'
 
+import { Flex } from '@chakra-ui/react'
+
 function Statistics() {
   return (
-    <div>Statistics</div>
+    <Flex w={'100%'} h={'100vh'}>
+      Statiscs
+    </Flex>
   )
 }
 

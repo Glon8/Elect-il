@@ -1,8 +1,12 @@
 import React from 'react'
 
+import { Flex } from '@chakra-ui/react'
+
 function history() {
   return (
-    <div>history</div>
+    <Flex w={'100%'} h={'100vh'}>
+      History
+    </Flex>
   )
 }
 

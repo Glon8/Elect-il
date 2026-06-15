@@ -4,7 +4,8 @@ import { Flex } from '@chakra-ui/react'
 
 function Footer() {
   return (
-    <Flex w={'full'} h={'3rem'} position={'absolute'} bottom={0} left={0} bg={'white/65'} >
+    <Flex w={'full'} minH={'9rem'} bg={'white/65'} px={2} py={3} >
+      Footer
     </Flex>
   )
 }
