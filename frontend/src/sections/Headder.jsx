@@ -1,12 +1,12 @@
 import React, { useContext } from 'react'
 
 import { Button, Flex, Text } from '@chakra-ui/react'
-import { ButtonContext } from '../context/ButtonContext';
+import { SignContext } from '../context/SignContext';
 
 import HeadBody from '../components/HeadBody';
 
 function Headder({ ...props }) {
-  const { useSignIn, signInFlip } = useContext(ButtonContext);
+  const { useSignIn, signInFlip } = useContext(SignContext);
 
   return (
     <HeadBody borderBottomStyle={'solid'} borderBottomWidth={1} borderBottomColor={'border.emphasized'} {...props} >
