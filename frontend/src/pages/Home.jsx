@@ -11,19 +11,16 @@ import Footer from '../sections/Footer'
 import SignIn from '../sections/SignIn'
 
 function Home() {
-    const [useSignIn, setSignIn] = useState(false);
-
-    const switchSignInForm = () => setSignIn(!useSignIn);
 
     return (
         <Flex bg='bg.subtle' w={"100vw"} minH={'100vh'} flexDir={'column'} position={'relative'}>
 
-            <Headder onClick={switchSignInForm} />
+            <Headder />
             <Voting />
             <Statistics />
             <History />
             <Footer />
-            <SignIn show={useSignIn} />
+            <SignIn />
 
         </Flex >
     )

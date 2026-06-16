@@ -2,13 +2,15 @@ import React from 'react'
 
 import { Flex, Text } from '@chakra-ui/react'
 
+import SectionBody from '../components/SectionBody'
+
 function Statistics() {
   return (
-    <Flex w={'100%'} h={'100vh'}>
+    <SectionBody>
 
       <Text fontWeight={'bold'} fontSize={'2xl'}>Statiscs</Text>
 
-    </Flex>
+    </SectionBody>
   )
 }
 
