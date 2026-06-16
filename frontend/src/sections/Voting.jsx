@@ -1,11 +1,13 @@
 import React from 'react'
 
-import { Flex } from '@chakra-ui/react'
+import { Flex, Text } from '@chakra-ui/react'
 
 function Voting() {
     return (
-        <Flex w={'100%'} h={'100vh'} pt={'3rem'}>
-            Voting
+        <Flex w={'100%'} h={'100vh'} pt={'4rem'} >
+
+            <Text fontWeight={'bold'} fontSize={'2xl'}>Voting</Text>
+
         </Flex>
     )
 }

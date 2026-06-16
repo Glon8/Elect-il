@@ -16,7 +16,7 @@ function Home() {
     const switchSignInForm = () => setSignIn(!useSignIn);
 
     return (
-        <Flex bg='cyan.muted' w={"100vw"} minH={'100vh'} flexDir={'column'} position={'relative'}>
+        <Flex bg='bg.subtle' w={"100vw"} minH={'100vh'} flexDir={'column'} position={'relative'}>
 
             <Headder onClick={switchSignInForm} />
             <Voting />

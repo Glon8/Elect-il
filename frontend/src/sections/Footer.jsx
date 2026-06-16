@@ -1,12 +1,14 @@
 import React from 'react'
 
-import { Flex } from '@chakra-ui/react'
+import { Flex, Text } from '@chakra-ui/react'
+
+import FootBody from '../components/FootBody'
 
 function Footer() {
   return (
-    <Flex w={'full'} minH={'9rem'} bg={'white/65'} px={2} py={3} >
-      Footer
-    </Flex>
+    <FootBody >
+      <Text fontWeight={'bold'} fontSize={'lg'}>Footer</Text>
+    </FootBody>
   )
 }
 

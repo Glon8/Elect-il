@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react'
 
+import { Button } from '@chakra-ui/react';
+
 import Body from '../components/Body'
-import Headder from './Headder';
+import HeadBody from '../components/HeadBody';
 
 function SignIn({ show, ...props }) {
     const [useShow, setShow] = useState(false);
@@ -18,7 +20,11 @@ function SignIn({ show, ...props }) {
 
             <Body zIndex={15} w={'20rem'} h={'25rem'} top={'50%'} left={'50%'} transform={'translate(-50%,-50%)'} position={'fixed'}>
 
-                <Headder roundedTop={'xl'} onClick={() => { showUp(); }} />
+                <HeadBody roundedTop={'xl'} >
+
+                    <Button fontWeight={'bolder'} fontSize={'xl'} onClick={() => { showUp(); }}>x</Button>
+
+                </HeadBody>
 
             </Body>
 

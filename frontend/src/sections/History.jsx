@@ -1,11 +1,13 @@
 import React from 'react'
 
-import { Flex } from '@chakra-ui/react'
+import { Flex, Text } from '@chakra-ui/react'
 
 function history() {
   return (
     <Flex w={'100%'} h={'100vh'}>
-      History
+
+      <Text fontWeight={'bold'} fontSize={'2xl'}>History</Text>
+
     </Flex>
   )
 }
