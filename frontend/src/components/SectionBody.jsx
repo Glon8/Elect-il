@@ -6,7 +6,7 @@ function SectionBody({ children, ...props }) {
     return (
         <Flex w={'100%'} h={'100vh'}>
 
-            <Flex w={'100%'} h={'100vh'} pt={'4rem'} {...props} >
+            <Flex w={'100%'} h={'100vh'} flexDirection={'column'} {...props} >
                 {children}
             </Flex>
 
