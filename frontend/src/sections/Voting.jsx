@@ -44,9 +44,9 @@ function Voting() {
     }
 
     return (
-        <SectionBody pt={'4rem'}>
+        <SectionBody>
 
-            <Text fontWeight={'bold'} fontSize={'2xl'}>Voting</Text>
+            <Text fontWeight={'bold'} fontSize={'2xl'} textAlign={'start'} mt={2} mb={3} px={5}>Choose your candidate: (Voting)</Text>
             {
                 partiesList?.['patries']?.map((item, ind) => {
                     return (

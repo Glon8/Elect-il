@@ -1,88 +1,78 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 
 import { Flex, Text } from '@chakra-ui/react'
+import * as echarts from 'echarts'
 
 import SectionBody from '../components/SectionBody'
 
 function Statistics() {
-  const partiesList = {
-    "voting": [
-      {
-        "party": "Likud",
-        "candidate": "Benjamin Netanyahu"
-      },
-      {
-        "party": "Yesh Atid",
-        "candidate": "Yair Lapid"
-      },
-      {
-        "party": "National Unity",
-        "candidate": "Benny Gantz"
-      },
-      {
-        "party": "Yisrael Beiteinu",
-        "candidate": "Avigdor Lieberman"
-      },
-      {
-        "party": "Religious Zionism",
-        "candidate": "Bezalel Smotrich"
-      },
-      {
-        "party": "Otzma Yehudit",
-        "candidate": "Itamar Ben-Gvir"
-      },
-      {
-        "party": "Shas",
-        "candidate": "Aryeh Deri"
-      },
-      {
-        "party": "United Torah Judaism",
-        "candidate": "Yitzhak Goldknopf"
-      }
-    ]
-  }
+  const parties = [
+    "Likud",
+    "Yesh Atid",
+    "National Unity",
+    "Yisrael Beiteinu",
+    "Religious Zionism",
+    "Otzma Yehudit",
+    "Shas",
+    "United Torah Judaism"
+  ];
 
-  const partiesStatistics = {
-    "statistics": [
-      {
-        "party": "Likud",
-        "votes": 1125437
+  const candidates = [
+    "Benjamin Netanyahu",
+    "Yair Lapid",
+    "Benny Gantz",
+    "Avigdor Lieberman",
+    "Bezalel Smotrich",
+    "Itamar Ben-Gvir",
+    "Aryeh Deri",
+    "Yitzhak Goldknopf"
+  ];
+
+  const votes = [
+    1125437,
+    734221,
+    681992,
+    312874,
+    286541,
+    254199,
+    417853,
+    298744
+  ];
+
+  const chartRef = useRef(null);
+
+  useEffect(() => {
+
+    const myChart = echarts.init(chartRef.current);
+
+    myChart.setOption({
+      title: {
+        text: 'Votes per party:'
       },
-      {
-        "party": "Yesh Atid",
-        "votes": 734221
+      tooltip: {},
+      xAxis: {
+        data: parties
       },
-      {
-        "party": "National Unity",
-        "votes": 681992
-      },
-      {
-        "party": "Yisrael Beiteinu",
-        "votes": 312874
-      },
-      {
-        "party": "Religious Zionism",
-        "votes": 286541
-      },
-      {
-        "party": "Otzma Yehudit",
-        "votes": 254199
-      },
-      {
-        "party": "Shas",
-        "votes": 417853
-      },
-      {
-        "party": "United Torah Judaism",
-        "votes": 298744
-      }
-    ]
-  }
+      yAxis: {},
+      series: [
+        {
+          name: 'Votes',
+          type: 'bar',
+          data: votes
+        }
+      ]
+    });
+
+    return () => {
+      myChart.dispose();
+    };
+  }, [])
 
   return (
     <SectionBody>
 
-      <Text fontWeight={'bold'} fontSize={'2xl'}>Statiscs</Text>
+      <Text fontWeight={'bold'} fontSize={'2xl'} textAlign={'start'} mt={2} mb={3} px={5}>Current voting state: (Statiscs)</Text>
+      <div ref={chartRef} style={{ width: '100%', height: '400px' }}></div>
 
     </SectionBody>
   )

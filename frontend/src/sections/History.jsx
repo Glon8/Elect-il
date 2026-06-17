@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Flex, Text } from '@chakra-ui/react'
+import { Flex, Link, Text } from '@chakra-ui/react'
 
 import SectionBody from '../components/SectionBody'
 import Body from '../components/Body'
@@ -17,16 +17,16 @@ function history() {
   }
 
   return (
-    <SectionBody>
+    <SectionBody >
 
-      <Text fontWeight={'bold'} fontSize={'2xl'}>History</Text>
+      <Text fontWeight={'bold'} fontSize={'2xl'} textAlign={'start'} mt={2} mb={3} px={5}>Previous elections: (History)</Text>
       {
         electionHistory?.['history']?.map((item, ind) => {
           return (
-            <Body key={'eH' + ind} h={'3rem'}>
+            <Link href='#' key={'eH' + ind} h={'3rem'} justifyContent={'center'}>
               <Text>{item.name}</Text>
               <Text>{item.date}</Text>
-            </Body>
+            </Link>
           )
         })
       }

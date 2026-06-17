@@ -16,7 +16,7 @@ function SignIn({ ...props }) {
             <Body py={'4rem'} zIndex={15} w={'20rem'} h={'25rem'} top={'50%'} left={'50%'} transform={'translate(-50%,-50%)'} position={'fixed'} display={'flex'} flexDir={'column'} justifyContent={'start'}>
 
                 <HeadBody roundedTop={'xl'} >
-                    <Button bg={'transparent'} color={'black'} borderColor={'black'} fontWeight={'bolder'} fontSize={'xl'} onClick={() => { signInFlip(); }}>x</Button>
+                    <Button w={0} rounded={'full'} bg={'transparent'} color={'black'} borderColor={'black'} fontWeight={'bolder'} fontSize={'xl'} onClick={() => { signInFlip(); }}><i className='pi pi-times'></i></Button>
                 </HeadBody>
                 <Flex w={'100%'} h={'100%'} px={3} py={5} flexDir={'column'} justifyContent={'center'} alignItems={'end'} gapY={3}>
                     <Text>Your code:</Text>
