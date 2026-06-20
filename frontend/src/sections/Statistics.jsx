@@ -1,9 +1,10 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 
 import { Flex, Text } from '@chakra-ui/react'
 import * as echarts from 'echarts'
 
 import SectionBody from '../components/SectionBody'
+import HeadBody from '../components/HeadBody'
 
 function Statistics() {
   const parties = [
@@ -41,7 +42,21 @@ function Statistics() {
 
   const chartRef = useRef(null);
 
+  const [useVotes, setVotes] = useState(0);
+  const [useTop, setTop] = useState([]);
+
+  const toParticipants = [
+    "Likud",
+    "Yesh Atid",
+    "National Unity"
+  ];
+
+  const totalVotes = () => { votes.forEach((item) => { setVotes(useVotes + item) }); }
+
   useEffect(() => {
+    totalVotes();
+
+    setTop(toParticipants);
 
     const myChart = echarts.init(chartRef.current);
 
@@ -49,18 +64,27 @@ function Statistics() {
       title: {
         text: 'Votes per party:'
       },
-      tooltip: {},
-      xAxis: {
-        data: parties
+      tooltip: {
       },
-      yAxis: {},
-      series: [
-        {
-          name: 'Votes',
-          type: 'bar',
-          data: votes
+      xAxis: {
+        data: parties,
+        axisLabel: {
+          rotate: -90
         }
-      ]
+      },
+      yAxis: {
+        axisLabel: {
+          show: false
+        }
+      },
+      series: [{
+        type: 'bar',
+        data: votes,
+        label: {
+          show: true,
+          position: 'top'
+        }
+      }]
     });
 
     return () => {
@@ -69,10 +93,28 @@ function Statistics() {
   }, [])
 
   return (
-    <SectionBody>
+    <SectionBody justifyContent={'space-between'}>
 
       <Text fontWeight={'bold'} fontSize={'2xl'} textAlign={'start'} mt={2} mb={3} px={5}>Current voting state: (Statiscs)</Text>
-      <div ref={chartRef} style={{ width: '100%', height: '400px' }}></div>
+      <HeadBody position={'initial'} flexDir={'column'} justifyContent={'space-evenly'}><Text>Total voting participants:</Text><Text>{useVotes}</Text></HeadBody>
+      <Flex ref={chartRef} style={{ width: '100%', height: '400px' }}></Flex>
+      <HeadBody position={'initial'} flexDir={'column'} h={'6rem'} justifyContent={'space-evenly'}>
+
+        <Text>Top leaders:</Text>
+        <Flex justifyContent={'space-evenly'} w={'100%'}>
+          {
+            useTop?.map((item, ind) => {
+              return (
+                <Flex flexDir={'column'} w={'30%'} textAlign={'center'}>
+                  <Text>{1 + ind}</Text>
+                  <Text>{item}</Text>
+                </Flex>
+              )
+            })
+          }
+        </Flex>
+
+      </HeadBody>
 
     </SectionBody>
   )

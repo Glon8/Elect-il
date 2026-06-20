@@ -1,9 +1,9 @@
 import React from 'react'
 
-import { Flex, Text } from '@chakra-ui/react'
+import { Button, Flex, Text, Image } from '@chakra-ui/react'
 
 import SectionBody from '../components/SectionBody'
-import Body from '../components/Body'
+import HeadBody from '../components/HeadBody'
 
 function Voting() {
     const partiesList = {
@@ -50,10 +50,12 @@ function Voting() {
             {
                 partiesList?.['patries']?.map((item, ind) => {
                     return (
-                        <Body key={'pL' + ind} h={'3rem'}>
-                            <Text>{item.party}</Text>
-                            <Text>{item.candidate}</Text>
-                        </Body>
+                        <HeadBody position={'initial'} key={'pL' + ind}>
+                            <Image></Image>
+                            <Text w={'30%'}>{item.party}</Text>
+                            <Text w={'50%'}>{item.candidate}</Text>
+                            <Button w={0} rounded={'full'} bg={'transparent'} color={'black'} borderColor={'gray.300'} fontWeight={'bolder'} fontSize={'xl'} onClick={() => { signInFlip(); }}><i className='pi pi-check'></i></Button>
+                        </HeadBody>
                     )
                 })
             }
