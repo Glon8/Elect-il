@@ -12,13 +12,11 @@ function Footer() {
     //{name: , link: }
   ]
   return (
-    <FootBody flexDir={'column'} alignItems={'center'} >
-
-      <Text fontWeight={'bold'} fontSize={'lg'}>Overall</Text>
+    <FootBody flexDir={{ base: 'column', smToMd: 'column', md: 'row' }} alignItems={'center'} justifyContent={'center'} bg={'#0E2739'} gapX={'5rem'} gapY={'8px'} >
       {
         options?.map((item, ind) => {
           return (
-            <Link key={'fo' + ind} href={item.link}>
+            <Link key={'fo' + ind} href={item.link} color={'white'}>
               {item.name}
             </Link>
           )

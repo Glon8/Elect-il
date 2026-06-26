@@ -14,7 +14,7 @@ import SignIn from '../sections/SignIn'
 function Home() {
 
     return (
-        <Flex bg='bg.subtle' w={"100vw"} minH={'100vh'} flexDir={'column'} position={'relative'}>
+        <Flex bg='#A1CAE8' w={"100%"} minH={'100vh'} flexDir={'column'} position={'relative'}>
 
             <Headder />
             <Opening />

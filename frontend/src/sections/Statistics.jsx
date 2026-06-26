@@ -95,8 +95,8 @@ function Statistics() {
   return (
     <SectionBody justifyContent={'space-between'}>
 
-      <Text fontWeight={'bold'} fontSize={'2xl'} textAlign={'start'} mt={2} mb={3} px={5}>Current voting state: (Statiscs)</Text>
-      <HeadBody position={'initial'} flexDir={'column'} justifyContent={'space-evenly'}><Text>Total voting participants:</Text><Text>{useVotes}</Text></HeadBody>
+      <Text fontWeight={'bold'} fontSize={'2xl'} textAlign={'start'} mt={2} mb={3} px={5}>Statistics title:</Text>
+      <HeadBody h={'auto'} position={'initial'} flexDir={'column'} justifyContent={'space-evenly'}><Text>Total voting participants:</Text><Text>{useVotes}</Text></HeadBody>
       <Flex ref={chartRef} style={{ width: '100%', height: '400px' }}></Flex>
       <HeadBody position={'initial'} flexDir={'column'} h={'6rem'} justifyContent={'space-evenly'}>
 
