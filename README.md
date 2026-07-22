@@ -35,6 +35,10 @@ The participant list is intended to be retained only until the voting process ha
 - MongoDB (planned)
 - AI-assisted data processing
 
+## Living site
+
+https://elect-il.netlify.app
+
 ## Project Status
 
 🚧 **In Progress**
