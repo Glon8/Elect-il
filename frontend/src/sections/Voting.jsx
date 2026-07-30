@@ -48,9 +48,9 @@ function Voting() {
 
             <Text fontWeight={'bold'} fontSize={'2xl'} textAlign={'start'} mt={2} mb={3} px={5}>Voting title:</Text>
             <Flex justifyContent={'space-around'} px={'1rem'}>
-                <Text>Party</Text>
-                <Text>Leader</Text>
-                <Text>Vote</Text>
+                <Text w={'40%'} p={'2rem'}>Party</Text>
+                <Text w={'40%'} p={'2rem'}>Leader</Text>
+                <Text alignContent={'center'}>Vote</Text>
             </Flex>
             <Flex flexDir={'column'} h={'100%'} overflowY={'auto'} px={'1rem'} mt={2} gapY={3}>
                 {
@@ -58,8 +58,8 @@ function Voting() {
                         return (
                             <HeadBody minH={'6rem'} h={'auto'} position={'initial'} key={'pL' + ind} rounded={'md'} py={2}>
                                 <Image></Image>
-                                <Text w={'30%'}>{item.party}</Text>
-                                <Text w={'50%'}>{item.candidate}</Text>
+                                <Text w={'40%'} overflow={'hidden'} textOverflow={'ellipsis'} whiteSpace={'nowrap'}>{item.party}</Text>
+                                <Text w={'40%'} overflow={'hidden'} textOverflow={'ellipsis'} whiteSpace={'nowrap'}>{item.candidate}</Text>
                                 <Button w={0} rounded={'full'} bg={'transparent'} color={'black'} borderColor={'gray.300'} fontWeight={'bolder'} fontSize={'xl'} onClick={() => { signInFlip(); }}><i className='pi pi-check'></i></Button>
                             </HeadBody>
                         )

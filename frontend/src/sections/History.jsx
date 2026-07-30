@@ -21,16 +21,16 @@ function history() {
 
       <Text fontWeight={'bold'} fontSize={'2xl'} textAlign={'start'} mt={2} mb={3} px={5}>History title:</Text>
       <Flex justifyContent={'space-around'} px={'1rem'}>
-        <Text>Name</Text>
-        <Text>Time</Text>
+        <Text w={'50%'} textAlign={'center'}>Name</Text>
+        <Text w={'40%'} textAlign={'center'}>Time</Text>
       </Flex>
       <Flex flexDir={'column'} w={'100%'} h={'100%'} overflowY={'auto'} px={'1rem'} mt={2} gapY={3}>
         {
           electionHistory?.['history']?.map((item, ind) => {
             return (
-              <Link href='#' key={'eH' + ind} h={'3rem'} justifyContent={'space-around'} bg={'white'} rounded={'md'}>
-                <Text>{item.name}</Text>
-                <Text>{item.date}</Text>
+              <Link href='#' key={'eH' + ind} h={'3rem'} justifyContent={'space-around'} bg={'white'} color={'black'} rounded={'md'}>
+                <Text w={'50%'} textAlign={'center'} textOverflow={'ellipsis'} overflow={'hidden'} whiteSpace={'nowrap'}>{item.name}</Text>
+                <Text w={'40%'} textAlign={'center'} textOverflow={'ellipsis'} overflow={'hidden'} whiteSpace={'nowrap'}>{item.date}</Text>
               </Link>
             )
           })
