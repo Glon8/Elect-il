@@ -15,7 +15,7 @@ import SignIn from '../sections/SignIn'
 
 function Home() {
     Logs.log('HelloWorld');
-    Logs.log({tag: 'i', message: "helloworld"});
+    Logs.log({tag: 'i', data: "helloworld"});
     return (
         <Flex bg='#A1CAE8' w={"100%"} minH={'100vh'} flexDir={'column'} position={'relative'}>
 
