@@ -14,8 +14,7 @@ import Footer from '../sections/Footer'
 import SignIn from '../sections/SignIn'
 
 function Home() {
-    const stack = new Error().stack;
-    log(stack);
+    log({ data: 'Test', tag: 'i' });
     return (
         <Flex bg='#A1CAE8' w={"100%"} minH={'100vh'} flexDir={'column'} position={'relative'}>
 
