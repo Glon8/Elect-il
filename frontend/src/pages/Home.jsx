@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 import { Flex } from '@chakra-ui/react'
 
-import Logs from 'logs-js'
+import { log, setDebug, setConfig } from 'logs-js'
 
 import Headder from '../sections/Headder'
 import Opening from '../sections/Opening'
@@ -14,8 +14,8 @@ import Footer from '../sections/Footer'
 import SignIn from '../sections/SignIn'
 
 function Home() {
-    Logs.log('HelloWorld');
-    Logs.log({tag: 'i', data: "helloworld"});
+    const stack = new Error().stack;
+    log(stack);
     return (
         <Flex bg='#A1CAE8' w={"100%"} minH={'100vh'} flexDir={'column'} position={'relative'}>
 
