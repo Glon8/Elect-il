@@ -1,21 +1,30 @@
 import { useState } from 'react'
 
 import { Provider } from './components/ui/provider'
-import { BrowserRouter as Roter, Routes, Route, BrowserRouter } from 'react-router-dom'
+import { PageProvider } from './context/PageContext'
 import { SignProvider } from './context/SignContext'
+import { LanguageProvider } from './context/LanguageContext'
 
-import Home from './pages/Home'
+import Body from './pages/Body'
 
 function App() {
   return (
     <Provider>
-      <BrowserRouter>
+
+      <LanguageProvider>
+
         <SignProvider>
-          <Routes>
-            <Route path='/' element={<Home />} />
-          </Routes>
+
+          <PageProvider>
+
+            <Body />
+
+          </PageProvider>
+
         </SignProvider>
-      </BrowserRouter>
+
+      </LanguageProvider>
+
     </Provider>
   )
 }

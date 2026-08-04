@@ -2,12 +2,13 @@ import React, { useContext } from 'react'
 
 import { Button, Flex, Text } from '@chakra-ui/react'
 import 'primeicons/primeicons.css';
+import { PageContext } from '../context/PageContext';
 import { SignContext } from '../context/SignContext';
 
 import HeadBody from '../components/HeadBody';
 
 function Headder({ ...props }) {
-  const { useSignIn, signInFlip } = useContext(SignContext);
+  const { signPop, signPopFlip } = useContext(PageContext);
 
   return (
     <HeadBody zIndex={1000} borderBottomStyle={'solid'} borderBottomWidth={1} borderBottomColor={'border.emphasized'} {...props} >
@@ -18,7 +19,7 @@ function Headder({ ...props }) {
         <Button w={0} rounded={'full'} bg={'transparent'} color={'black'} borderColor={'gray.300'} fontWeight={'bolder'} fontSize={'xl'} onClick={() => { }}>
           <i className='pi pi-moon'></i>
         </Button>
-        <Button rounded={'full'} bg={'transparent'} color={'black'} borderColor={'gray.300'} onClick={() => { signInFlip(); }}>Sign In</Button>
+        <Button rounded={'full'} bg={'transparent'} color={'black'} borderColor={'gray.300'} onClick={() => { signPopFlip(); }}>Sign In</Button>
       </Flex>
 
     </HeadBody>
