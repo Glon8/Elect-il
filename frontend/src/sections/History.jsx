@@ -28,7 +28,7 @@ function history() {
         {
           electionHistory?.['history']?.map((item, ind) => {
             return (
-              <Link href='#' key={'eH' + ind} h={'3rem'} justifyContent={'space-around'} bg={'white'} color={'black'} rounded={'md'}>
+              <Link key={'eH' + ind} h={'3rem'} justifyContent={'space-around'} bg={'white'} color={'black'} rounded={'md'} onClick={(e) => { e.preventDefault(); }}>
                 <Text w={'50%'} textAlign={'center'} textOverflow={'ellipsis'} overflow={'hidden'} whiteSpace={'nowrap'}>{item.name}</Text>
                 <Text w={'40%'} textAlign={'center'} textOverflow={'ellipsis'} overflow={'hidden'} whiteSpace={'nowrap'}>{item.date}</Text>
               </Link>

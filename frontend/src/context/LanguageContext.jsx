@@ -8,6 +8,8 @@ export const LanguageProvider = ({ children }) => {
     const [useTrans, setTrans] = useState(content);
     const [useOrien, setOrien] = useState('rtl');
 
+    // must add params check/update on page change or first load
+
     useEffect(() => {
         if (!['ru', 'eng', 'he'].includes(useLang)) return;
 

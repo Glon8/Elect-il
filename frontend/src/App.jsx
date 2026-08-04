@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { Provider } from './components/ui/provider'
 import { PageProvider } from './context/PageContext'
 import { SignProvider } from './context/SignContext'
+import { ModeProvider } from './context/ModeContext'
 import { LanguageProvider } from './context/LanguageContext'
 
 import Body from './pages/Body'
@@ -13,15 +14,19 @@ function App() {
 
       <LanguageProvider>
 
-        <SignProvider>
+        <ModeProvider>
 
-          <PageProvider>
+          <SignProvider>
 
-            <Body />
+            <PageProvider>
 
-          </PageProvider>
+              <Body />
 
-        </SignProvider>
+            </PageProvider>
+
+          </SignProvider>
+
+        </ModeProvider>
 
       </LanguageProvider>
 
