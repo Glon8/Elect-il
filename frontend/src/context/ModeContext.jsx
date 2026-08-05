@@ -7,6 +7,11 @@ export const ModeContext = createContext(null);
 export const ModeProvider = ({ children }) => {
     const [useMode, setMode] = useState('light');
 
+    const supported = ['light', 'dark'];
+
+    const params = new URLSearchParams(window.location.search);
+    const mode = params.get('mode');
+
     const modeSwitch = () => {
         const mode = useMode == 'light' ? 'dark' : 'light';
 
@@ -17,22 +22,20 @@ export const ModeProvider = ({ children }) => {
         paramsReplacement(params);
     }
 
-    const supported = ['light', 'dark'];
+    const modeUpdate = (newMode) => {
+        if (typeof newMode != 'string' || !supported.includes(newMode) || newMode === useMode) return;
 
-    const params = new URLSearchParams(window.location.search);
-    const mode = params.get('mode');
+        setMode(newMode);
 
-    useEffect(() => {
-        if (!supported.includes(mode)) {
-            params.set('mode', useMode);
+        if (mode != newMode) {
+            params.set('mode', newMode);
 
             paramsReplacement(params);
         }
-        else setMode(mode);
-    }, []);
+    }
 
     return (
-        <ModeContext.Provider value={{ mode: useMode, modeSwitch }}>
+        <ModeContext.Provider value={{ modeSup: supported, mode: useMode, modeSwitch, modeUpdate }}>
             {children}
         </ModeContext.Provider>
     )

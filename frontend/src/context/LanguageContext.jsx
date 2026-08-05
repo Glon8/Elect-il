@@ -23,27 +23,17 @@ export const LanguageProvider = ({ children }) => {
 
         setLang(language);
 
-        if (lang === language) return;
+        if (lang != language) {
+            params.set('lang', language);
 
-        params.set('lang', language);
-
-        paramsReplacement(params);
+            paramsReplacement(params);
+        }
 
         useLang == 'he' ? setOrien('rtl') : setOrien('ltr');
     }
 
-    useEffect(() => {
-        if (!supported.includes(lang)) {
-            params.set('lang', useLang);
-
-            paramsReplacement(params);
-        }
-        else setLang(lang);
-    }, []);
-
     return (
-        <LanguageContext.Provider
-            value={{ language: useLang, langUpdate, translation: useTrans, orientation: useOrien }}>
+        <LanguageContext.Provider value={{ langSup: supported, language: useLang, langUpdate, translation: useTrans, orientation: useOrien }}>
             {children}
         </LanguageContext.Provider>
     );

@@ -1,6 +1,8 @@
 import { useState } from 'react'
 
 import { Provider } from './components/ui/provider'
+
+import { ManagerProvider } from './context/ManagerContext'
 import { PageProvider } from './context/PageContext'
 import { SignProvider } from './context/SignContext'
 import { ModeProvider } from './context/ModeContext'
@@ -20,7 +22,11 @@ function App() {
 
             <PageProvider>
 
-              <Body />
+              <ManagerProvider>
+
+                <Body />
+
+              </ManagerProvider>
 
             </PageProvider>
 

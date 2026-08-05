@@ -1,7 +1,6 @@
 import React, { createContext, useEffect, useState } from 'react'
 
 import { pathReplacement, getPath } from '../../util';
-import { log } from 'logs-js'
 
 export const PageContext = createContext(null);
 
@@ -23,30 +22,12 @@ export const PageProvider = ({ children }) => {
 
         setPage(path);
 
-        if (getPath(1) === path) return;
-
-        pathReplacement(path, 1);
+        if (getPath(1) != path) pathReplacement(path, 1);
     }
 
-    useEffect(() => {
-        if (currentPath == '/') pathReplacement(usePage, 1);
-        else {
-            const currentPage = getPath(1);
-
-            log(currentPage)
-
-            if (!supported.includes(currentPage)) return;
-
-            setPage(currentPage);
-        }
-    }, []);
-
     return (
-        <PageContext.Provider
-            value={{
-                page: usePage, pageUpdate,
-                signPop: useSignPop, signPopFlip
-            }}> {children}
+        <PageContext.Provider value={{ pageSup: supported, page: usePage, pageUpdate, signPop: useSignPop, signPopFlip }}>
+            {children}
         </PageContext.Provider>
     )
 }
