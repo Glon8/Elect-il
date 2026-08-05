@@ -18,15 +18,19 @@ export const LanguageProvider = ({ children }) => {
     // must add params check/update on page change or first load
     // on first load may attempt to get a user browsers language
 
-    useEffect(() => {
-        if (!supported.includes(useLang) || lang === useLang) return;
+    const langUpdate = (language) => {
+        if (typeof language != 'string' || !supported.includes(language) || language === useLang) return;
 
-        params.set('lang', useLang);
+        setLang(language);
+
+        if (lang === language) return;
+
+        params.set('lang', language);
 
         paramsReplacement(params);
 
         useLang == 'he' ? setOrien('rtl') : setOrien('ltr');
-    }, [useLang]);
+    }
 
     useEffect(() => {
         if (!supported.includes(lang)) {
@@ -39,7 +43,7 @@ export const LanguageProvider = ({ children }) => {
 
     return (
         <LanguageContext.Provider
-            value={{ language: useLang, setLanguage: setLang, translation: useTrans, orientation: useOrien }}>
+            value={{ language: useLang, langUpdate, translation: useTrans, orientation: useOrien }}>
             {children}
         </LanguageContext.Provider>
     );

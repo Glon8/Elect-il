@@ -7,21 +7,20 @@ export const ModeContext = createContext(null);
 export const ModeProvider = ({ children }) => {
     const [useMode, setMode] = useState('light');
 
-    // must add params check/update on mode change or first load
-    const modeSwitch = () => setMode(useMode == 'light' ? 'dark' : 'light');
+    const modeSwitch = () => {
+        const mode = useMode == 'light' ? 'dark' : 'light';
+
+        setMode(mode);
+
+        params.set('mode', mode);
+
+        paramsReplacement(params);
+    }
 
     const supported = ['light', 'dark'];
 
     const params = new URLSearchParams(window.location.search);
     const mode = params.get('mode');
-
-    useEffect(() => {
-        if (!supported.includes(mode) || mode === useMode) return;
-
-        params.set('mode', useMode);
-
-        paramsReplacement(params);
-    }, [useMode]);
 
     useEffect(() => {
         if (!supported.includes(mode)) {

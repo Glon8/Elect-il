@@ -6,14 +6,10 @@ import FootBody from '../components/FootBody'
 import { PageContext } from '../context/PageContext'
 
 function Footer() {
-  const { page, setPage } = useContext(PageContext);
+  const { page, pageUpdate } = useContext(PageContext);
 
   const navigate = (path) => {
-    if (typeof path != 'string' || path === page) return;
-
-    path = path.trim().toLowerCase();
-
-    setPage(path);
+    pageUpdate(path);
 
     window.scrollTo(0, 0);
   }

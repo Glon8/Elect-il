@@ -1,6 +1,7 @@
 import React, { createContext, useEffect, useState } from 'react'
 
 import { pathReplacement, getPath } from '../../util';
+import { log } from 'logs-js'
 
 export const PageContext = createContext(null);
 
@@ -15,16 +16,24 @@ export const PageProvider = ({ children }) => {
     // must add params check/update on page change or first load
     const signPopFlip = () => { setSignPop(!useSignPop); }
 
-    useEffect(() => {
-        if (getPath(1) === usePage) return;
+    const pageUpdate = (path) => {
+        if (typeof path != 'string' || path === usePage || !supported.includes(path)) return;
 
-        pathReplacement(usePage, 1);
-    }, [usePage]);
+        path = path.trim().toLowerCase();
+
+        setPage(path);
+
+        if (getPath(1) === path) return;
+
+        pathReplacement(path, 1);
+    }
 
     useEffect(() => {
         if (currentPath == '/') pathReplacement(usePage, 1);
         else {
             const currentPage = getPath(1);
+
+            log(currentPage)
 
             if (!supported.includes(currentPage)) return;
 
@@ -35,7 +44,7 @@ export const PageProvider = ({ children }) => {
     return (
         <PageContext.Provider
             value={{
-                page: usePage, setPage,
+                page: usePage, pageUpdate,
                 signPop: useSignPop, signPopFlip
             }}> {children}
         </PageContext.Provider>
