@@ -40,7 +40,7 @@ export const ManagerProvider = ({ children }) => {
     }, []);
 
     return (
-        <ManagerContext.Provider>
+        <ManagerContext.Provider value={{}}>
             {children}
         </ManagerContext.Provider>
     )
