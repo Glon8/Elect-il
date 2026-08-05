@@ -9,9 +9,6 @@ export const PageProvider = ({ children }) => {
     const [useSignPop, setSignPop] = useState(false);
 
     const supported = ['election', 'us', 'encryption', 'approval'];
-
-    const currentPath = window.location.pathname;
-
     // must add params check/update on page change or first load
     const signPopFlip = () => { setSignPop(!useSignPop); }
 

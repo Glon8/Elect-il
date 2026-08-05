@@ -9,13 +9,12 @@ export const ModeProvider = ({ children }) => {
 
     const supported = ['light', 'dark'];
 
-    const params = new URLSearchParams(window.location.search);
-    const mode = params.get('mode');
-
     const modeSwitch = () => {
         const mode = useMode == 'light' ? 'dark' : 'light';
 
         setMode(mode);
+
+        const params = new URLSearchParams(window.location.search);
 
         params.set('mode', mode);
 
@@ -26,6 +25,9 @@ export const ModeProvider = ({ children }) => {
         if (typeof newMode != 'string' || !supported.includes(newMode) || newMode === useMode) return;
 
         setMode(newMode);
+
+        const params = new URLSearchParams(window.location.search);
+        const mode = params.get('mode');
 
         if (mode != newMode) {
             params.set('mode', newMode);

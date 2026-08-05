@@ -12,9 +12,6 @@ export const LanguageProvider = ({ children }) => {
 
     const supported = ['ru', 'en', 'he'];
 
-    const params = new URLSearchParams(window.location.search);
-    const lang = params.get('lang');
-
     // must add params check/update on page change or first load
     // on first load may attempt to get a user browsers language
 
@@ -22,6 +19,9 @@ export const LanguageProvider = ({ children }) => {
         if (typeof language != 'string' || !supported.includes(language) || language === useLang) return;
 
         setLang(language);
+
+        const params = new URLSearchParams(window.location.search);
+        const lang = params.get('lang');
 
         if (lang != language) {
             params.set('lang', language);
