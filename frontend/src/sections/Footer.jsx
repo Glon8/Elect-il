@@ -2,11 +2,14 @@ import React, { useContext } from 'react'
 
 import { Flex, Link, Text } from '@chakra-ui/react'
 
+import { LanguageContext } from '../context/LanguageContext';
+
 import FootBody from '../components/FootBody'
 import { PageContext } from '../context/PageContext'
 
 function Footer() {
   const { page, pageUpdate } = useContext(PageContext);
+  const { translation } = useContext(LanguageContext);
 
   const navigate = (path) => {
     pageUpdate(path);
@@ -15,9 +18,9 @@ function Footer() {
   }
 
   const options = [
-    { name: 'Us', onClick: () => navigate('us') },
-    { name: 'Encryption', onClick: () => navigate('encryption') },
-    { name: 'Approval', onClick: () => navigate('approval') },
+    { name: translation?.footer?.us, onClick: () => navigate('us') },
+    { name: translation?.footer?.encr, onClick: () => navigate('encryption') },
+    { name: translation?.footer?.appr, onClick: () => navigate('approval') },
   ]
   return (
     <FootBody flexDir={{ base: 'column', smToMd: 'column', md: 'row' }} alignItems={'center'} justifyContent={'center'} bg={'#0E2739'} gapX={'5rem'} gapY={'8px'} >

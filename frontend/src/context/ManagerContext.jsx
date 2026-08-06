@@ -1,6 +1,10 @@
 import React, { createContext, useContext, useEffect, useState } from 'react'
 
 import { getPath, pathReplacement, paramsReplacement } from '../../util';
+// language translation should be removed once backend get in place
+import { content as en } from '../translationPackages/elect_il_en'
+import { content as he } from '../translationPackages/elect_il_he'
+import { content as ru } from '../translationPackages/elect_il_ru'
 
 import { PageContext } from './PageContext';
 import { LanguageContext } from './LanguageContext';

@@ -1,15 +1,18 @@
-import React from 'react'
+import React, { useContext } from 'react'
 
 import { Text } from '@chakra-ui/react'
+import { LanguageContext } from '../context/LanguageContext'
 
 import SectionBody from '../components/SectionBody'
 import Body from '../components/Body'
 
 function Opening() {
+    const { translation } = useContext(LanguageContext);
+
     return (
         <SectionBody pt={'4rem'} justifyContent={'center'} alignItems={'center'} px={{ base: '1rem', smToMd: '1rem' }}>
-            <Text>Thank you for choosing us!</Text>
-            <Text>We push toward clear and transparent voting, using encryption and a short time and only minor metadata storage, to make the voting SAFE and SECURE!</Text>
+            <Text>{translation?.opening?.title}</Text>
+            <Text>{translation?.opening?.desc}</Text>
         </SectionBody>
     )
 }

@@ -1,11 +1,14 @@
-import React from 'react'
+import React, { useContext } from 'react'
 
 import { Button, Flex, Text, Image } from '@chakra-ui/react'
+import { LanguageContext } from '../context/LanguageContext'
 
 import SectionBody from '../components/SectionBody'
 import HeadBody from '../components/HeadBody'
 
 function Voting() {
+    const { translation } = useContext(LanguageContext);
+
     const partiesList = {
         "patries": [
             {
@@ -46,11 +49,11 @@ function Voting() {
     return (
         <SectionBody>
 
-            <Text fontWeight={'bold'} fontSize={'2xl'} textAlign={'start'} mt={2} mb={3} px={5}>Voting title:</Text>
+            <Text fontWeight={'bold'} fontSize={'2xl'} textAlign={'start'} mt={2} mb={3} px={5}>{translation?.voting?.title}</Text>
             <Flex justifyContent={'space-around'} px={'1rem'}>
-                <Text w={'40%'} p={'2rem'}>Party</Text>
-                <Text w={'40%'} p={'2rem'}>Leader</Text>
-                <Text alignContent={'center'}>Vote</Text>
+                <Text w={'40%'} p={'2rem'}>{translation?.voting?.party}</Text>
+                <Text w={'40%'} p={'2rem'}>{translation?.voting?.leader}</Text>
+                <Text alignContent={'center'}>{translation?.voting?.vote}</Text>
             </Flex>
             <Flex flexDir={'column'} h={'100%'} overflowY={'auto'} px={'1rem'} mt={2} gapY={3}>
                 {
