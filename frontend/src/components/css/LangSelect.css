@@ -11,7 +11,8 @@
     padding-left: 3px;
     padding-right: 3px;
     font-weight: 500;
-    font-size:small;
+    font-size: small;
+    color: black;
 }
 
 .def::picker(select) {
@@ -25,17 +26,22 @@
     border-top-width: 0;
 }
 
-option {
+.def option {
     width: 100%;
     justify-content: center;
+    color: black;
 }
 
-option:last-of-type {
+.def option:disabled {
+    color: gray;
+}
+
+.def option:last-of-type {
     border-bottom-left-radius: 1rem;
     border-bottom-right-radius: 1rem;
 }
 
-option::checkmark {
+.def option::checkmark {
     display: none;
 }
 
