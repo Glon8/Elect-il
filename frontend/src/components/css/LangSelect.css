@@ -1,0 +1,50 @@
+.def {
+    appearance: base-select;
+    width: 3rem;
+    background: transparent;
+    border-width: 1px;
+    border-radius: 1rem;
+    border-color: #d4d4d8;
+    align-items: center;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 3px;
+    padding-right: 3px;
+    font-weight: 500;
+    font-size:small;
+}
+
+.def::picker(select) {
+    width: 3rem;
+    appearance: base-select;
+    border: 1px solid #d4d4d8;
+    background: #fff;
+    justify-items: center;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    border-top-width: 0;
+}
+
+option {
+    width: 100%;
+    justify-content: center;
+}
+
+option:last-of-type {
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+}
+
+option::checkmark {
+    display: none;
+}
+
+.def::picker-icon {
+    content: '\23F7';
+    color: gray;
+}
+
+.def:open {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
