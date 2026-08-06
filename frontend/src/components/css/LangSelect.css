@@ -46,8 +46,10 @@
 }
 
 .def::picker-icon {
-    content: '\23F7';
+    content: '^';
+    rotate: 180deg;
     color: gray;
+    font-size: 0.8rem;
 }
 
 .def:open {
