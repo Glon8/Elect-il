@@ -46,8 +46,8 @@
 }
 
 .def::picker-icon {
-    content: '^';
-    rotate: 180deg;
+    content: '>';
+    rotate: 90deg;
     color: gray;
     font-size: 0.8rem;
 }
