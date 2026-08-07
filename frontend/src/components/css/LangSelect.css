@@ -52,6 +52,16 @@
     font-size: 1rem;
 }
 
+@media (max-width: 768px) {
+    .def::picker-icon {
+        display: none;
+    }
+
+    .def {
+        justify-content: center;
+    }
+}
+
 .def:open {
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
