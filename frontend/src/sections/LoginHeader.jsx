@@ -4,7 +4,7 @@ import { Flex, Text, useMediaQuery } from '@chakra-ui/react'
 
 import HeadBody from '../components/HeadBody';
 
-function LoginHeader({ ...props }) {
+export default function LoginHeader({ ...props }) {
     const [isSmall] = useMediaQuery("(max-width: 768px)");
 
     return (
@@ -16,5 +16,3 @@ function LoginHeader({ ...props }) {
         </HeadBody >
     )
 }
-
-export default LoginHeader

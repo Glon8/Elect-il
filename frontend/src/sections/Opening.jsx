@@ -6,7 +6,7 @@ import { LanguageContext } from '../context/LanguageContext'
 import SectionBody from '../components/SectionBody'
 import Body from '../components/Body'
 
-function Opening() {
+export default function Opening() {
     const { translation } = useContext(LanguageContext);
 
     return (
@@ -16,5 +16,3 @@ function Opening() {
         </SectionBody>
     )
 }
-
-export default Opening

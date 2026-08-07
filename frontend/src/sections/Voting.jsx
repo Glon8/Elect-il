@@ -6,7 +6,7 @@ import { LanguageContext } from '../context/LanguageContext'
 import SectionBody from '../components/SectionBody'
 import HeadBody from '../components/HeadBody'
 
-function Voting() {
+export default function Voting() {
     const { translation } = useContext(LanguageContext);
 
     const partiesList = {
@@ -73,5 +73,3 @@ function Voting() {
         </SectionBody>
     )
 }
-
-export default Voting

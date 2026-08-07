@@ -11,7 +11,7 @@ import { SignContext } from '../context/SignContext';
 import HeadBody from '../components/HeadBody';
 import LangSelect from '../components/LangSelect';
 
-function Headder({ ...props }) {
+export default function Headder({ ...props }) {
   const { signPop, signPopFlip, pageUpdate } = useContext(PageContext);
   const { mode, modeSwitch } = useContext(ModeContext);
   const { translation } = useContext(LanguageContext);
@@ -52,5 +52,3 @@ function Headder({ ...props }) {
     </HeadBody>
   )
 }
-
-export default Headder

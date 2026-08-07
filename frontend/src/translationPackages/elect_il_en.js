@@ -18,15 +18,16 @@ export const content = {
     },
     signin: {
         phaseone: {
-            title: '',
-            desc: '',
-            placeholder: '',
+            title: 'SIGN-IN',
+            desc: 'Use your ID number and type it below',
+            placeholder: 'ID number',
         },
         phasetwo: {
-            title: '',
-            desc: '',
+            title: 'Verification',
+            desc: 'Write down the code that you recieved via EMAIL or SMS',
+            placeholder: 'Password',
         },
-        button: '',
+        button: 'Send',
     },
     statistics: {
         title: 'Statistics title:',

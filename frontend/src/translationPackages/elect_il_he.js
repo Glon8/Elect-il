@@ -18,16 +18,16 @@ export const content = {
     },
     signin: {
         phaseone: {
-            title: '',
-            desc: '',
-            placeholder: '',
-            button: '',
+            title: 'התחברות',
+            desc: 'השתמש בתעודת זהות ע"מ להתחבר',
+            placeholder: 'מס תעודת זהות',
         },
         phasetwo: {
-            title: '',
-            desc: '',
-            button: '',
-        }
+            title: 'אימות',
+            desc: 'הקלד את הסיסמה שקיבלתה דרך סמס או דואר רלקטרוני',
+            placeholder: 'סיסמה',
+        },
+        button: 'שלח',
     },
     statistics: {
         title: 'סטטיסטיקה עדכנית',

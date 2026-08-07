@@ -7,7 +7,7 @@ import { LanguageContext } from '../context/LanguageContext';
 import FootBody from '../components/FootBody'
 import { PageContext } from '../context/PageContext'
 
-function Footer() {
+export default function Footer() {
   const { page, pageUpdate } = useContext(PageContext);
   const { translation } = useContext(LanguageContext);
 
@@ -37,5 +37,3 @@ function Footer() {
     </FootBody>
   )
 }
-
-export default Footer

@@ -7,7 +7,7 @@ import { LanguageContext } from '../context/LanguageContext'
 import SectionBody from '../components/SectionBody'
 import HeadBody from '../components/HeadBody'
 
-function Statistics() {
+export default function Statistics() {
   const { translation } = useContext(LanguageContext);
 
   const parties = [
@@ -120,5 +120,3 @@ function Statistics() {
     </SectionBody>
   )
 }
-
-export default Statistics

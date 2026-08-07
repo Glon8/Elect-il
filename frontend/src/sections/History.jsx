@@ -22,7 +22,7 @@ function history() {
 
       <Text fontWeight={'bold'} fontSize={'2xl'} textAlign={'start'} mt={2} mb={3} px={5}>{translation?.history?.title}</Text>
       <Text px={{ base: '1rem', smToMd: '1rem' }}>{translation?.history?.desc}</Text>
-      <Flex flexDir={'column'} w={'100%'} h={'100%'} overflowY={'auto'} px={'1rem'} mt={2} gapY={3}>
+      <Flex flexDir={'column'} w={'100%'} h={'100%'} overflowY={'auto'} px={'1rem'} mt={'2rem'} gapY={3}>
         {
           electionHistory?.map((item, ind) => {
             return (

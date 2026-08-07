@@ -18,16 +18,16 @@ export const content = {
     },
     signin: {
         phaseone: {
-            title: '',
-            desc: '',
-            placeholder: '',
-            button: '',
+            title: 'Вход',
+            desc: 'Введите ваш паспортный номер для входа',
+            placeholder: 'Паспортный номер',
         },
         phasetwo: {
-            title: '',
-            desc: '',
-            button: '',
-        }
+            title: 'Подтверждение',
+            desc: 'Введите код, полученный по СМС или ЭЛЕКТРОННОЙ ПОЧТЕ',
+            placeholder: 'Пароль',
+        },
+        button: 'Отправить',
     },
     statistics: {
         title: 'Текущая статистика',
