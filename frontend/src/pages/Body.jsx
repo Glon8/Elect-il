@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import { Flex } from '@chakra-ui/react'
 
 import Headder from '../sections/Headder'
+import LoginHeader from '../sections/LoginHeader'
 import Opening from '../sections/Opening'
 import Voting from '../sections/Voting'
 import Statistics from '../sections/Statistics'
@@ -16,6 +17,7 @@ function Body() {
         <Flex bg='#A1CAE8' w={"100%"} minH={'100vh'} flexDir={'column'} position={'relative'}>
 
             <Headder />
+            <LoginHeader />
             <Opening />
             <Voting />
             <Statistics />
