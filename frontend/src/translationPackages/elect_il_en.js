@@ -9,8 +9,8 @@ export const content = {
         signout: 'Sign Out',
     },
     history: {
-        title: '',
-        desc: '',
+        title: 'Past elections:',
+        desc: 'Here displayed votings that past, and you can observe their statistics, by simply choosing a date!',
     },
     opening: {
         title: 'Thank you for choosing us!',
@@ -31,6 +31,7 @@ export const content = {
     statistics: {
         title: 'Statistics title:',
         totalvotes: 'Total voting participants:',
+        graphtitle: 'Votes per party:',
         topleaders: 'Top leaders:',
     },
     voting: {

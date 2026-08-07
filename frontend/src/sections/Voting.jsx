@@ -50,12 +50,12 @@ function Voting() {
         <SectionBody>
 
             <Text fontWeight={'bold'} fontSize={'2xl'} textAlign={'start'} mt={2} mb={3} px={5}>{translation?.voting?.title}</Text>
-            <Flex justifyContent={'space-around'} px={'1rem'}>
+            <Flex justifyContent={'space-around'} px={'1rem'} style={{ direction: 'ltr' }}>
                 <Text w={'40%'} p={'2rem'}>{translation?.voting?.party}</Text>
                 <Text w={'40%'} p={'2rem'}>{translation?.voting?.leader}</Text>
                 <Text alignContent={'center'}>{translation?.voting?.vote}</Text>
             </Flex>
-            <Flex flexDir={'column'} h={'100%'} overflowY={'auto'} px={'1rem'} mt={2} gapY={3}>
+            <Flex flexDir={'column'} h={'100%'} overflowY={'auto'} px={'1rem'} mt={2} gapY={3} style={{ direction: 'ltr' }}>
                 {
                     partiesList?.['patries']?.map((item, ind) => {
                         return (

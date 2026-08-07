@@ -64,9 +64,6 @@ function Statistics() {
     const myChart = echarts.init(chartRef.current);
 
     myChart.setOption({
-      title: {
-        text: 'Votes per party:'
-      },
       tooltip: {
       },
       xAxis: {
@@ -100,6 +97,7 @@ function Statistics() {
 
       <Text fontWeight={'bold'} fontSize={'2xl'} textAlign={'start'} mt={2} mb={3} px={5}>{translation?.statistics?.title}</Text>
       <HeadBody h={'auto'} position={'initial'} flexDir={'column'} justifyContent={'space-evenly'}><Text>{translation?.statistics?.totalvotes}</Text><Text>{useVotes}</Text></HeadBody>
+      <Text textAlign={'center'}>{translation?.statistics?.graphtitle}</Text>
       <Flex ref={chartRef} style={{ width: '100%', height: '400px' }}></Flex>
       <HeadBody position={'initial'} flexDir={'column'} h={'6rem'} justifyContent={'space-evenly'}>
 

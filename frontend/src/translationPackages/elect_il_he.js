@@ -9,8 +9,8 @@ export const content = {
         signout: 'להתנתק',
     },
     history: {
-        title: '',
-        desc: '',
+        title: 'בחירות קודמות:',
+        desc: 'פה מוצגות בחירות אשר חלפו, ניתן לצפות בכל אחת ואחת מהם עם בחירת תאריך!',
     },
     opening: {
         title: 'תודה על הבחירה בנו!',
@@ -31,11 +31,12 @@ export const content = {
     },
     statistics: {
         title: 'סטטיסטיקה עדכנית',
-        totalvotes: 'סהכ משתתפים עד כה:',
-        topleaders: 'שלושה מובילים:',
+        totalvotes: ':סהכ משתתפים עד כה',
+        graphtitle: 'קולות עבור מפלגה:',
+        topleaders: ':שלושה מובילים',
     },
     voting: {
-        title: 'רשימת נבחרים',
+        title: 'רשימת נבחרים:',
         party: 'מפלגה',
         leader: 'ראש המפלגה',
         vote: 'בחירה',
