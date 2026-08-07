@@ -33,7 +33,7 @@ export default function SignIn({ ...props }) {
                 {
                     //<PhaseB />
                 }
-                <Button w={'60%'} bgColor={'gray'}>{translation?.signin?.button}</Button>
+                <Button w={'60%'} bgColor={'gray'} color={'white'}>{translation?.signin?.button}</Button>
 
             </Body>
 
