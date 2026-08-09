@@ -7,6 +7,7 @@ import { PageProvider } from './context/PageContext'
 import { SignProvider } from './context/SignContext'
 import { ModeProvider } from './context/ModeContext'
 import { LanguageProvider } from './context/LanguageContext'
+import { HistoryProvider } from './context/HistoryContext'
 
 import Body from './pages/Body'
 
@@ -18,19 +19,23 @@ function App() {
 
         <ModeProvider>
 
-          <SignProvider>
+          <HistoryProvider>
 
-            <PageProvider>
+            <SignProvider>
 
-              <ManagerProvider>
+              <PageProvider>
 
-                <Body />
+                <ManagerProvider>
 
-              </ManagerProvider>
+                  <Body />
 
-            </PageProvider>
+                </ManagerProvider>
 
-          </SignProvider>
+              </PageProvider>
+
+            </SignProvider>
+
+          </HistoryProvider>
 
         </ModeProvider>
 

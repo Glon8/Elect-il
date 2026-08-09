@@ -106,7 +106,7 @@ export default function Statistics() {
           {
             useTop?.map((item, ind) => {
               return (
-                <Flex flexDir={'column'} w={'30%'} textAlign={'center'}>
+                <Flex key={`statistics${ind}`} flexDir={'column'} w={'30%'} textAlign={'center'}>
                   <Text>{1 + ind}</Text>
                   <Text>{item}</Text>
                 </Flex>

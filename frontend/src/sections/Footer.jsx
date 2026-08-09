@@ -27,7 +27,7 @@ export default function Footer() {
       {
         options?.map((item, ind) => {
           return (
-            <Link key={'fo' + ind} href={'#'} color={'white'} onClick={(e) => { e.preventDefault(); item.onClick(); }}>
+            <Link key={`footer${ind}`} href={'#'} color={'white'} onClick={(e) => { e.preventDefault(); item.onClick(); }}>
               {item.name}
             </Link>
           )

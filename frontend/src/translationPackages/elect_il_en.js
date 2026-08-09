@@ -12,6 +12,7 @@ export const content = {
     history: {
         title: 'Past elections',
         desc: 'Here displayed votings that past, and you can observe their statistics, by simply choosing a date!',
+        search: 'Year',
     },
     opening: {
         title: 'Thank you for choosing us!',

@@ -59,7 +59,7 @@ export default function Voting() {
                 {
                     partiesList?.['patries']?.map((item, ind) => {
                         return (
-                            <HeadBody minH={'6rem'} h={'auto'} position={'initial'} key={'pL' + ind} rounded={'md'} py={2}>
+                            <HeadBody minH={'5rem'} h={'auto'} position={'initial'} key={`vote${ind}`} rounded={'md'} py={2}>
                                 <Image></Image>
                                 <Text w={'40%'} overflow={'hidden'} textOverflow={'ellipsis'} whiteSpace={'nowrap'}>{item.party}</Text>
                                 <Text w={'40%'} overflow={'hidden'} textOverflow={'ellipsis'} whiteSpace={'nowrap'}>{item.candidate}</Text>
