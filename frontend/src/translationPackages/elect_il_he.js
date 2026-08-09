@@ -7,9 +7,10 @@ export const content = {
     header: {
         signin: 'כניסה',
         signout: 'להתנתק',
+        welcome: 'שלום!',
     },
     history: {
-        title: 'בחירות קודמות:',
+        title: 'בחירות קודמות',
         desc: 'פה מוצגות בחירות אשר חלפו, ניתן לצפות בכל אחת ואחת מהם עם בחירת תאריך!',
     },
     opening: {
@@ -36,7 +37,7 @@ export const content = {
         topleaders: ':שלושה מובילים',
     },
     voting: {
-        title: 'רשימת נבחרים:',
+        title: 'רשימת נבחרים',
         party: 'מפלגה',
         leader: 'ראש המפלגה',
         vote: 'בחירה',

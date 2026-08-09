@@ -14,10 +14,4 @@ export const pathReplacement = (path, ind) => {
 
 export const getPath = (ind) => location.pathname.split('/')[ind];
 
-export const paramsReplacement = (params) => {
-    const parts = location.pathname.split('?');
-
-    parts[1] = params;
-
-    history.replaceState({}, '', parts.join('?'));
-}
+export const paramsReplacement = (params) => history.replaceState({}, '', `${location.pathname}?${params.toString()}`);

@@ -28,8 +28,21 @@ export const ManagerProvider = ({ children }) => {
         if (!pageSup.includes(curPage)) pathReplacement(page, 1);
         else pageUpdate(curPage);
 
+        const prefLang = navigator.language.split('-')[0];
+
         if (!langSup.includes(curLang)) {
-            params.set('lang', language);
+            let updateParam;
+
+            if (langSup.includes(prefLang)) {
+                langUpdate(prefLang);
+                updateParam = prefLang;
+            }
+            else {
+                langUpdate('en');
+                updateParam = 'en';
+            }
+
+            params.set('lang', updateParam);
 
             paramsReplacement(params);
         }

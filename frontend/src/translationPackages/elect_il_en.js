@@ -7,9 +7,10 @@ export const content = {
     header: {
         signin: 'Sign In',
         signout: 'Sign Out',
+        welcome: 'Hello!',
     },
     history: {
-        title: 'Past elections:',
+        title: 'Past elections',
         desc: 'Here displayed votings that past, and you can observe their statistics, by simply choosing a date!',
     },
     opening: {
@@ -30,13 +31,13 @@ export const content = {
         button: 'Send',
     },
     statistics: {
-        title: 'Statistics title:',
+        title: 'Updated Statistics',
         totalvotes: 'Total voting participants:',
         graphtitle: 'Votes per party:',
         topleaders: 'Top leaders:',
     },
     voting: {
-        title: 'Voting title:',
+        title: 'Current Election Participants',
         party: 'Party',
         leader: 'Leader',
         vote: 'Vote',

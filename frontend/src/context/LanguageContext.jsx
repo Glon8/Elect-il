@@ -9,8 +9,8 @@ import { paramsReplacement } from '../../util';
 export const LanguageContext = createContext(null);
 
 export const LanguageProvider = ({ children }) => {
-    const [useLang, setLang] = useState('en');
-    const [useTrans, setTrans] = useState(en);
+    const [useLang, setLang] = useState('');
+    const [useTrans, setTrans] = useState(null);
     const [useOrien, setOrien] = useState('rtl');
 
     const supported = ['ru', 'en', 'he'];
@@ -20,9 +20,6 @@ export const LanguageProvider = ({ children }) => {
         en: en,
         he: he,
     };
-
-    // must add params check/update on page change or first load
-    // on first load may attempt to get a user browsers language
 
     const langUpdate = (language) => {
         if (typeof language != 'string' || !supported.includes(language) || language === useLang) return;
@@ -36,11 +33,9 @@ export const LanguageProvider = ({ children }) => {
 
         if (lang != language) {
             params.set('lang', language);
-
             paramsReplacement(params);
         }
 
-        //language == 'he' ? setOrien('rtl') : setOrien('ltr');
         document.documentElement.dir = language == 'he' ? 'rtl' : 'ltr';
     }
 
