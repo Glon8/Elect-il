@@ -20,7 +20,7 @@ function history() {
       <Text px={{ base: '1rem', smToMd: '1rem' }}>{translation?.history?.desc}</Text>
       <Flex mt={8} style={{ direction: 'ltr' }}>
         <Input value={useDate} letterSpacing={4} w={'10rem'} borderRightWidth={0} borderRightRadius={0} placeholder={translation?.history?.search} maxLength={4} textAlign={'center'} inputMode='numeric' onChange={(e) => setDate(e.target.value)}></Input>
-        <Button onClick={updateQuery} bg={'black'} borderLeftRadius={0}><i className='pi pi-search'></i></Button>
+        <Button onClick={updateQuery} bg={'black'} color={'white'} borderLeftRadius={0}><i className='pi pi-search'></i></Button>
       </Flex>
       <Flex w={!isSmall ? '100%' : '80%'} h={'90%'} flexWrap={'wrap'} alignContent={'flex-start'} overflowY={'auto'} px={'1rem'} my={'1rem'} gapY={3} justifyContent={useQuery !== null && useQuery.length != 0 ? 'space-between' : 'center'} style={{ direction: 'ltr' }}>
         {
