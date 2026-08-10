@@ -6,7 +6,7 @@ import SectionBody from '../components/SectionBody'
 
 export default function Encryption() {
     return (
-        <SectionBody>
+        <SectionBody alignItems={'center'} justifyContent={'center'}>
             <Text>Encryption page</Text>
         </SectionBody>
     )

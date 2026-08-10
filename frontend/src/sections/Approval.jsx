@@ -6,7 +6,7 @@ import SectionBody from '../components/SectionBody'
 
 export default function Approval() {
     return (
-        <SectionBody>
+        <SectionBody alignItems={'center'} justifyContent={'center'}>
             <Text>Approval page</Text>
         </SectionBody>
     )

@@ -14,7 +14,7 @@ function history() {
   const [isSmall] = useMediaQuery("(max-width: 768px)");
 
   return (
-    <SectionBody pb={'1rem'} alignItems={'center'}>
+    <SectionBody pb={'1rem'} alignItems={'center'} justifyContent={'center'}>
 
       <Text fontWeight={'bold'} fontSize={'2xl'} textAlign={'start'} mt={2} mb={3} px={5}>{translation?.history?.title}</Text>
       <Text px={{ base: '1rem', smToMd: '1rem' }}>{translation?.history?.desc}</Text>
@@ -24,7 +24,7 @@ function history() {
           onKeyDown={(e) => e.key === 'Enter' ? updateQuery() : null}></Input>
         <Button onClick={updateQuery} bg={'black'} color={'white'} borderLeftRadius={0}><i className='pi pi-search'></i></Button>
       </Flex>
-      <Flex w={!isSmall ? '100%' : '80%'} h={'90%'} flexWrap={'wrap'} alignContent={'flex-start'} overflowY={'auto'} px={'1rem'} my={'1rem'} gapY={3} justifyContent={useQuery !== null && useQuery.length != 0 ? 'space-between' : 'center'} style={{ direction: 'ltr' }}>
+      <Flex w={!isSmall ? '100%' : '80%'} h={!isSmall ? '30%' : '40%'} flexWrap={'wrap'} alignContent={'flex-start'} overflowY={'auto'} px={'1rem'} my={'1rem'} gapY={3} justifyContent={useQuery !== null && useQuery.length != 0 ? 'space-between' : 'center'} style={{ direction: 'ltr' }}>
         {
           useQuery !== null && useQuery.length != 0 ?
             useQuery?.map((item, ind) => {

@@ -6,7 +6,7 @@ import SectionBody from '../components/SectionBody'
 
 export default function Us() {
     return (
-        <SectionBody>
+        <SectionBody alignItems={'center'} justifyContent={'center'}>
             <Text>Us page</Text>
         </SectionBody>
     )
