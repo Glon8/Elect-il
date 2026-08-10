@@ -46,7 +46,7 @@ export default function Statistics() {
             <Text>{useVotes}</Text>
           </HeadBody>
             <Text mt={3} textAlign={'center'}>{translation?.statistics?.graphtitle}</Text>
-            <Flex w={'100%'} h={!isSmall ? '100%' : '40%'} flexDir={'column'} gapY={1} overflowY={'auto'}>
+            <Flex w={'100%'} h={!isSmall ? '50%' : '40%'} flexDir={'column'} gapY={1} overflowY={'auto'} style={{ direction: 'ltr' }}>
               {
                 parties?.map((item, ind) => {
                   const width = Math.floor((item.votes * 100) / useVotes);

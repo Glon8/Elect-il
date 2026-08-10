@@ -23,7 +23,7 @@ export default function Voting() {
                     <Text w={'40%'} p={'2rem'}>{translation?.voting?.leader}</Text>
                     <Text alignContent={'center'}>{translation?.voting?.vote}</Text>
                 </Flex>
-                    <Flex flexDir={'column'} h={'70%'} overflowY={'auto'} mt={2} gapY={3} style={{ direction: 'ltr' }}>
+                    <Flex flexDir={'column'} h={'60%'} overflowY={'auto'} mt={2} gapY={3} style={{ direction: 'ltr' }}>
                         {
                             parties?.map((item, ind) => {
                                 return (
