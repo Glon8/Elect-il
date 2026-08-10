@@ -9,6 +9,7 @@ import { content as ru } from '../translationPackages/elect_il_ru'
 import { PageContext } from './PageContext';
 import { LanguageContext } from './LanguageContext';
 import { ModeContext } from './ModeContext';
+import { HistoryContext } from './HistoryContext';
 
 export const ManagerContext = createContext(null);
 
@@ -16,6 +17,7 @@ export const ManagerProvider = ({ children }) => {
     const { page, pageSup, pageUpdate } = useContext(PageContext);
     const { language, langSup, langUpdate } = useContext(LanguageContext);
     const { mode, modeSup, modeUpdate } = useContext(ModeContext);
+    const { setDate, findQuery } = useContext(HistoryContext);
 
     const path = window.location.pathname;
     const params = new URLSearchParams(window.location.search);
@@ -25,9 +27,11 @@ export const ManagerProvider = ({ children }) => {
     const curMode = params.get('mode');
 
     useEffect(() => {
+        // page init \/
         if (!pageSup.includes(curPage)) pathReplacement(page, 1);
         else pageUpdate(curPage);
 
+        // language init \/
         const prefLang = navigator.language.split('-')[0];
 
         if (!langSup.includes(curLang)) {
@@ -48,12 +52,19 @@ export const ManagerProvider = ({ children }) => {
         }
         else langUpdate(curLang);
 
+        // mode init \/
         if (!modeSup.includes(curMode)) {
             params.set('mode', mode);
 
             paramsReplacement(params);
         }
         else modeUpdate(curMode);
+
+        // history init \/
+        const nowYear = String(new Date().getFullYear());
+
+        setDate(nowYear);
+        findQuery(nowYear);
     }, []);
 
     return (
