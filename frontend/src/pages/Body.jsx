@@ -13,6 +13,7 @@ import SignIn from '../sections/SignIn'
 import Approval from '../sections/Approval'
 import Us from '../sections/Us'
 import Encryption from '../sections/Encryption'
+import VoteConfirm from '../sections/VoteConfirm'
 
 import { PageContext } from '../context/PageContext'
 import { SignContext } from '../context/SignContext'
@@ -31,6 +32,7 @@ function Body() {
 
             {page === 'election' ? <Opening /> : null}
             {page === 'election' && !!userData.token ? <Voting /> : null}
+            <VoteConfirm />
             {page === 'election' ? <Statistics /> : null}
             {page === 'election' ? <History /> : null}
 

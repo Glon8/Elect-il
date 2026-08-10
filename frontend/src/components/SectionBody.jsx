@@ -8,7 +8,7 @@ export default function SectionBody({ children, ...props }) {
 
             <Flex w={'100%'} h={{ base: '100%', smToMd: '100%', md: '85%' }} bg={'white'} justifyContent={'center'} >
 
-                <Flex maxW={{ base: '100%', smToMd: '100%', md: '40rem' }} w={'100%'} flexDirection={'column'} py={'3rem'} color={'black'} {...props}>
+                <Flex maxW={{ base: '100%', smToMd: '100%', md: '40rem' }} w={'100%'} flexDirection={'column'} py={'3rem'} color={'black'} px={5} {...props}>
                     {children}
                 </Flex>
 

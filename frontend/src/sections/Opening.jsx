@@ -10,7 +10,7 @@ export default function Opening() {
     const { translation } = useContext(LanguageContext);
 
     return (
-        <SectionBody pt={'4rem'} justifyContent={'center'} alignItems={'center'} px={{ base: '1rem', smToMd: '1rem' }}>
+        <SectionBody pt={'4rem'} justifyContent={'center'} alignItems={'center'}>
             <Text>{translation?.opening?.title}</Text>
             <Text>{translation?.opening?.desc}</Text>
         </SectionBody>

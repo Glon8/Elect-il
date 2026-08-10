@@ -43,6 +43,15 @@ export const content = {
         party: 'מפלגה',
         leader: 'ראש המפלגה',
         vote: 'בחירה',
+        error: 'No on going elections right now',
+    },
+    voteconfirm: {
+        title: 'Attention Please Note',
+        disclaimer: 'By giving your voice here on the platform, you agree, that we keep your voice, for this particular election. Furthurmore, you agree that during processing, your voice ll be split with your personal data(ID). ID ll be stored in ecrypted state, and then deleted by the end of the election. This action unreversable!',
+        label: 'I read and understood the note',
+        question: 'Are you sure you want to vote for this party?',
+        positive: 'YES',
+        negative: 'NO',
     },
     langSelector: {
         ru: 'Ru',

@@ -16,15 +16,15 @@ function history() {
   return (
     <SectionBody pb={'1rem'} alignItems={'center'} justifyContent={'center'}>
 
-      <Text fontWeight={'bold'} fontSize={'2xl'} textAlign={'start'} mt={2} mb={3} px={5}>{translation?.history?.title}</Text>
-      <Text px={{ base: '1rem', smToMd: '1rem' }}>{translation?.history?.desc}</Text>
+      <Text fontWeight={'bold'} fontSize={'2xl'} textAlign={'start'} mt={2} mb={3}>{translation?.history?.title}</Text>
+      <Text>{translation?.history?.desc}</Text>
       <Flex mt={8} style={{ direction: 'ltr' }}>
         <Input value={useDate} letterSpacing={4} w={'10rem'} borderColor={'gray.300'} borderRightWidth={0} borderRightRadius={0} placeholder={translation?.history?.search} maxLength={4} textAlign={'center'} inputMode='numeric'
           onChange={(e) => setDate(e.target.value)}
           onKeyDown={(e) => e.key === 'Enter' ? updateQuery() : null}></Input>
         <Button onClick={updateQuery} bg={'black'} color={'white'} borderLeftRadius={0}><i className='pi pi-search'></i></Button>
       </Flex>
-      <Flex w={!isSmall ? '100%' : '80%'} h={!isSmall ? '30%' : '40%'} flexWrap={'wrap'} alignContent={'flex-start'} overflowY={'auto'} px={'1rem'} my={'1rem'} gapY={3} justifyContent={useQuery !== null && useQuery.length != 0 ? 'space-between' : 'center'} style={{ direction: 'ltr' }}>
+      <Flex w={!isSmall ? '100%' : '80%'} h={!isSmall ? '30%' : '40%'} flexWrap={'wrap'} alignContent={'flex-start'} overflowY={'auto'} my={'1rem'} gapY={3} justifyContent={useQuery !== null && useQuery.length != 0 ? 'space-between' : 'center'} style={{ direction: 'ltr' }}>
         {
           useQuery !== null && useQuery.length != 0 ?
             useQuery?.map((item, ind) => {
@@ -35,8 +35,8 @@ function history() {
                   </Link>
                 </Flex>
               )
-            }) : (<Flex mt={'3rem'} w={'17rem'} h={'3rem'} justifyContent={'center'} rounded={'1rem'} bg={'transparent'} borderWidth={1} borderColor={'gray.300'}>
-              <Text alignContent={'center'} w={'full'} h={'3rem'} color={'black'} textAlign={'center'} textOverflow={'ellipsis'} overflow={'hidden'} whiteSpace={'nowrap'}>{translation?.history?.nohistory}</Text>
+            }) : (< Flex w={'full'} mt={'3rem'} h={'3rem'} justifyContent={'center'} alignItems={'center'} bg={'transparent'}>
+              <Text minW={'90%'} rounded={'1rem'} py={2} borderWidth={1} borderColor={'gray.300'} alignContent={'center'} h={'3rem'} color={'black'} textAlign={'center'} textOverflow={'ellipsis'} overflow={'hidden'} whiteSpace={'nowrap'}>{translation?.history?.nohistory}</Text>
             </Flex>)
         }
       </Flex>

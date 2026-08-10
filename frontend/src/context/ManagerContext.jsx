@@ -10,6 +10,7 @@ import { PageContext } from './PageContext';
 import { LanguageContext } from './LanguageContext';
 import { ModeContext } from './ModeContext';
 import { HistoryContext } from './HistoryContext';
+import { VotingContext } from './VotingContext';
 
 export const ManagerContext = createContext(null);
 
@@ -18,6 +19,7 @@ export const ManagerProvider = ({ children }) => {
     const { language, langSup, langUpdate } = useContext(LanguageContext);
     const { mode, modeSup, modeUpdate } = useContext(ModeContext);
     const { setDate, findQuery } = useContext(HistoryContext);
+    const { setParties, pullPartiesData, updateParties } = useContext(VotingContext);
 
     const path = window.location.pathname;
     const params = new URLSearchParams(window.location.search);
@@ -59,6 +61,11 @@ export const ManagerProvider = ({ children }) => {
             paramsReplacement(params);
         }
         else modeUpdate(curMode);
+
+        // parties init \/
+        const parties = pullPartiesData();
+
+        updateParties(parties);
 
         // history init \/
         const nowYear = String(new Date().getFullYear());
