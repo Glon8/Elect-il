@@ -28,8 +28,8 @@ export default function Headder({ ...props }) {
   return (
     <HeadBody zIndex={1000} borderBottomStyle={'solid'} borderBottomWidth={1} borderBottomColor={'border.emphasized'} justifyContent={'space-between'} {...props} >
 
-      <Link minW={'20px'} h={'100%'} py={2} onClick={(e) => { e.preventDefault(); navigate('election'); }}>
-        {/* website logo/image goes here */}
+      <Link rounded={'1rem'} borderWidth={1} px={3} borderColor={'gray.300'} minW={'20px'} h={'100%'} py={2} onClick={(e) => { e.preventDefault(); navigate('election'); }}>
+        {/* website logo/image goes here */} No LOGO {'\u{1F612}'}
       </Link>
       <Flex gapX={5} width={'auto'} minWidth={'50%'} justifyContent={'end'}>
 

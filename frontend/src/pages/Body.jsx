@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 
 import { Flex } from '@chakra-ui/react'
 
@@ -9,21 +9,38 @@ import Voting from '../sections/Voting'
 import Statistics from '../sections/Statistics'
 import History from '../sections/History'
 import Footer from '../sections/Footer'
-
 import SignIn from '../sections/SignIn'
+import Approval from '../sections/Approval'
+import Us from '../sections/Us'
+import Encryption from '../sections/Encryption'
+
+import { PageContext } from '../context/PageContext'
+import { SignContext } from '../context/SignContext'
+
 
 function Body() {
+    const { page } = useContext(PageContext);
+    const { userData } = useContext(SignContext);
+
     return (
         <Flex bg='#A1CAE8' w={"100%"} minH={'100vh'} flexDir={'column'} position={'relative'}>
 
             <Headder />
             <LoginHeader />
-            <Opening />
-            <Voting />
-            <Statistics />
-            <History />
-            <Footer />
             <SignIn />
+
+            {page === 'election' ? <Opening /> : null}
+            {page === 'election' && !!userData.token ? <Voting /> : null}
+            {page === 'election' ? <Statistics /> : null}
+            {page === 'election' ? <History /> : null}
+
+            {page === 'us' ? <Us /> : null}
+
+            {page === 'approval' ? <Approval /> : null}
+
+            {page === 'encryption' ? <Encryption /> : null}
+
+            <Footer />
 
         </Flex >
     )
