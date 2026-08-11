@@ -23,7 +23,7 @@ export default function VoteConfirm() {
         <PopUpBody displayTrig={votePop} bgOnClick={reset} gapY={3} py={isSmall ? '2rem' : '4rem'} minW={'20rem'} w={isSmall ? '95%' : '30rem'} h={isSmall ? 'auto' : '35rem'} maxH={isSmall ? '80%' : ''} px={5} justifyContent={'space-between'}>
             <Text color={'black'}>{translation?.voteconfirm?.title}</Text>
             <Flex w={'full'} alignItems={'center'} gapY={1} flexDir={'column'}>
-                <Text>{translation?.voteconfirm?.disclaimer}</Text>
+                <Text color={'black'}>{translation?.voteconfirm?.disclaimer}</Text>
                 <Flex w={'full'} gapX={3}>
                     <input type='checkbox' checked={useChecked} onChange={() => setChecked(!useChecked)} />
                     <Text color={'black'}>{translation?.voteconfirm?.label}</Text>
