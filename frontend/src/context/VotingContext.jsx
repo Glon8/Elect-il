@@ -4,6 +4,7 @@ export const VotingContext = createContext(null);
 
 export const VotingProvider = ({ children }) => {
     const [useParties, setParties] = useState([]);
+    const [useSelected, setSelected] = useState(null);
 
     const example = [{
         party: "Likud",
@@ -63,7 +64,7 @@ export const VotingProvider = ({ children }) => {
     const vote = () => { }
 
     return (
-        <VotingContext.Provider value={{ parties: useParties, setParties, updateParties, pullPartiesData, vote }}>
+        <VotingContext.Provider value={{ parties: useParties, setParties, updateParties, pullPartiesData, vote, selected: useSelected, setSelected }}>
             {children}
         </VotingContext.Provider>
     )

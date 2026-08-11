@@ -46,12 +46,12 @@ export const content = {
         error: 'No on going elections right now',
     },
     voteconfirm: {
-        title: 'Attention Please Note',
-        disclaimer: 'By giving your voice here on the platform, you agree, that we keep your voice, for this particular election. Furthurmore, you agree that during processing, your voice ll be split with your personal data(ID). ID ll be stored in ecrypted state, and then deleted by the end of the election. This action unreversable!',
-        label: 'I read and understood the note',
-        question: 'Are you sure you want to vote for this party?',
-        positive: 'YES',
-        negative: 'NO',
+        title: 'Внимание',
+        disclaimer: 'Отдавая свой голос здесь, на платформе, вы соглашаетесь с тем, что мы сохраним ваш голос для этих конкретных выборов. Более того, вы соглашаетесь с тем, что в процессе обработки ваш голос будет отделён от ваших персональных данных (ПН). Паспортный Номер будет храниться в зашифрованном виде, а затем удалён по окончании выборов. Это действие необратимо!',
+        label: 'Я прочитал(а) и понял(а) примечание',
+        question: 'Вы уверены, что хотите проголосовать за эту партию?',
+        positive: 'ДА',
+        negative: 'НЕТ',
     },
     langSelector: {
         ru: 'Ру',
