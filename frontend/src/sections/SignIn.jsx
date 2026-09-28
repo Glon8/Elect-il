@@ -1,6 +1,6 @@
-import React, { useEffect, useState, useContext } from 'react'
+import { useState, useContext } from 'react'
 
-import { Button, Flex, Input, Text } from '@chakra-ui/react';
+import { Button } from '@chakra-ui/react';
 
 import { PageContext } from '../context/PageContext';
 import { SignContext } from '../context/SignContext';
@@ -11,7 +11,7 @@ import HeadBody from '../components/HeadBody';
 import PhaseA from './signphases/PhaseA';
 import PhaseB from './signphases/PhaseB';
 
-export default function SignIn({ ...props }) {
+export default function SignIn() {
     const { signPop, signPopFlip } = useContext(PageContext);
     const { translation } = useContext(LanguageContext);
     const [usePhase, setPhase] = useState('cred');

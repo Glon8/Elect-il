@@ -1,6 +1,6 @@
-import React, { useContext } from 'react'
+import { useContext } from 'react'
 
-import { Flex, Input, Text } from '@chakra-ui/react';
+import { Flex, Input } from '@chakra-ui/react';
 
 import { LanguageContext } from '../../context/LanguageContext';
 import HeadA from '../../components/headers/HeadA';
