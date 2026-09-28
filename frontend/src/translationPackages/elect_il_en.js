@@ -2,7 +2,7 @@ export const content = {
     footer: {
         us: 'Us',
         encr: 'Encryption',
-        appr: 'Approval',
+        appr: 'License',
     },
     header: {
         signin: 'Sign In',
@@ -16,8 +16,8 @@ export const content = {
         nohistory: 'Nothing found for this year',
     },
     opening: {
-        title: 'Thank you for choosing us!',
-        desc: 'We push toward clear and transparent voting, using encryption and a short time and only minor metadata storage, to make the voting SAFE and SECURE!',
+        title: 'Thank you for trusting us!',
+        desc: 'We push toward transparent and SECURE voting, using encryption and a short time and only minor metadata storage!',
     },
     signin: {
         phaseone: {
