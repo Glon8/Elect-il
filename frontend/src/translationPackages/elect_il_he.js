@@ -27,14 +27,14 @@ export const content = {
         },
         phasetwo: {
             title: 'אימות',
-            desc: 'הקלד את הסיסמה שקיבלתה דרך סמס או דואר רלקטרוני',
+            desc: 'הקלד את הסיסמה שקיבלתה דרך סמס או דואר אלקטרוני',
             placeholder: 'סיסמה',
         },
         button: 'שלח',
     },
     statistics: {
         title: 'סטטיסטיקה עדכנית',
-        totalvotes: ':סהכ משתתפים עד כה',
+        totalvotes: ':ס"הכ משתתפים עד כה',
         graphtitle: 'קולות עבור מפלגה:',
         topleaders: ':שלושה מובילים',
     },

@@ -14,7 +14,11 @@ import PhaseB from './signphases/PhaseB';
 export default function SignIn({ ...props }) {
     const { signPop, signPopFlip } = useContext(PageContext);
     const { translation } = useContext(LanguageContext);
-    const [usePhase, setPhase] = useState('login');
+    const [usePhase, setPhase] = useState('cred');
+
+    const switchPhase = () => {
+        setPhase(usePhase === 'cred' ? 'verify' : 'cred')
+    }
 
     const send = () => { }
 
@@ -25,12 +29,12 @@ export default function SignIn({ ...props }) {
                 <Button w={0} rounded={'full'} bg={'transparent'} color={'black'} borderColor={'gray.300'} fontWeight={'bolder'} fontSize={'xl'} onClick={signPopFlip}><i className='pi pi-times'></i></Button>
             </HeadBody>
             {
-                <PhaseA />
+                usePhase === "cred" ? <PhaseA /> : null
             }
             {
-                //<PhaseB />
+                usePhase === "verify" ? <PhaseB /> : null
             }
-            <Button w={'60%'} bg={'black'} color={'white'}>{translation?.signin?.button}</Button>
+            <Button w={'60%'} bg={'black'} color={'white'} onClick={switchPhase}>{translation?.signin?.button}</Button>
 
         </PopUpBody>
     )

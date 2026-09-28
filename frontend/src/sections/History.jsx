@@ -7,6 +7,7 @@ import { HistoryContext } from '../context/HistoryContext'
 import SectionBody from '../components/SectionBody'
 import HeadA from '../components/headers/HeadA'
 import HeadC from '../components/headers/HeadC'
+import AText from '../components/AText'
 
 function history() {
   const { translation } = useContext(LanguageContext);
@@ -18,7 +19,7 @@ function history() {
     <SectionBody pb={'1rem'} alignItems={'center'} justifyContent={'center'}>
 
       <HeadA>{translation?.history?.title}</HeadA>
-      <Text fontSize={'lg'}>{translation?.history?.desc}</Text>
+      <AText>{translation?.history?.desc}</AText>
       <Flex mt={8} style={{ direction: 'ltr' }}>
         <Input value={useDate} letterSpacing={4} w={'10rem'} borderColor={'gray.300'} borderRightWidth={0} borderRightRadius={0} placeholder={translation?.history?.search} maxLength={4} textAlign={'center'} inputMode='numeric'
           onChange={(e) => setDate(e.target.value)}
