@@ -29,10 +29,10 @@ export default function SignIn() {
                 <Button w={0} rounded={'full'} bg={'transparent'} color={'black'} borderColor={'gray.300'} fontWeight={'bolder'} fontSize={'xl'} onClick={signPopFlip}><i className='pi pi-times'></i></Button>
             </HeadBody>
             {
-                usePhase === "cred" ? <PhaseA /> : null
+                usePhase === "cred" ? <PhaseA /> : ''
             }
             {
-                usePhase === "verify" ? <PhaseB /> : null
+                usePhase === "verify" ? <PhaseB /> : ''
             }
             <Button w={'60%'} bg={'black'} color={'white'} onClick={switchPhase}>{translation?.signin?.button}</Button>
 
