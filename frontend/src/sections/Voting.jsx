@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import { useContext } from 'react'
 
 import { Button, Flex, Text, Image } from '@chakra-ui/react'
 import { LanguageContext } from '../context/LanguageContext'
@@ -7,6 +7,8 @@ import { VotingContext } from '../context/VotingContext'
 import SectionBody from '../components/SectionBody'
 import HeadBody from '../components/HeadBody'
 import { PageContext } from '../context/PageContext'
+import HeadA from '../components/headers/HeadA'
+import HeadC from '../components/headers/HeadC'
 
 export default function Voting() {
     const { translation } = useContext(LanguageContext);
@@ -16,13 +18,13 @@ export default function Voting() {
     return (
         <SectionBody justifyContent={'center'} alignContent={'center'}>
 
-            <Text fontWeight={'bold'} fontSize={'2xl'} textAlign={'start'} mt={2} mb={3}>{translation?.voting?.title}</Text>
+            <HeadA>{translation?.voting?.title}</HeadA>
             {
                 parties != null && parties.length != 0 ? (<><Flex justifyContent={'space-around'} style={{ direction: 'ltr' }}>
                     <HeadBody minH={'5rem'} h={'auto'} position={'initial'} rounded={'md'} py={2} borderWidth={1} borderColor={'gray.300'} justifyContent={'space-between'}>
-                        <Text w={'10rem'} textAlign={'center'} overflow={'hidden'} textOverflow={'ellipsis'} whiteSpace={'nowrap'}>{translation?.voting?.party}</Text>
-                        <Text w={'10rem'} textAlign={'center'} overflow={'hidden'} textOverflow={'ellipsis'} whiteSpace={'nowrap'}>{translation?.voting?.leader}</Text>
-                        <Text w={'5rem'} textAlign={'center'} overflow={'hidden'} textOverflow={'ellipsis'} whiteSpace={'nowrap'}>{translation?.voting?.vote}</Text>
+                        <HeadC w={'10rem'} textAlign={'center'} overflow={'hidden'} textOverflow={'ellipsis'} whiteSpace={'nowrap'}>{translation?.voting?.party}</HeadC>
+                        <HeadC w={'10rem'} textAlign={'center'} overflow={'hidden'} textOverflow={'ellipsis'} whiteSpace={'nowrap'}>{translation?.voting?.leader}</HeadC>
+                        <HeadC w={'5rem'} textAlign={'center'} overflow={'hidden'} textOverflow={'ellipsis'} whiteSpace={'nowrap'}>{translation?.voting?.vote}</HeadC>
                     </HeadBody>
                 </Flex>
                     <Flex flexDir={'column'} h={'65%'} overflowY={'auto'} mt={2} gapY={3} style={{ direction: 'ltr' }}>
@@ -30,7 +32,7 @@ export default function Voting() {
                             parties?.map((item, ind) => {
                                 const even = ind % 2 == 0;
                                 return (
-                                    <HeadBody bg={even ? 'blue.100' : 'wite'} minH={'5rem'} h={'auto'} position={'initial'} key={`vote${ind}`} rounded={'md'} py={2} borderYWidth={1} borderColor={'gray.300'} rounded={0}>
+                                    <HeadBody bg={even ? 'blue.100' : 'wite'} minH={'5rem'} h={'auto'} position={'initial'} key={`vote${ind}`} py={2} borderYWidth={1} borderColor={'gray.300'}>
                                         <Image></Image>
                                         <Text w={'40%'} overflow={'hidden'} textOverflow={'ellipsis'} whiteSpace={'nowrap'}>{item?.party}</Text>
                                         <Text w={'40%'} overflow={'hidden'} textOverflow={'ellipsis'} whiteSpace={'nowrap'}>{item?.candidate}</Text>

@@ -1,11 +1,12 @@
-import React, { useContext, useState } from 'react'
+import { useContext } from 'react'
 
 import { Flex, Link, Text, Input, useMediaQuery, Button } from '@chakra-ui/react'
 import { LanguageContext } from '../context/LanguageContext'
 import { HistoryContext } from '../context/HistoryContext'
 
 import SectionBody from '../components/SectionBody'
-import Body from '../components/Body'
+import HeadA from '../components/headers/HeadA'
+import HeadC from '../components/headers/HeadC'
 
 function history() {
   const { translation } = useContext(LanguageContext);
@@ -16,8 +17,8 @@ function history() {
   return (
     <SectionBody pb={'1rem'} alignItems={'center'} justifyContent={'center'}>
 
-      <Text fontWeight={'bold'} fontSize={'2xl'} textAlign={'start'} mt={2} mb={3}>{translation?.history?.title}</Text>
-      <Text>{translation?.history?.desc}</Text>
+      <HeadA>{translation?.history?.title}</HeadA>
+      <Text fontSize={'lg'}>{translation?.history?.desc}</Text>
       <Flex mt={8} style={{ direction: 'ltr' }}>
         <Input value={useDate} letterSpacing={4} w={'10rem'} borderColor={'gray.300'} borderRightWidth={0} borderRightRadius={0} placeholder={translation?.history?.search} maxLength={4} textAlign={'center'} inputMode='numeric'
           onChange={(e) => setDate(e.target.value)}
@@ -29,14 +30,14 @@ function history() {
           useQuery !== null && useQuery.length != 0 ?
             useQuery?.map((item, ind) => {
               return (
-                <Flex key={`history${ind}`} w={!isSmall ? '19%' : '32%'} h={'3rem'} justifyContent={'center'} rounded={'1rem'} bg={'transparent'} borderWidth={1} borderColor={'gray.300'}>
+                <Flex key={`history${ind}`} w={!isSmall ? '19%' : '48%'} h={'3rem'} justifyContent={'center'} rounded={'1rem'} bg={'transparent'} borderWidth={1} borderColor={'gray.300'}>
                   <Link h={'3rem'} justifyContent={'space-around'} color={'black'} rounded={'md'} onClick={(e) => { e.preventDefault(); }}>
-                    <Text textAlign={'center'} textOverflow={'ellipsis'} overflow={'hidden'} whiteSpace={'nowrap'}>{item}</Text>
+                    <Text fontWeight={'medium'} textAlign={'center'} textOverflow={'ellipsis'} overflow={'hidden'} whiteSpace={'nowrap'}>{item}</Text>
                   </Link>
                 </Flex>
               )
             }) : (< Flex w={'full'} mt={'3rem'} h={'3rem'} justifyContent={'center'} alignItems={'center'} bg={'transparent'}>
-              <Text minW={'90%'} rounded={'1rem'} py={2} borderWidth={1} borderColor={'gray.300'} alignContent={'center'} h={'3rem'} color={'black'} textAlign={'center'} textOverflow={'ellipsis'} overflow={'hidden'} whiteSpace={'nowrap'}>{translation?.history?.nohistory}</Text>
+              <HeadC px={1} minW={'90%'} rounded={'1rem'} py={2} borderWidth={1} borderColor={'gray.300'} alignContent={'center'} h={'3rem'} color={'black'} textAlign={'center'} textOverflow={'ellipsis'} overflow={'hidden'} whiteSpace={'nowrap'}>{translation?.history?.nohistory}</HeadC>
             </Flex>)
         }
       </Flex>

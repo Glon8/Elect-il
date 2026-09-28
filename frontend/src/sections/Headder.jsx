@@ -28,8 +28,9 @@ export default function Headder({ ...props }) {
   return (
     <HeadBody zIndex={1000} borderBottomStyle={'solid'} borderBottomWidth={1} borderBottomColor={'border.emphasized'} justifyContent={'space-between'} {...props} >
 
-      <Link color={'black'} rounded={'1rem'} borderWidth={1} px={3} borderColor={'gray.300'} minW={'20px'} h={'100%'} py={2} onClick={(e) => { e.preventDefault(); navigate('election'); }}>
-        {/* website logo/image goes here */} No LOGO {'\u{1F612}'}
+      <Link textDecorationLine={'none'} rounded={'full'} borderWidth={1} borderColor={'gray.300'} color={'black'} px={3} minW={'20px'} h={'70%'} py={2} onClick={(e) => { e.preventDefault(); navigate('election'); }}>
+        <Text fontWeight={'bold'} color={'gray.600'}>Elect-il</Text>
+        <Text fontSize={'2xl'} color={'blue.600'} fontFamily={ "Segoe UI"}>{'\u{2721}'}</Text>
       </Link>
       <Flex gapX={5} width={'auto'} minWidth={'50%'} justifyContent={'end'}>
 

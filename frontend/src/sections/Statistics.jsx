@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from 'react'
+import { useEffect, useState, useContext } from 'react'
 
 import { Flex, Text, useMediaQuery } from '@chakra-ui/react'
 import { LanguageContext } from '../context/LanguageContext'
@@ -6,6 +6,10 @@ import { LanguageContext } from '../context/LanguageContext'
 import SectionBody from '../components/SectionBody'
 import HeadBody from '../components/HeadBody'
 import { VotingContext } from '../context/VotingContext'
+import HeadA from '../components/headers/HeadA'
+import HeadB from '../components/headers/HeadB'
+import HeadC from '../components/headers/HeadC'
+import StValues from '../components/StValues'
 
 export default function Statistics() {
   const { translation } = useContext(LanguageContext);
@@ -38,14 +42,14 @@ export default function Statistics() {
   return (
     <SectionBody justifyContent={'center'}>
 
-      <Text fontWeight={'bold'} fontSize={'2xl'} textAlign={'start'} mt={2} mb={5}>{translation?.statistics?.title}</Text>
+      <HeadA mb={5}>{translation?.statistics?.title}</HeadA>
       {
         parties != null && parties.length != 0 ?
           (<> <HeadBody h={'auto'} position={'initial'} flexDir={'column'} justifyContent={'space-evenly'}>
-            <Text>{translation?.statistics?.totalvotes}</Text>
-            <Text>{useVotes}</Text>
+            <HeadB>{translation?.statistics?.totalvotes}</HeadB>
+            <StValues>{useVotes}</StValues>
           </HeadBody>
-            <Text mt={3} textAlign={'center'}>{translation?.statistics?.graphtitle}</Text>
+            <HeadB mt={3} textAlign={'center'}>{translation?.statistics?.graphtitle}</HeadB>
             <Flex w={'100%'} h={!isSmall ? '50%' : '40%'} flexDir={'column'} gapY={1} overflowY={'auto'} style={{ direction: 'ltr' }}>
               {
                 parties?.map((item, ind) => {
@@ -61,14 +65,14 @@ export default function Statistics() {
             </Flex>
             <HeadBody mt={3} position={'initial'} flexDir={'column'} h={'6rem'} justifyContent={'space-evenly'}>
 
-              <Text>{translation?.statistics?.topleaders}</Text>
+              <HeadB>{translation?.statistics?.topleaders}</HeadB>
               <Flex justifyContent={'space-evenly'} w={'100%'}>
                 {
                   useTop?.map((item, ind) => {
                     return (
                       <Flex key={`statistics${ind}`} flexDir={'column'} w={'30%'} textAlign={'center'}>
-                        <Text>{1 + ind}</Text>
-                        <Text>{item.party}</Text>
+                        <StValues>{1 + ind}</StValues>
+                        <HeadC>{item.party}</HeadC>
                       </Flex>
                     )
                   })
