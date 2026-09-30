@@ -6,13 +6,13 @@ import { HistoryContext } from '../context/HistoryContext'
 
 import SectionBody from '../components/SectionBody'
 import HeadA from '../components/headers/HeadA'
-import HeadC from '../components/headers/HeadC'
 import AText from '../components/AText'
+import Missing from '../components/Missing'
 
 function history() {
   const { translation } = useContext(LanguageContext);
   const { useQuery, useDate, setDate, updateQuery } = useContext(HistoryContext);
-
+  
   const [isSmall] = useMediaQuery("(max-width: 768px)");
 
   return (
@@ -37,9 +37,7 @@ function history() {
                   </Link>
                 </Flex>
               )
-            }) : (< Flex w={'full'} mt={'3rem'} h={'3rem'} justifyContent={'center'} alignItems={'center'} bg={'transparent'}>
-              <HeadC px={1} minW={'90%'} rounded={'1rem'} py={2} borderWidth={1} borderColor={'gray.300'} alignContent={'center'} h={'3rem'} color={'black'} textAlign={'center'} textOverflow={'ellipsis'} overflow={'hidden'} whiteSpace={'nowrap'}>{translation?.history?.nohistory}</HeadC>
-            </Flex>)
+            }) : (<Missing >{translation?.history?.nohistory}</Missing>)
         }
       </Flex>
 

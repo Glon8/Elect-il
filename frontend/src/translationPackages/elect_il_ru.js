@@ -13,7 +13,7 @@ export const content = {
         title: 'Прошедшие выборы',
         desc: 'Здесь показаны выборы, что закончились, вы можете осмотреть их конечную статистику, выбрав дату!',
         search: 'Год',
-        nohistory: 'Для этого года ничего не нашлось',
+        nohistory: 'Информация отсутствует',
     },
     opening: {
         title: 'Спасибо, что доверились нам!',
@@ -37,13 +37,14 @@ export const content = {
         totalvotes: 'Всего участвующих:',
         graphtitle: 'Голоса за партию:',
         topleaders: 'Ведущие лидеры:',
+        error: 'Загрузка',
     },
     voting: {
         title: 'Списки избираемых',
         party: 'Партия',
         leader: 'Лидер партии',
         vote: 'Выбор',
-        error: 'No on going elections right now',
+        error: 'В данный момент опросы отсутствуют',
     },
     voteconfirm: {
         title: 'Внимание',

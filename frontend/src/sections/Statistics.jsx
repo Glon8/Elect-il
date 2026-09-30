@@ -10,6 +10,7 @@ import HeadA from '../components/headers/HeadA'
 import HeadB from '../components/headers/HeadB'
 import HeadC from '../components/headers/HeadC'
 import StValues from '../components/StValues'
+import Missing from '../components/Missing'
 
 export default function Statistics() {
   const { translation } = useContext(LanguageContext);
@@ -80,9 +81,7 @@ export default function Statistics() {
               </Flex>
 
             </HeadBody></>)
-          : (<Flex w={'full'} mt={'3rem'} h={'3rem'} justifyContent={'center'} alignItems={'center'} bg={'transparent'}>
-            <Text minW={'90%'} rounded={'1rem'} py={2} borderWidth={1} borderColor={'gray.300'} alignContent={'center'} h={'3rem'} color={'black'} textAlign={'center'} textOverflow={'ellipsis'} overflow={'hidden'} whiteSpace={'nowrap'}>{translation?.statistics?.error}</Text>
-          </Flex>)
+          : (<Missing spinner >{translation?.statistics?.error}</Missing>)
       }
 
     </SectionBody>

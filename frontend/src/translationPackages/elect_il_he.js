@@ -13,7 +13,7 @@ export const content = {
         title: 'בחירות קודמות',
         desc: 'פה מוצגות בחירות אשר חלפו, ניתן לצפות בכל אחת ואחת מהם עם בחירת תאריך!',
         search: 'שנה',
-        nohistory: 'שום דבר לא נמצה עבור שנה זו',
+        nohistory: 'מידע לא זמין',
     },
     opening: {
         title: 'תודה על אמונתכם בנו!',
@@ -37,13 +37,14 @@ export const content = {
         totalvotes: ':ס"הכ משתתפים עד כה',
         graphtitle: 'קולות עבור מפלגה:',
         topleaders: ':שלושה מובילים',
+        error: 'טוען',
     },
     voting: {
         title: 'רשימת נבחרים',
         party: 'מפלגה',
         leader: 'ראש המפלגה',
         vote: 'בחירה',
-        error: 'No on going elections right now',
+        error: 'אין סכרים זמינים כעט',
     },
     voteconfirm: {
         title: 'שימו לב',

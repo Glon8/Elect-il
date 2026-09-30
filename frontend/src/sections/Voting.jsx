@@ -9,6 +9,7 @@ import HeadBody from '../components/HeadBody'
 import { PageContext } from '../context/PageContext'
 import HeadA from '../components/headers/HeadA'
 import HeadC from '../components/headers/HeadC'
+import Missing from '../components/Missing'
 
 export default function Voting() {
     const { translation } = useContext(LanguageContext);
@@ -42,9 +43,7 @@ export default function Voting() {
                             })
                         }
                     </Flex></>)
-                    : (<Flex w={'full'} mt={'3rem'} h={'3rem'} justifyContent={'center'} alignItems={'center'} bg={'transparent'}>
-                        <Text minW={'90%'} rounded={'1rem'} py={2} borderWidth={1} borderColor={'gray.300'} alignContent={'center'} h={'3rem'} color={'black'} textAlign={'center'} textOverflow={'ellipsis'} overflow={'hidden'} whiteSpace={'nowrap'}>{translation?.voting?.error}</Text>
-                    </Flex>)
+                    : (<Missing >{translation?.voting?.error}</Missing>)
             }
 
         </SectionBody>

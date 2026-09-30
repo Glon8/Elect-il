@@ -13,7 +13,7 @@ export const content = {
         title: 'Past elections',
         desc: 'Here displayed votings that past, and you can observe their statistics, by simply choosing a date!',
         search: 'Year',
-        nohistory: 'Nothing found for this year',
+        nohistory: 'Information is not available',
     },
     opening: {
         title: 'Thank you for trusting us!',
@@ -37,6 +37,7 @@ export const content = {
         totalvotes: 'Total voting participants:',
         graphtitle: 'Votes per party:',
         topleaders: 'Top leaders:',
+        error: 'Loading',
     },
     voting: {
         title: 'Current Election Participants',
