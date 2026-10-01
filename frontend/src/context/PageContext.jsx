@@ -1,4 +1,4 @@
-import React, { createContext, useEffect, useState } from 'react'
+import { createContext, useEffect, useState } from 'react'
 
 import { pathReplacement, getPath } from '../../util';
 
@@ -9,7 +9,7 @@ export const PageProvider = ({ children }) => {
     const [useSignPop, setSignPop] = useState(false);
     const [useVotePop, setVotePop] = useState(false);
 
-    const supported = ['election', 'us', 'encryption', 'approval'];
+    const supported = ['election', 'us', 'encryption', 'license'];
     // must add params check/update on page change or first load
     const signPopFlip = () => setSignPop(!useSignPop);
     const votePopFlip = () => setVotePop(!useVotePop);

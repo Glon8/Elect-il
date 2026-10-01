@@ -10,7 +10,7 @@ import Statistics from '../sections/Statistics'
 import History from '../sections/History'
 import Footer from '../sections/Footer'
 import SignIn from '../sections/SignIn'
-import Approval from '../sections/Approval'
+import License from '../sections/License'
 import Us from '../sections/Us'
 import Encryption from '../sections/Encryption'
 import VoteConfirm from '../sections/VoteConfirm'
@@ -38,7 +38,7 @@ function Body() {
 
             {page === 'us' ? <Us /> : null}
 
-            {page === 'approval' ? <Approval /> : null}
+            {page === 'license' ? <License /> : null}
 
             {page === 'encryption' ? <Encryption /> : null}
 

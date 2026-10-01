@@ -6,13 +6,13 @@ import SectionBody from '../components/SectionBody'
 import HeaderA from '../components/headers/HeadA'
 import AText from '../components/AText'
 
-export default function Encryption() {
+export default function License() {
     const { translation } = useContext(LanguageContext);
 
     return (
         <SectionBody justifyContent={'center'}>
-            <HeaderA>{translation?.encryption?.title}</HeaderA>
-            <AText> Some Text </AText>
+            <HeaderA>License</HeaderA>
+            <AText>Some text</AText>
         </SectionBody>
     )
 }

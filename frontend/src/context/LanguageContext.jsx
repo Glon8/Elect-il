@@ -1,4 +1,4 @@
-import React, { createContext, useEffect, useState } from 'react'
+import { createContext, useEffect, useState } from 'react'
 // language translation should be removed once backend get in place
 import { content as en } from '../translationPackages/elect_il_en'
 import { content as he } from '../translationPackages/elect_il_he'
