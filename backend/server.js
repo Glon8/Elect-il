@@ -3,7 +3,7 @@ import cors from 'cors'
 
 import utilRouter from './src/routes/utility.routes.js'
 import electRouter from './src/routes/elect.routes.js'
-import signRouter from './src/routes//sign.routes.js'
+import signRouter from './src/routes/sign.routes.js'
 
 const app = express();
 const port = process.env.PORT || 5000;
