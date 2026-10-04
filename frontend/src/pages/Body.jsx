@@ -1,6 +1,6 @@
-import React, { useContext, useEffect, useState } from 'react'
+import { useContext } from 'react'
 
-import { Flex } from '@chakra-ui/react'
+import { Flex, useMediaQuery } from '@chakra-ui/react'
 
 import Headder from '../sections/Headder'
 import LoginHeader from '../sections/LoginHeader'
@@ -20,11 +20,13 @@ import { SignContext } from '../context/SignContext'
 
 
 function Body() {
+    const [isSmall] = useMediaQuery("(max-width: 768px)");
+
     const { page } = useContext(PageContext);
     const { userData } = useContext(SignContext);
 
     return (
-        <Flex bg='#A1CAE8' w={"100%"} minH={'100vh'} flexDir={'column'} position={'relative'}>
+        <Flex bg='#A1CAE8' w={"100%"} minH={'100vh'} flexDir={'column'} position={'relative'} gapY={isSmall ? 1 : 0}>
 
             <Headder />
             <LoginHeader />

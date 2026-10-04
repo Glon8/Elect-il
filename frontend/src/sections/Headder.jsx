@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import { useContext } from 'react'
 
 import { Button, Flex, Link, Text, useMediaQuery } from '@chakra-ui/react'
 import 'primeicons/primeicons.css';

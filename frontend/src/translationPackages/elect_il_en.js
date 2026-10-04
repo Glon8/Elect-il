@@ -67,35 +67,21 @@ export const content = {
     },
     encryption: {
         title: 'Encryption & Security',
+        p1: "We take our clients' security very seriously. For this reason, we want to explain how we process and store data throughout the voting process. The process is divided into two phases: Ongoing Voting and Post-Voting.",
+        subTitle1: 'Ongoing Voting',
+        p2: "This is the stage during which a client's ID is used for verification. Most importantly, when you cast your vote, we receive only two pieces of information:",
+        p3: "1. The name of the party you voted for",
+        p4: "2. Your hashed ID number",
+        p5: "Important: We do not store plain-text IDs, and we do not link your identity to your voting preference. By the end of the voting process, these two types of information are kept completely separate.",
+        p6: "Your ID is hashed directly on your device before it is sent to our servers. This means that your original ID number never leaves your device and remains private.",
+        subTitle2: 'Post-Voting',
+        p7: "Once the voting period has ended, all client ID hashes are removed. What remains in storage is only the election results: a list of parties, their party leaders, and the number of votes each party received.",
+        p8: "We keep the hashed IDs only until the voting process is complete. A few hours after the election ends, all remaining hashes are permanently erased, leaving no trace of them behind.",
+        p9: "We retain the hashes for a few hours after the election so that participants can independently verify that the voting process was legitimate. If participants wish to verify the results and count the votes themselves, we can provide the hashes that were temporarily retained. Those who wish to do so can then verify their own IDs against the list.",
+        p10: "** Hash / Hashing — a one-way process that transforms an ID into a unique-looking string of characters. The original ID is not included in the resulting value and cannot feasibly be recovered from it.",
     },
     license: {
-        title: '',
+        title: "License",
+        p1: "No license has been established for this project yet. A license will be added at a later stage.",
     },
 };
-
-/*
-## Encryption & Security
-
-We take our clients' security very seriously. For this reason, we want to explain how we process and store data throughout the voting process.
-
-We divide the process into two phases: **Ongoing Voting** and **Post-Voting**.
-
-### Ongoing Voting
-
-This is the stage during which a client's ID is used for verification. Most importantly, when you cast your vote, we receive only two pieces of information:
-
-* The name of the party you voted for
-* Your hashed ID number
-
-**Important:** We do not store plain-text IDs, and we do not link your identity to your voting preference. By the end of the voting process, these two types of information are kept completely separate.
-
-Your ID is hashed directly on your device before it is sent to our servers. This means that your original ID number never leaves your device and remains private.
-
-### Post-Voting
-
-Once the voting period has ended, all client ID hashes are removed. What remains in storage is only the election results: a list of parties, their party leaders, and the number of votes each party received.
-
-We keep the hashed IDs only until the voting process is complete. A few hours after the election ends, all remaining hashes are permanently erased, leaving no trace of them behind.
-
-We retain the hashes for a few hours after the election so that participants can independently verify that the voting process was legitimate. If participants wish to verify the results and count the votes themselves, we can provide the hashes that were temporarily retained. Those who wish to do so can then verify their own IDs against the list.
-*/

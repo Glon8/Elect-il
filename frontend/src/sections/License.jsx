@@ -11,8 +11,8 @@ export default function License() {
 
     return (
         <SectionBody justifyContent={'center'}>
-            <HeaderA>License</HeaderA>
-            <AText>Some text</AText>
+            <HeaderA>{translation?.license?.title}</HeaderA>
+            <AText>{translation?.license?.p1}</AText>
         </SectionBody>
     )
 }

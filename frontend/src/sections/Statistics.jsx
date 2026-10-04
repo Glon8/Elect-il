@@ -8,7 +8,6 @@ import HeadBody from '../components/HeadBody'
 import { VotingContext } from '../context/VotingContext'
 import HeadA from '../components/headers/HeadA'
 import HeadB from '../components/headers/HeadB'
-import HeadC from '../components/headers/HeadC'
 import StValues from '../components/StValues'
 import Missing from '../components/Missing'
 
@@ -46,12 +45,12 @@ export default function Statistics() {
       <HeadA mb={5}>{translation?.statistics?.title}</HeadA>
       {
         parties != null && parties.length != 0 ?
-          (<> <HeadBody h={'auto'} position={'initial'} flexDir={'column'} justifyContent={'space-evenly'}>
+          (<> <HeadBody h={'auto'} position={'initial'} flexDir={'column'} justifyContent={'space-evenly'} rounded={'md'} borderWidth={1} borderColor={'gray.300'}>
             <HeadB>{translation?.statistics?.totalvotes}</HeadB>
             <StValues>{useVotes}</StValues>
           </HeadBody>
             <HeadB mt={3} textAlign={'center'}>{translation?.statistics?.graphtitle}</HeadB>
-            <Flex w={'100%'} h={!isSmall ? '50%' : '40%'} flexDir={'column'} gapY={1} overflowY={'auto'} style={{ direction: 'ltr' }}>
+            <Flex w={'100%'} h={!isSmall ? 'auto' : 'auto'} flexDir={'column'} gapY={1} overflowY={'auto'} style={{ direction: 'ltr' }}>
               {
                 parties?.map((item, ind) => {
                   const width = Math.floor((item.votes * 100) / useVotes);
@@ -64,23 +63,7 @@ export default function Statistics() {
                 })
               }
             </Flex>
-            <HeadBody mt={3} position={'initial'} flexDir={'column'} h={'6rem'} justifyContent={'space-evenly'}>
-
-              <HeadB>{translation?.statistics?.topleaders}</HeadB>
-              <Flex justifyContent={'space-evenly'} w={'100%'}>
-                {
-                  useTop?.map((item, ind) => {
-                    return (
-                      <Flex key={`statistics${ind}`} flexDir={'column'} w={'30%'} textAlign={'center'}>
-                        <StValues>{1 + ind}</StValues>
-                        <HeadC>{item.party}</HeadC>
-                      </Flex>
-                    )
-                  })
-                }
-              </Flex>
-
-            </HeadBody></>)
+            </>)
           : (<Missing spinner >{translation?.statistics?.error}</Missing>)
       }
 

@@ -1,5 +1,5 @@
 import { useContext } from 'react'
-import { Flex } from '@chakra-ui/react';
+import { Flex, useMediaQuery } from '@chakra-ui/react';
 
 import { LanguageContext } from '../context/LanguageContext';
 
@@ -9,9 +9,10 @@ import AText from '../components/AText'
 
 export default function Us() {
     const { translation } = useContext(LanguageContext);
+    const [isSmall] = useMediaQuery("(max-width: 768px)");
 
     return (
-        <SectionBody justifyContent={'center'} gapY={5}>
+        <SectionBody  justifyContent={isSmall ? 'bottom' : 'center'} overflowY={'auto'} gapY={3} my={'2rem'}>
             <HeaderA>{translation?.us?.title}</HeaderA>
             <Flex flexDir={'column'} gapY={3}>
                 <AText>{translation?.us?.p1}</AText>
