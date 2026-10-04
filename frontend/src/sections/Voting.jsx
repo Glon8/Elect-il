@@ -1,49 +1,46 @@
-import { useContext } from 'react'
+import { useState, useContext } from 'react'
 
-import { Button, Flex, Text, Image } from '@chakra-ui/react'
+import { Button, Flex } from '@chakra-ui/react';
+
 import { LanguageContext } from '../context/LanguageContext'
 import { VotingContext } from '../context/VotingContext'
 
 import SectionBody from '../components/SectionBody'
-import HeadBody from '../components/HeadBody'
-import { PageContext } from '../context/PageContext'
-import HeadA from '../components/headers/HeadA'
-import HeadC from '../components/headers/HeadC'
+import HeadA from '../components/headers/HeadA';
 import Missing from '../components/Missing'
+import Greeting from './votingphases/Greeting'
+import Policy from './votingphases/Policy';
+import SignUp from './votingphases/SignUp';
+import Vote from './votingphases/Vote'
 
 export default function Voting() {
     const { translation } = useContext(LanguageContext);
-    const { parties, setSelected } = useContext(VotingContext);
-    const { votePopFlip } = useContext(PageContext);
+    const { parties } = useContext(VotingContext);
+
+    const [usePageState, setPageState] = useState(1);
+
+    const cancel = () => setPageState(1);
+    const nextPhase = () => setPageState(usePageState === 4 ? 1 : usePageState + 1);
+
 
     return (
-        <SectionBody justifyContent={'center'} alignContent={'center'}>
+        <SectionBody justifyContent={'center'} alignContent={'center'} gapY={'1rem'} my={'3rem'}>
 
-            <HeadA>{translation?.voting?.title}</HeadA>
+            <HeadA>Voting</HeadA>
             {
-                parties != null && parties.length != 0 ? (<><Flex justifyContent={'space-around'} style={{ direction: 'ltr' }}>
-                    <HeadBody minH={'5rem'} h={'auto'} position={'initial'} rounded={'md'} py={2} borderWidth={1} borderColor={'gray.300'} justifyContent={'space-between'}>
-                        <HeadC w={'10rem'} textAlign={'center'} overflow={'hidden'} textOverflow={'ellipsis'} whiteSpace={'nowrap'}>{translation?.voting?.party}</HeadC>
-                        <HeadC w={'10rem'} textAlign={'center'} overflow={'hidden'} textOverflow={'ellipsis'} whiteSpace={'nowrap'}>{translation?.voting?.leader}</HeadC>
-                        <HeadC w={'5rem'} textAlign={'center'} overflow={'hidden'} textOverflow={'ellipsis'} whiteSpace={'nowrap'}>{translation?.voting?.vote}</HeadC>
-                    </HeadBody>
-                </Flex>
-                    <Flex flexDir={'column'} h={'65%'} overflowY={'auto'} mt={2} gapY={3} style={{ direction: 'ltr' }}>
-                        {
-                            parties?.map((item, ind) => {
-                                const even = ind % 2 == 0;
-                                return (
-                                    <HeadBody bg={even ? 'blue.100' : 'wite'} minH={'5rem'} h={'auto'} position={'initial'} key={`vote${ind}`} py={2} borderYWidth={1} borderColor={'gray.300'}>
-                                        <Image></Image>
-                                        <Text w={'40%'} overflow={'hidden'} textOverflow={'ellipsis'} whiteSpace={'nowrap'}>{item?.party}</Text>
-                                        <Text w={'40%'} overflow={'hidden'} textOverflow={'ellipsis'} whiteSpace={'nowrap'}>{item?.candidate}</Text>
-                                        <Button w={0} rounded={'full'} bg={'white'} color={'black'} borderColor={'gray.300'} fontWeight={'bolder'} fontSize={'xl'} onClick={() => { setSelected(item); votePopFlip(); }}><i className='pi pi-check'></i></Button>
-                                    </HeadBody>
-                                )
-                            })
-                        }
-                    </Flex></>)
-                    : (<Missing >{translation?.voting?.error}</Missing>)
+                parties != null && parties.length != 0 ? (
+                    <>
+                        {usePageState === 1 ? <Greeting /> : ''}
+                        {usePageState === 2 ? <Policy /> : ''}
+                        {usePageState === 3 ? <SignUp /> : ''}
+                        {usePageState === 4 ? <Vote /> : ''}
+
+                        <Flex gapX={5} justifyContent={'space-around'}>
+                            {usePageState === 1 ? '' : <Button w={'45%'} bg={'black'} color={'white'} onClick={cancel}>{usePageState === 1 ? '' : 'Cancel'}</Button>}
+                            {usePageState === 4 ? '' : <Button w={'45%'} bg={'black'} color={'white'} onClick={nextPhase}>{usePageState === 4 ? 'Vote' : 'Continue'}</Button>}
+                        </Flex>
+                    </>
+                ) : (<Missing >{translation?.voting?.error}</Missing>)
             }
 
         </SectionBody>

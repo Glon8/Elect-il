@@ -30,7 +30,7 @@ export default function Headder({ ...props }) {
 
       <Link textDecorationLine={'none'} rounded={'full'} borderWidth={1} borderColor={'gray.300'} color={'black'} px={3} minW={'20px'} h={'70%'} py={2} onClick={(e) => { e.preventDefault(); navigate('election'); }}>
         <Text fontWeight={'bold'} color={'gray.600'}>Elect-il</Text>
-        <Text fontSize={'2xl'} color={'blue.600'} fontFamily={ "Segoe UI"}>{'\u{2721}'}</Text>
+        <Text fontSize={'2xl'} color={'blue.600'} fontFamily={"Segoe UI"}>{'\u{2721}'}</Text>
       </Link>
       <Flex gapX={5} width={'auto'} minWidth={'50%'} justifyContent={'end'}>
 
@@ -41,8 +41,7 @@ export default function Headder({ ...props }) {
             <i className={`pi ${mode == 'light' ? 'pi-moon' : 'pi-sun'}`}></i>
           </Button>
           <LangSelect />
-          <Button width={isSmall ? 0 : 'auto'} rounded={'full'} bg={'transparent'} color={'black'} borderColor={'gray.300'} onClick={!userData?.token ? signPopFlip : signOut}>{!isSmall && (!userData?.token ? translation?.header?.signin : translation?.header?.signout)} <i className={`pi ${!userData?.token ? 'pi-sign-in' : 'pi-sign-out'}`}></i></Button>
-
+          <Button width={0} rounded={'full'} bg={'transparent'} color={'black'} borderColor={'gray.300'} onClick={!userData?.token ? signPopFlip : signOut}><i className={`pi ${!userData?.token ? 'pi-sign-in' : 'pi-sign-out'}`}></i></Button>
         </Flex>
       </Flex>
 

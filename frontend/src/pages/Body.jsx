@@ -33,7 +33,7 @@ function Body() {
             <SignIn />
 
             {page === 'election' ? <Opening /> : null}
-            {page === 'election' && !!userData.token ? <Voting /> : null}
+            {page === 'election' ? <Voting /> : null}
             <VoteConfirm />
             {page === 'election' ? <Statistics /> : null}
             {page === 'election' ? <History /> : null}

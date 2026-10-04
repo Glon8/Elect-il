@@ -40,7 +40,7 @@ export default function Statistics() {
   }, [parties]);
 
   return (
-    <SectionBody justifyContent={'center'}>
+    <SectionBody justifyContent={'center'} my={'3rem'}>
 
       <HeadA mb={5}>{translation?.statistics?.title}</HeadA>
       {
