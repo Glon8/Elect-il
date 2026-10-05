@@ -40,11 +40,30 @@ export const content = {
         error: 'Loading',
     },
     voting: {
+        title: "Voting",
+        error: 'No on going elections right now',
+        cancel: "Cancel",
+        continue: "Continue",
+    },
+    votinGreeting: {
+        title: "On Going Voting",
+        greeting: "Your voice matters! Take a moment to cast your vote and let your opinion be heard. Every vote counts.",
+        began: "Began on date",
+        finish: "About to finish on date",
+        summary: "Cast your vote before the voting closes and be part of the decision!",
+    },
+    votingPolicy: {
+        title: 'Disclaimer & Security',
+        disclaimer: 'By giving your voice here on the platform, you agree, that we keep your voice, for this particular election. Furthurmore, you agree that during processing, your voice ll be split with your personal data(ID). ID ll be stored in ecrypted state, and then deleted by the end of the election.',
+        guide: "For full security and encryption explanation, read the Encryption section in the end of the page.",
+        checkbox: "I read and understood the note",
+    },
+    votingSignUp: {},
+    votingVote: {
         title: 'Current Election Participants',
         party: 'Party',
         leader: 'Leader',
         vote: 'Vote',
-        error: 'No on going elections right now',
     },
     voteconfirm: {
         title: 'Attention',

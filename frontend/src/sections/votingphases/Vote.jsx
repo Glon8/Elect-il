@@ -17,12 +17,12 @@ export default function Vote({ ...props }) {
 
     return (
         <Flex w={'100%'} h={'90%'} flexDir={'column'} justifyContent={'center'} gapY={3}{...props}>
-            <HeadB>{translation?.voting?.title}</HeadB>
+            <HeadB>{translation?.votingVote?.title}</HeadB>
             <Flex justifyContent={'space-around'} style={{ direction: 'ltr' }}>
                 <HeadBody minH={'5rem'} h={'auto'} position={'initial'} rounded={'md'} py={2} borderWidth={1} borderColor={'gray.300'} justifyContent={'space-between'}>
-                    <HeadC w={'10rem'} textAlign={'center'} overflow={'hidden'} textOverflow={'ellipsis'} whiteSpace={'nowrap'}>{translation?.voting?.party}</HeadC>
-                    <HeadC w={'10rem'} textAlign={'center'} overflow={'hidden'} textOverflow={'ellipsis'} whiteSpace={'nowrap'}>{translation?.voting?.leader}</HeadC>
-                    <HeadC w={'5rem'} textAlign={'center'} overflow={'hidden'} textOverflow={'ellipsis'} whiteSpace={'nowrap'}>{translation?.voting?.vote}</HeadC>
+                    <HeadC w={'10rem'} textAlign={'center'} overflow={'hidden'} textOverflow={'ellipsis'} whiteSpace={'nowrap'}>{translation?.votingVote?.party}</HeadC>
+                    <HeadC w={'10rem'} textAlign={'center'} overflow={'hidden'} textOverflow={'ellipsis'} whiteSpace={'nowrap'}>{translation?.votingVote?.leader}</HeadC>
+                    <HeadC w={'5rem'} textAlign={'center'} overflow={'hidden'} textOverflow={'ellipsis'} whiteSpace={'nowrap'}>{translation?.votingVote?.vote}</HeadC>
                 </HeadBody>
             </Flex>
             <Flex flexDir={'column'} h={'95%'} overflowY={'auto'} mt={2} gapY={3} style={{ direction: 'ltr' }}>
