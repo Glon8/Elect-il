@@ -12,6 +12,7 @@ import Greeting from './votingphases/Greeting'
 import Policy from './votingphases/Policy';
 import SignUp from './votingphases/SignUp';
 import Vote from './votingphases/Vote'
+import Seperator from '../components/Seperator';
 
 export default function Voting() {
     const { translation } = useContext(LanguageContext);
@@ -26,9 +27,10 @@ export default function Voting() {
 
 
     return (
-        <SectionBody justifyContent={'center'} alignContent={'center'} gapY={'1rem'} my={'3rem'}>
+        <SectionBody justifyContent={'center'} alignContent={'center'} my={'3rem'}>
 
-            <HeadA>{translation?.voting?.title}</HeadA>
+            <HeadA mb={0}>{translation?.voting?.title}</HeadA>
+            <Seperator />
             {
                 parties != null && parties.length != 0 ? (
                     <>
@@ -37,7 +39,7 @@ export default function Voting() {
                         {usePageState === 3 ? <SignUp /> : ''}
                         {usePageState === 4 ? <Vote /> : ''}
 
-                        <Flex gapX={5} justifyContent={'space-around'}>
+                        <Flex mt={'1rem'} gapX={5} justifyContent={'space-around'}>
                             {usePageState === 1 ? '' : (
                                 <Button w={'45%'} bg={'black'} color={'white'} onClick={() => { cancel(); setPolicyState(false); }}>
                                     {usePageState === 1 ? '' : translation?.voting?.cancel}

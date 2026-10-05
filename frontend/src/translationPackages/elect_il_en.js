@@ -17,7 +17,8 @@ export const content = {
     },
     opening: {
         title: 'Thank you for trusting us!',
-        desc: 'We push toward transparent and SECURE voting, using encryption and a short time and only minor metadata storage!',
+        p1: 'We believe voting should be transparent, secure, and under your control. Our platform uses encryption while storing only minimal metadata to protect your privacy.',
+        p2: "Your vote is always in your hands. You can change your mind or cancel your vote at any time before submitting your opinion. Your vote is only finalized when you decide to submit it.",
     },
     signin: {
         phaseone: {
@@ -67,7 +68,7 @@ export const content = {
     },
     voteconfirm: {
         title: 'Attention',
-        disclaimer: 'By giving your voice here on the platform, you agree, that we keep your voice, for this particular election. Furthurmore, you agree that during processing, your voice ll be split with your personal data(ID). ID ll be stored in ecrypted state, and then deleted by the end of the election. This action unreversable!',
+        disclaimer: 'Please make sure your choice is correct before submitting. Once submitted, your vote will be recorded and cannot be changed or canceled.',
         label: 'I read and understood the note',
         question: 'Are you sure you want to vote for this party?',
         positive: 'YES',

@@ -10,6 +10,7 @@ import HeadA from '../components/headers/HeadA'
 import HeadB from '../components/headers/HeadB'
 import StValues from '../components/StValues'
 import Missing from '../components/Missing'
+import Seperator from '../components/Seperator'
 
 export default function Statistics() {
   const { translation } = useContext(LanguageContext);
@@ -42,7 +43,8 @@ export default function Statistics() {
   return (
     <SectionBody justifyContent={'center'} my={'3rem'}>
 
-      <HeadA mb={5}>{translation?.statistics?.title}</HeadA>
+      <HeadA mb={0}>{translation?.statistics?.title}</HeadA>
+      <Seperator />
       {
         parties != null && parties.length != 0 ?
           (<> <HeadBody h={'auto'} position={'initial'} flexDir={'column'} justifyContent={'space-evenly'} rounded={'md'} borderWidth={1} borderColor={'gray.300'}>
@@ -63,7 +65,7 @@ export default function Statistics() {
                 })
               }
             </Flex>
-            </>)
+          </>)
           : (<Missing spinner >{translation?.statistics?.error}</Missing>)
       }
 

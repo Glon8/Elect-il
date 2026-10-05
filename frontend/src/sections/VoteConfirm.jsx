@@ -22,16 +22,16 @@ export default function VoteConfirm() {
     const reset = () => { setSelected(null); setChecked(false); votePopFlip(); }
 
     return (
-        <PopUpBody displayTrig={votePop} bgOnClick={reset} gapY={3} py={isSmall ? '2rem' : '4rem'} minW={'20rem'} w={isSmall ? '95%' : '30rem'} h={isSmall ? 'auto' : '35rem'} maxH={isSmall ? '80%' : ''} px={5} justifyContent={'space-between'}>
+        <PopUpBody displayTrig={votePop} bgOnClick={reset} gapY={3} py={isSmall ? '2rem' : '4rem'} minW={'20rem'} w={isSmall ? '95%' : '30rem'} h={'auto'} maxH={isSmall ? '80%' : ''} px={5} justifyContent={'space-between'}>
             <HeadA m={0} color={'black'}>{translation?.voteconfirm?.title}</HeadA>
-            <Flex w={'full'} alignItems={'center'} gapY={1} flexDir={'column'}>
-                <Text color={'black'}>{translation?.voteconfirm?.disclaimer}</Text>
+            <Flex w={'full'} alignItems={'center'} gapY={3} flexDir={'column'}>
+                <Text color={'black'} p={2} rounded={'md'} borderWidth={1} borderColor={'gray.300'}>{translation?.voteconfirm?.disclaimer}</Text>
                 <Flex w={'full'} gapX={3}>
                     <input type='checkbox' checked={useChecked} onChange={() => setChecked(!useChecked)} />
                     <HeadC color={'black'}>{translation?.voteconfirm?.label}</HeadC>
                 </Flex>
             </Flex>
-            <Flex color={'black'} w={'full'} alignItems={'center'} gapY={1} flexDir={'column'}>
+            <Flex color={'black'} w={'full'} alignItems={'center'} gapY={1} flexDir={'column'} p={2} rounded={'md'} borderWidth={1} borderColor={'gray.300'}>
                 <Text>{translation?.voteconfirm?.question}</Text>
                 <HeadC>{selected ? `${selected?.party} > ${selected?.candidate}` : 'Party > Candidate'}</HeadC>
             </Flex>
