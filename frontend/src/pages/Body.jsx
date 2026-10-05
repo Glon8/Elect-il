@@ -26,7 +26,7 @@ function Body() {
     const { userData } = useContext(SignContext);
 
     return (
-        <Flex bg='#A1CAE8' w={"100%"} minH={'100vh'} flexDir={'column'} position={'relative'} gapY={isSmall ? 1 : 0}>
+        <Flex bg='#A1CAE8' w={"100%"} minH={'100vh'} flexDir={'column'} position={'relative'} alignItems={'center'} gapY={isSmall ? 5 : 0}>
 
             <Headder />
             <LoginHeader />
