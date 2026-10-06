@@ -53,7 +53,15 @@ export const content = {
         guide: "For full security and encryption explanation, read the Encryption section in the end of the page.",
         checkbox: "I read and understood the note",
     },
-    votingSignUp: {},
+    votingSignUp: {
+        signUp: "Sign-Up",
+        verify: "Verification",
+        sug: "To begin sign up process, enter your passport ID. Your ID never leaves your computer — only a secure hash of it is sent to the server. Once you complete, continue to verification.",
+        vg: "To verify you, a verification number will be sent to your phone. Enter the number you received into the verification field on the website. Once the number is verified, you can continue.",
+        sup: "Pasport ID",
+        vp: "Verification number",
+        send: "Send",
+    },
     votingVote: {
         title: 'Current Election Participants',
         party: 'Party',

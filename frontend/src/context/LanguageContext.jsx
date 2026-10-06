@@ -37,6 +37,8 @@ export const LanguageProvider = ({ children }) => {
         }
 
         document.documentElement.dir = language == 'he' ? 'rtl' : 'ltr';
+
+        setOrien(language == 'he' ? 'rtl' : 'ltr');
     }
 
     return (

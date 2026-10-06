@@ -34,11 +34,17 @@ export default function SignIn() {
 
                 <HeadA w={'100%'} mb={0}>{translation?.signin?.title}</HeadA>
                 <Seperator mt={2} mb={3} />
-                <Input placeholder={translation?.signin?.username} />
-                <Input placeholder={translation?.signin?.password} />
-                <Flex gap={3} p={1} w={'100%'} borderWidth={1} borderColor={'gray.300'} rounded={'md'} alignItems={'center'}>
-                    <Flex w={6} h={6} borderWidth={1} borderColor={'gray.300'} color={'gray.400'} rounded={'full'} alignItems={'center'} justifyContent={'center'}><i className='pi pi-info' /></Flex>
-                    <Text color={'gray.400'}>{translation?.signin?.warning}</Text>
+                <Input placeholder={translation?.signin?.username}
+                    type={"text"}
+                    pattern={"[A-Za-z0-9!@#$%&_-?]*"}
+                    maxLength={24} />
+                <Input placeholder={translation?.signin?.password}
+                    type={"text"}
+                    pattern={"[A-Za-z0-9!@#$%&?]*"}
+                    maxLength={24} />
+                <Flex gap={3} p={1} w={'100%'} borderWidth={1} borderColor={'gray.300'} color={'gray'} rounded={'md'} alignItems={'center'}>
+                    <Flex w={6} h={6} borderWidth={1} borderColor={'gray'} rounded={'full'} alignItems={'center'} justifyContent={'center'}><i className='pi pi-info' /></Flex>
+                    <Text>{translation?.signin?.warning}</Text>
                 </Flex>
                 <Button w={'100%'} bg={'black'} color={'white'} onClick={switchPhase}>{translation?.signin?.send}</Button>
 
