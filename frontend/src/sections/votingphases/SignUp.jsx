@@ -48,7 +48,7 @@ export default function SignUp({ ...props }) {
                     pattern={"[0-9]*"}
                     maxLength={usePhase ? 9 : 6} />
                 <Flex w={'full'} justifyContent={'center'}>
-                    <Button w={'100%'} h={'2rem'} onClick={() => {
+                    <Button bgColor={'black'} w={'100%'} h={'2rem'} onClick={() => {
                         if (usePhase) phaseSwitch();
                     }}>{translation?.votingSignUp?.send}</Button>
                 </Flex>

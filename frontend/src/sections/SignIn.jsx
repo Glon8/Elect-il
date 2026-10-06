@@ -32,7 +32,7 @@ export default function SignIn() {
             </HeadBody>
             <Flex alignItems={'center'} w={'100%'} px={'1rem'} flexDir={'column'} gapY={3}>
 
-                <HeadA w={'100%'} mb={0}>{translation?.signin?.title}</HeadA>
+                <HeadA w={'100%'} mb={0} color={'black'}>{translation?.signin?.title}</HeadA>
                 <Seperator mt={2} mb={3} />
                 <Input placeholder={translation?.signin?.username}
                     type={"text"}
