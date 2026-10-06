@@ -1,9 +1,9 @@
-import React, { createContext, useState } from 'react'
+import { createContext, useState } from 'react'
 
 export const SignContext = createContext(null);
 
 export const SignProvider = ({ children }) => {
-    const [useDetails, setDetails] = useState({ fullName: 'Kate Mew', token: '1123123' }); // > recieves users details
+    const [useDetails, setDetails] = useState({}); // > recieves users details
 
     const signIn = () => { } // > recieving users credentials 
     const verification = () => { } // > recievs users verification

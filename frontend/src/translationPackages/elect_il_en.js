@@ -21,17 +21,11 @@ export const content = {
         p2: "Your vote is always in your hands. You can change your mind or cancel your vote at any time before submitting your opinion. Your vote is only finalized when you decide to submit it.",
     },
     signin: {
-        phaseone: {
-            title: 'SIGN-IN',
-            desc: 'Use your ID number and type it below',
-            placeholder: 'ID number',
-        },
-        phasetwo: {
-            title: 'Verification',
-            desc: 'Write down the code that you recieved via EMAIL or SMS',
-            placeholder: 'Password',
-        },
-        button: 'Send',
+        title: 'Moderator Log-In',
+        username: 'Username',
+        password: 'Password',
+        send: 'Send',
+        warning: 'For moderators use ONLY!',
     },
     statistics: {
         title: 'Updated Statistics',
