@@ -1,0 +1,1 @@
+export const verify = (string, pattern, maxLength) => string == "" || string.length <= maxLength && pattern.test(string);

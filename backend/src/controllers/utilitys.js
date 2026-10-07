@@ -1,3 +1,5 @@
 export const ping = (req, res) => {
-    res.statusCode(200).send()
+    console.log('[Ping]');
+
+    res.statusCode(200).send();
 }
