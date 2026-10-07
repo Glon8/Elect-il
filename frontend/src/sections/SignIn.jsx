@@ -72,13 +72,15 @@ export default function SignIn() {
                     onChange={nameChange}
                     type={"text"}
                     pattern={"[A-Za-z0-9!@#$%&_-?]*"}
-                    maxLength={24} />
+                    maxLength={24}
+                    color={'black'} />
                 <Input value={usePass}
                     placeholder={translation?.signin?.password}
                     onChange={passChange}
                     type={"text"}
                     pattern={"[A-Za-z0-9!@#$%&?]*"}
-                    maxLength={24} />
+                    maxLength={24}
+                    color={'black'} />
                 <Flex gap={3} p={1} w={'100%'} borderWidth={1} borderColor={'gray.300'} color={'gray'} rounded={'md'} alignItems={'center'}>
                     <Flex w={6} h={6} borderWidth={1} borderColor={'gray'} rounded={'full'} alignItems={'center'} justifyContent={'center'}><i className='pi pi-info' /></Flex>
                     <Text>{translation?.signin?.warning}</Text>
