@@ -8,7 +8,7 @@ import { verify } from '../../util'
 import HeadB from '../../components/headers/HeadB'
 import { PseudoLink as Link } from '../../components/PseudoLink'
 
-export default function SignUp({ signSwitch, ...props }) {
+export default function SignUp({ signSet, ...props }) {
     const [isSmall] = useMediaQuery("(max-width: 768px)");
 
     const { orientation, translation } = useContext(LanguageContext);
@@ -17,11 +17,15 @@ export default function SignUp({ signSwitch, ...props }) {
     const [useId, setId] = useState('');
     const [useCode, setcode] = useState('');
     const [useTypo, setTypo] = useState(false);
+    const [useSent, setSent] = useState(false);
 
     const phaseSwitch = () => setPhase(!usePhase);
     const send = () => {
         if (usePhase && !useTypo && useId.length === 9) phaseSwitch();
-        else if (!usePhase && !useTypo && useCode.length === 6) signSwitch();
+        else if (!usePhase && !useTypo && useCode.length === 6) {
+            signSet(true);
+            setSent(true);
+        }
     }
     const change = (e) => {
         const val = e.target.value;
@@ -74,7 +78,7 @@ export default function SignUp({ signSwitch, ...props }) {
                     maxLength={usePhase ? 9 : 6}
                     color={useTypo ? 'red' : 'black'} />
                 <Flex w={'full'} justifyContent={'center'}>
-                    <Button bgColor={'black'} color={'white'} w={'100%'} h={'2rem'} onClick={send}>{translation?.votingSignUp?.send}</Button>
+                    <Button disabled={useSent} bgColor={'black'} color={'white'} w={'100%'} h={'2rem'} onClick={send}>{translation?.votingSignUp?.send}</Button>
                 </Flex>
 
             </Flex>

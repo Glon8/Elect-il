@@ -22,10 +22,10 @@ export default function Voting() {
     const [usePolicyState, setPolicyState] = useState(false);
     const [useSignState, setSignState] = useState(false);
 
-    const cancel = () => setPageState(1);
+    const cancel = () => { setPageState(1); setSignState(false); setPolicyState(false); }
     const nextPhase = () => setPageState(usePageState === 4 ? 1 : usePageState + 1);
     const policyState = () => setPolicyState(!usePolicyState);
-    const signState = () => setSignState(!useSignState);
+    const signState = (state) => setSignState(state);
 
 
     return (
@@ -38,7 +38,7 @@ export default function Voting() {
                     <>
                         {usePageState === 1 ? <Greeting /> : ''}
                         {usePageState === 2 ? <Policy policySwitch={policyState} /> : ''}
-                        {usePageState === 3 ? <SignUp signSwitch={signState} /> : ''}
+                        {usePageState === 3 ? <SignUp signSet={signState} /> : ''}
                         {usePageState === 4 ? <Vote /> : ''}
 
                         <Flex mt={'1rem'} gapX={5} justifyContent={'space-around'}>
