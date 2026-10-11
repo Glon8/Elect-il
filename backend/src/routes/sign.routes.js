@@ -1,9 +1,12 @@
 import express from 'express'
 
-import { signIn } from '../controllers/signs.js'
+import { signIn, provideId, provideConfirm, signUp } from '../controllers/sign.js'
 
 const signRouter = express.Router();
 
-signRouter.post('/sign-in', signIn);
+signRouter.post('/in', signIn);
+signRouter.post('/id', provideId);
+signRouter.post('/conf', provideConfirm);
+signRouter.post('/up', signUp);
 
 export default signRouter;

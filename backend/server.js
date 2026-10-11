@@ -2,7 +2,7 @@ import express from 'express'
 import cors from 'cors'
 
 import utilRouter from './src/routes/utility.routes.js'
-import electRouter from './src/routes/elect.routes.js'
+import historyRouter from './src/routes/history.routes.js'
 import signRouter from './src/routes/sign.routes.js'
 
 const app = express();
@@ -20,8 +20,8 @@ app.use(
 app.use(express.json());
 
 app.use('/api', utilRouter);
-app.use('/api/vote', electRouter);
-app.use('/api', signRouter);
+app.use('/api/elect', historyRouter);
+app.use('/api/sign', signRouter);
 
 app.listen(port, () => {
     if (port === 5000) console.log(`Server started at http://localhost:${port}`);
