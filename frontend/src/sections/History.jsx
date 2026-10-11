@@ -36,7 +36,7 @@ function history() {
                 return (
                   <Flex key={`history${ind}`} w={!isSmall ? '19%' : '48%'} h={'3rem'} justifyContent={'center'} rounded={'1rem'} bg={'transparent'} borderWidth={1} borderColor={'gray.300'}>
                     <Link h={'3rem'} justifyContent={'space-around'} color={'black'} rounded={'md'} onClick={(e) => { e.preventDefault(); }}>
-                      <Text fontWeight={'medium'} textAlign={'center'} textOverflow={'ellipsis'} overflow={'hidden'} whiteSpace={'nowrap'}>{item}</Text>
+                      <Text fontWeight={'medium'} textAlign={'center'} textOverflow={'ellipsis'} overflow={'hidden'} whiteSpace={'nowrap'}>{item.starts}</Text>
                     </Link>
                   </Flex>
                 )
