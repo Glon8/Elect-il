@@ -85,7 +85,7 @@ export default function SignIn() {
                     <Flex w={6} h={6} borderWidth={1} borderColor={'gray'} rounded={'full'} alignItems={'center'} justifyContent={'center'}><i className='pi pi-info' /></Flex>
                     <Text>{translation?.signin?.warning}</Text>
                 </Flex>
-                <Button disabled={useName.length < 2 || usePass.length < 6 || useTypo} w={'100%'} bg={'#5618E7'} color={'white'} onClick={send}>{translation?.signin?.send}</Button>
+                <Button disabled={useName.length < 2 || usePass.length < 6 || useTypo} w={'100%'} bg={'#384480'} color={'white'} onClick={send}>{translation?.signin?.send}</Button>
 
             </Flex>
 

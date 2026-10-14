@@ -26,7 +26,7 @@ function history() {
         <Input value={useDate} letterSpacing={4} w={'10rem'} borderColor={'gray.300'} borderRightWidth={0} borderRightRadius={0} placeholder={translation?.history?.search} maxLength={4} textAlign={'center'} inputMode='numeric'
           onChange={(e) => setDate(e.target.value)}
           onKeyDown={(e) => e.key === 'Enter' ? updateQuery() : null}></Input>
-        <Button onClick={updateQuery} bg={'#5618E7'} color={'white'} borderLeftRadius={0}><i className='pi pi-search'></i></Button>
+        <Button onClick={updateQuery} bg={'#384480'} color={'white'} borderLeftRadius={0}><i className='pi pi-search'></i></Button>
       </Flex>
       <Flex h={!isSmall ? '30%' : '40%'} justifyContent={'center'}>
         <Flex w={!isSmall ? '100%' : '80%'} h={'100%'} flexWrap={'wrap'} alignContent={'flex-start'} overflowY={'auto'} my={'1rem'} gapY={3} justifyContent={useQuery !== null && useQuery.length != 0 ? 'space-between' : 'center'} style={{ direction: 'ltr' }}>

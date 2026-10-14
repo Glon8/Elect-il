@@ -38,8 +38,8 @@ export default function VoteConfirm() {
                 <HeadC>{selected ? `${selected?.party} > ${selected?.candidate}` : 'Party > Candidate'}</HeadC>
             </Flex>
             <Flex w={'full'} justifyContent={'space-evenly'} alignItems={'center'} flexDir={isSmall ? '' : 'column-reverse'} gapY={3}>
-                <Button disabled={!useChecked} w={'40%'} bg={'#5618E7'} color={'white'} onClick={() => { vote(); reset(); }}>{translation?.voteconfirm?.positive}</Button>
-                <Button w={'40%'} bg={'#5618E7'} color={'white'} onClick={reset}>{translation?.voteconfirm?.negative}</Button>
+                <Button disabled={!useChecked} w={'40%'} bg={'#384480'} color={'white'} onClick={() => { vote(); reset(); }}>{translation?.voteconfirm?.positive}</Button>
+                <Button w={'40%'} bg={'#384480'} color={'white'} onClick={reset}>{translation?.voteconfirm?.negative}</Button>
             </Flex>
         </PopUpBody>
     )

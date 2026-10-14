@@ -43,12 +43,12 @@ export default function Voting() {
 
                         <Flex mt={'1rem'} gapX={5} justifyContent={'space-around'}>
                             {usePageState === 1 ? '' : (
-                                <Button w={'45%'} bg={'#5618E7'} color={'white'} onClick={() => { cancel(); setPolicyState(false); }}>
+                                <Button w={'45%'} bg={'#384480'} color={'white'} onClick={() => { cancel(); setPolicyState(false); }}>
                                     {usePageState === 1 ? '' : translation?.voting?.cancel}
                                 </Button>
                             )}
                             {usePageState === 4 ? '' : (
-                                <Button disabled={usePageState == 2 && !usePolicyState || usePageState == 3 && !useSignState} w={'45%'} bg={'#5618E7'} color={'white'} onClick={nextPhase}>
+                                <Button disabled={usePageState == 2 && !usePolicyState || usePageState == 3 && !useSignState} w={'45%'} bg={'#384480'} color={'white'} onClick={nextPhase}>
                                     {usePageState === 4 ? '' : translation?.voting?.continue}
                                 </Button>
                             )}
