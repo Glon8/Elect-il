@@ -13,7 +13,7 @@ export default function Opening() {
     const { translation } = useContext(LanguageContext);
 
     return (
-        <SectionBody pt={'4rem'} justifyContent={'center'} alignItems={'center'}>
+        <SectionBody bcpr pt={'4rem'} justifyContent={'center'} alignItems={'center'}>
             <HeadA mb={0}>{translation?.opening?.title}</HeadA>
             <Seperator />
             <Flex flexDir={'column'} gapY={5}>

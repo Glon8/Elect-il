@@ -17,7 +17,7 @@ function history() {
   const [isSmall] = useMediaQuery("(max-width: 768px)");
 
   return (
-    <SectionBody pb={'1rem'} justifyContent={'center'}>
+    <SectionBody tcpl pb={'1rem'} justifyContent={'center'}>
 
       <HeadA mb={0}>{translation?.history?.title}</HeadA>
       <Seperator />

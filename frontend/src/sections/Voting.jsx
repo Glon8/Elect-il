@@ -29,7 +29,7 @@ export default function Voting() {
 
 
     return (
-        <SectionBody justifyContent={'center'} alignContent={'center'} my={'3rem'}>
+        <SectionBody tcpl bcpl justifyContent={'center'} alignContent={'center'} my={'3rem'}>
 
             <HeadA mb={0}>{translation?.voting?.title}</HeadA>
             <Seperator />

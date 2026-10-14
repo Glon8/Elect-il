@@ -41,7 +41,7 @@ export default function Statistics() {
   }, [parties]);
 
   return (
-    <SectionBody justifyContent={'center'} my={'3rem'}>
+    <SectionBody tcpr bcpr justifyContent={'center'} my={'3rem'}>
 
       <HeadA mb={0}>{translation?.statistics?.title}</HeadA>
       <Seperator />
