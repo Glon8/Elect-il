@@ -49,7 +49,7 @@ export default function Statistics() {
         parties != null && parties.length != 0 ?
           (<> <HeadBody h={'auto'} position={'initial'} flexDir={'column'} justifyContent={'space-evenly'} rounded={'md'} borderWidth={1} borderColor={'gray.300'}>
             <HeadB>{translation?.statistics?.totalvotes}</HeadB>
-            <StValues>{useVotes}</StValues>
+            <StValues color={'#425363'} letterSpacing={2} fontSize={'2rem'} fontWeight={'bolder'}>{useVotes}</StValues>
           </HeadBody>
             <HeadB mt={3} textAlign={'center'}>{translation?.statistics?.graphtitle}</HeadB>
             <Flex w={'100%'} h={!isSmall ? 'auto' : 'auto'} flexDir={'column'} gapY={1} overflowY={'auto'} style={{ direction: 'ltr' }}>

@@ -9,6 +9,7 @@ import { VotingContext } from '../context/VotingContext'
 import PopUpBody from '../components/PopUpBody'
 import HeadA from '../components/headers/HeadA'
 import HeadC from '../components/headers/HeadC'
+import Seperator from '../components/Seperator'
 
 export default function VoteConfirm() {
     const { translation } = useContext(LanguageContext);
@@ -23,7 +24,8 @@ export default function VoteConfirm() {
 
     return (
         <PopUpBody displayTrig={votePop} bgOnClick={reset} gapY={3} py={isSmall ? '2rem' : '4rem'} minW={'20rem'} w={isSmall ? '95%' : '30rem'} h={'auto'} maxH={isSmall ? '80%' : ''} px={5} justifyContent={'space-between'}>
-            <HeadA m={0} color={'black'}>{translation?.voteconfirm?.title}</HeadA>
+            <HeadA m={0}>{translation?.voteconfirm?.title}</HeadA>
+            <Seperator m={0}/>
             <Flex w={'full'} alignItems={'center'} gapY={3} flexDir={'column'}>
                 <Text color={'black'} p={2} rounded={'md'} borderWidth={1} borderColor={'gray.300'}>{translation?.voteconfirm?.disclaimer}</Text>
                 <Flex w={'full'} gapX={3}>
@@ -36,8 +38,8 @@ export default function VoteConfirm() {
                 <HeadC>{selected ? `${selected?.party} > ${selected?.candidate}` : 'Party > Candidate'}</HeadC>
             </Flex>
             <Flex w={'full'} justifyContent={'space-evenly'} alignItems={'center'} flexDir={isSmall ? '' : 'column-reverse'} gapY={3}>
-                <Button disabled={!useChecked} w={'40%'} bg={'black'} color={'white'} onClick={() => { vote(); reset(); }}>{translation?.voteconfirm?.positive}</Button>
-                <Button w={'40%'} bg={'black'} color={'white'} onClick={reset}>{translation?.voteconfirm?.negative}</Button>
+                <Button disabled={!useChecked} w={'40%'} bg={'#5618E7'} color={'white'} onClick={() => { vote(); reset(); }}>{translation?.voteconfirm?.positive}</Button>
+                <Button w={'40%'} bg={'#5618E7'} color={'white'} onClick={reset}>{translation?.voteconfirm?.negative}</Button>
             </Flex>
         </PopUpBody>
     )
