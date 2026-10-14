@@ -6,6 +6,7 @@ import { LanguageContext } from '../context/LanguageContext';
 import SectionBody from '../components/SectionBody'
 import HeaderA from '../components/headers/HeadA'
 import AText from '../components/AText'
+import Seperator from '../components/Seperator';
 
 export default function Us() {
     const { translation } = useContext(LanguageContext);
@@ -13,7 +14,8 @@ export default function Us() {
 
     return (
         <SectionBody  justifyContent={isSmall ? 'bottom' : 'center'} overflowY={'auto'} gapY={3} my={'2rem'}>
-            <HeaderA>{translation?.us?.title}</HeaderA>
+            <HeaderA mb={0}>{translation?.us?.title}</HeaderA>
+            <Seperator mt={2} mb={3} />
             <Flex flexDir={'column'} gapY={3}>
                 <AText>{translation?.us?.p1}</AText>
                 <AText>{translation?.us?.p2}</AText>

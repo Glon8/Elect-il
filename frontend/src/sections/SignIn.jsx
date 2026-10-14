@@ -65,7 +65,7 @@ export default function SignIn() {
             </HeadBody>
             <Flex alignItems={'center'} w={'100%'} px={'1rem'} flexDir={'column'} gapY={3}>
 
-                <HeadA w={'100%'} mb={0} color={'black'}>{translation?.signin?.title}</HeadA>
+                <HeadA w={'100%'} mb={0}>{translation?.signin?.title}</HeadA>
                 <Seperator mt={2} mb={3} />
                 <Input value={useName}
                     placeholder={translation?.signin?.username}
@@ -85,7 +85,7 @@ export default function SignIn() {
                     <Flex w={6} h={6} borderWidth={1} borderColor={'gray'} rounded={'full'} alignItems={'center'} justifyContent={'center'}><i className='pi pi-info' /></Flex>
                     <Text>{translation?.signin?.warning}</Text>
                 </Flex>
-                <Button disabled={useName.length < 2 || usePass.length < 6 || useTypo} w={'100%'} bg={'black'} color={'white'} onClick={send}>{translation?.signin?.send}</Button>
+                <Button disabled={useName.length < 2 || usePass.length < 6 || useTypo} w={'100%'} bg={'#5618E7'} color={'white'} onClick={send}>{translation?.signin?.send}</Button>
 
             </Flex>
 
