@@ -2,10 +2,11 @@ import { useEffect, useState, useContext } from 'react'
 
 import { Flex, Text, useMediaQuery } from '@chakra-ui/react'
 import { LanguageContext } from '../context/LanguageContext'
+import { VotingContext } from '../context/VotingContext'
+import { HistoryContext } from '../context/HistoryContext'
 
 import SectionBody from '../components/SectionBody'
 import HeadBody from '../components/HeadBody'
-import { VotingContext } from '../context/VotingContext'
 import HeadA from '../components/headers/HeadA'
 import HeadB from '../components/headers/HeadB'
 import StValues from '../components/StValues'
@@ -15,6 +16,7 @@ import Seperator from '../components/Seperator'
 export default function Statistics() {
   const { translation } = useContext(LanguageContext);
   const { parties } = useContext(VotingContext);
+  const { useQuery } = useContext(HistoryContext);
 
   const [isSmall] = useMediaQuery("(max-width: 768px)");
 

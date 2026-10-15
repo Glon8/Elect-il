@@ -6,7 +6,7 @@ import { PageContext } from '../context/PageContext';
 import { SignContext } from '../context/SignContext';
 import { LanguageContext } from '../context/LanguageContext';
 
-import { verify } from '../util'
+import { verify } from '../../util'
 
 import PopUpBody from '../components/PopUpBody'
 import HeadBody from '../components/HeadBody';

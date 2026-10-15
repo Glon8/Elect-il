@@ -12,7 +12,7 @@ import Seperator from '../components/Seperator'
 
 function history() {
   const { translation } = useContext(LanguageContext);
-  const { useQuery, useDate, setDate, updateQuery } = useContext(HistoryContext);
+  const { useQuery, year, setYear, updateQuery } = useContext(HistoryContext);
 
   const [isSmall] = useMediaQuery("(max-width: 768px)");
 
@@ -23,8 +23,8 @@ function history() {
       <Seperator />
       <AText p={2} color={'gray'} rounded={'md'} borderWidth={1} borderColor={'gray.300'}>{translation?.history?.desc}</AText>
       <Flex w={'full'} justifyContent={'center'} mt={8} style={{ direction: 'ltr' }}>
-        <Input value={useDate} letterSpacing={4} w={'10rem'} borderColor={'gray.300'} borderRightWidth={0} borderRightRadius={0} placeholder={translation?.history?.search} maxLength={4} textAlign={'center'} inputMode='numeric'
-          onChange={(e) => setDate(e.target.value)}
+        <Input value={year} letterSpacing={4} w={'10rem'} borderColor={'gray.300'} borderRightWidth={0} borderRightRadius={0} placeholder={translation?.history?.search} maxLength={4} textAlign={'center'} inputMode='numeric'
+          onChange={(e) => setYear(e.target.value)}
           onKeyDown={(e) => e.key === 'Enter' ? updateQuery() : null}></Input>
         <Button onClick={updateQuery} bg={'#384480'} color={'white'} borderLeftRadius={0}><i className='pi pi-search'></i></Button>
       </Flex>

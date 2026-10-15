@@ -15,3 +15,7 @@ export const pathReplacement = (path, ind) => {
 export const getPath = (ind) => location.pathname.split('/')[ind];
 
 export const paramsReplacement = (params) => history.replaceState({}, '', `${location.pathname}?${params.toString()}`);
+
+export const verify = (string, pattern, maxLength) => string == "" || string.length <= maxLength && pattern.test(string);
+
+export const yearVerify = (string) => typeof string === 'string' && string.length === 4 && /^\d{4}$/.test(string);

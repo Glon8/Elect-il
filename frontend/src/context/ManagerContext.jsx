@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useState } from 'react'
 
-import { getPath, pathReplacement, paramsReplacement } from '../../util';
+import { yearVerify, getPath, pathReplacement, paramsReplacement } from '../../util';
 
 import { PageContext } from './PageContext';
 import { LanguageContext } from './LanguageContext';
@@ -14,7 +14,7 @@ export const ManagerProvider = ({ children }) => {
     const { page, pageSup, pageUpdate } = useContext(PageContext);
     const { language, langSup, langUpdate } = useContext(LanguageContext);
     const { mode, modeSup, modeUpdate } = useContext(ModeContext);
-    const { setDate, findQuery } = useContext(HistoryContext);
+    const { year, setYear, findQuery } = useContext(HistoryContext);
     const { setParties, pullPartiesData, updateParties } = useContext(VotingContext);
 
     const path = window.location.pathname;
@@ -23,6 +23,7 @@ export const ManagerProvider = ({ children }) => {
     const curPage = getPath(1);
     const curLang = params.get('lang');
     const curMode = params.get('mode');
+    const curYear = params.get('year');
 
     useEffect(() => {
         // page init \/
@@ -58,16 +59,30 @@ export const ManagerProvider = ({ children }) => {
         }
         else modeUpdate(curMode);
 
-        // parties init \/
-        const parties = pullPartiesData();
+        if (!curYear || !yearVerify(curYear)) {
+            // param set \/
+            params.set('year', year);
+            paramsReplacement(params);
 
-        updateParties(parties);
+            // history init \/
+            findQuery(year);
 
-        // history init \/
-        const nowYear = String(new Date().getFullYear());
+            // parties init \/
+            const parties = pullPartiesData();
 
-        setDate(nowYear);
-        findQuery(nowYear);
+            updateParties(parties);
+        }
+        else {
+            setYear(curYear);
+
+            // history init \/
+            findQuery(curYear);
+
+            // parties init \/
+            const parties = pullPartiesData();
+
+            updateParties(parties);
+        }
     }, []);
 
     return (

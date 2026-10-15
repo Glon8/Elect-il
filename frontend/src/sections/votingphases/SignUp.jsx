@@ -3,7 +3,7 @@ import { useState, useEffect, useContext } from 'react'
 import { Button, Flex, Input, Text, useMediaQuery } from '@chakra-ui/react'
 import { LanguageContext } from '../../context/LanguageContext'
 
-import { verify } from '../../util'
+import { verify } from '../../../util'
 
 import HeadB from '../../components/headers/HeadB'
 import { PseudoLink as Link } from '../../components/PseudoLink'

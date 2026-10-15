@@ -1,11 +1,10 @@
-import React, { createContext, useState } from 'react'
+import { createContext, useState } from 'react'
+
+import { paramsReplacement } from '../../util';
 
 export const HistoryContext = createContext(null);
 
 export function HistoryProvider({ children }) {
-    const [useQuery, setQuery] = useState([]);
-    const [useDate, setDate] = useState(null);
-
     const electionHistory = [
         {
             date: '2024',
@@ -208,25 +207,39 @@ export function HistoryProvider({ children }) {
         }
     ];
 
+    const [useHistory, setHistory] = useState(electionHistory);
+    const [useQuery, setQuery] = useState([]);
+
+    const date = new Date().getFullYear();
+
+    const [useYear, setYear] = useState(String(date));
+
     const updateQuery = () => {
-        if (typeof useDate != 'string' || useDate.length < 4) return;
+        if (typeof useYear != 'string' || useYear.length < 4) return;
 
         console.log('entered');
 
-        const newYear = Number(useDate);
+        const newYear = Number(useYear);
 
-        if (Number.isNaN(newYear)) setDate(new Date().getFullYear());
+        if (Number.isNaN(newYear)) setYear(date);
 
-        if (useDate > 1900 && useDate <= 3000) {
+        if (useYear > 1900 && useYear <= 3000) {
             // < pull on query from the server
             console.log('size is ok');
 
             // temporary display
-            const clearedYear = useDate.trim();
+            const clearedYear = useYear.trim();
 
-            const result = electionHistory.find(item => item.date === clearedYear);
+            const result = useHistory.find(item => item.date === clearedYear);
 
             setQuery(result?.data ?? []);
+
+
+            const params = new URLSearchParams(window.location.search);
+
+            params.set('year', useYear);
+
+            paramsReplacement(params);
         }
     }
     // for local search > temporary display initiation
@@ -235,13 +248,13 @@ export function HistoryProvider({ children }) {
 
         const clearedYear = year.trim();
 
-        const result = electionHistory.find(item => item.date === clearedYear);
+        const result = useHistory.find(item => item.date === clearedYear);
 
         setQuery(result?.data ?? []);
     }
 
     return (
-        <HistoryContext.Provider value={{ useDate, setDate, useQuery, setQuery, updateQuery, findQuery }}>
+        <HistoryContext.Provider value={{ year: useYear, setYear, useQuery, setQuery, updateQuery, findQuery }}>
             {children}
         </HistoryContext.Provider>
     )
