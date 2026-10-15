@@ -16,7 +16,7 @@ import Seperator from '../components/Seperator'
 export default function Statistics() {
   const { translation } = useContext(LanguageContext);
   const { parties } = useContext(VotingContext);
-  const { useQuery } = useContext(HistoryContext);
+  const { date, query } = useContext(HistoryContext);
 
   const [isSmall] = useMediaQuery("(max-width: 768px)");
 
@@ -24,7 +24,7 @@ export default function Statistics() {
   const [useTop, setTop] = useState([]);
 
   const totalVotes = () => {
-    const sum = parties.reduce((total, item) => total + item.votes, 0);
+    const sum = query[query.length - 1]?.votes.reduce((total, value) => total + value, 0);
 
     setVotes(sum);
   }
@@ -40,7 +40,7 @@ export default function Statistics() {
   useEffect(() => {
     totalVotes();
     topPartys();
-  }, [parties]);
+  }, [parties, date, query]);
 
   return (
     <SectionBody tcpr bcpr justifyContent={'center'} my={'3rem'}>

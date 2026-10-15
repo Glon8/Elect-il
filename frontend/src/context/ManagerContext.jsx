@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useState } from 'react'
 
-import { yearVerify, getPath, pathReplacement, paramsReplacement } from '../../util';
+import { dateVerify, yearExtract, getPath, pathReplacement, paramsReplacement } from '../../util';
 
 import { PageContext } from './PageContext';
 import { LanguageContext } from './LanguageContext';
@@ -14,7 +14,7 @@ export const ManagerProvider = ({ children }) => {
     const { page, pageSup, pageUpdate } = useContext(PageContext);
     const { language, langSup, langUpdate } = useContext(LanguageContext);
     const { mode, modeSup, modeUpdate } = useContext(ModeContext);
-    const { year, setYear, findQuery } = useContext(HistoryContext);
+    const { date, year, setYear, setDate, findQuery } = useContext(HistoryContext);
     const { setParties, pullPartiesData, updateParties } = useContext(VotingContext);
 
     const path = window.location.pathname;
@@ -23,7 +23,7 @@ export const ManagerProvider = ({ children }) => {
     const curPage = getPath(1);
     const curLang = params.get('lang');
     const curMode = params.get('mode');
-    const curYear = params.get('year');
+    const curDate = params.get('date');
 
     useEffect(() => {
         // page init \/
@@ -59,25 +59,25 @@ export const ManagerProvider = ({ children }) => {
         }
         else modeUpdate(curMode);
 
-        if (!curYear || !yearVerify(curYear)) {
+        if (!curDate || !dateVerify(curDate)) {
             // param set \/
-            params.set('year', year);
+            params.set('date', date);
             paramsReplacement(params);
-
             // history init \/
             findQuery(year);
-
             // parties init \/
             const parties = pullPartiesData();
 
             updateParties(parties);
         }
         else {
-            setYear(curYear);
+            setDate(curDate);
 
+            const year = yearExtract(curDate);
+
+            setYear(year);
             // history init \/
-            findQuery(curYear);
-
+            findQuery(year);
             // parties init \/
             const parties = pullPartiesData();
 

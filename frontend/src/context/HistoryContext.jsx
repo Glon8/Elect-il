@@ -1,6 +1,6 @@
 import { createContext, useState } from 'react'
 
-import { paramsReplacement } from '../../util';
+import { nowDate, paramsReplacement } from '../../util';
 
 export const HistoryContext = createContext(null);
 
@@ -11,66 +11,66 @@ export function HistoryProvider({ children }) {
             data: [
                 {
                     open: false,
-                    starts: '2024-01-15',
-                    ends: '2024-01-29',
+                    starts: '15-01-2024',
+                    ends: '29-01-2024',
                     parties: ['party1', 'party2', 'party3', 'party4', 'party5'],
-                    leaders: ['A', 'B', 'C', 'D', 'E'],
+                    candidates: ['A', 'B', 'C', 'D', 'E'],
                     votes: [120, 85, 64, 42, 19]
                 },
                 {
                     open: false,
-                    starts: '2024-03-04',
-                    ends: '2024-03-18',
+                    starts: '04-03-2024',
+                    ends: '18-03-2024',
                     parties: ['party1', 'party2', 'party3', 'party4', 'party5'],
-                    leaders: ['A', 'B', 'C', 'D', 'E'],
+                    candidates: ['A', 'B', 'C', 'D', 'E'],
                     votes: [95, 110, 72, 38, 21]
                 },
                 {
                     open: false,
-                    starts: '2024-04-26',
-                    ends: '2024-05-10',
+                    starts: '26-04-2024',
+                    ends: '10-05-2024',
                     parties: ['party1', 'party2', 'party3', 'party4', 'party5'],
-                    leaders: ['A', 'B', 'C', 'D', 'E'],
+                    candidates: ['A', 'B', 'C', 'D', 'E'],
                     votes: [130, 90, 75, 48, 25]
                 },
                 {
                     open: false,
-                    starts: '2024-06-12',
-                    ends: '2024-06-26',
+                    starts: '12-06-2024',
+                    ends: '26-06-2024',
                     parties: ['party1', 'party2', 'party3', 'party4', 'party5'],
-                    leaders: ['A', 'B', 'C', 'D', 'E'],
+                    candidates: ['A', 'B', 'C', 'D', 'E'],
                     votes: [105, 98, 80, 45, 22]
                 },
                 {
                     open: false,
-                    starts: '2024-08-01',
-                    ends: '2024-08-15',
+                    starts: '01-08-2024',
+                    ends: '15-08-2024',
                     parties: ['party1', 'party2', 'party3', 'party4', 'party5'],
-                    leaders: ['A', 'B', 'C', 'D', 'E'],
+                    candidates: ['A', 'B', 'C', 'D', 'E'],
                     votes: [140, 100, 68, 51, 30]
                 },
                 {
                     open: false,
-                    starts: '2024-09-19',
-                    ends: '2024-10-03',
+                    starts: '19-09-2024',
+                    ends: '03-10-2024',
                     parties: ['party1', 'party2', 'party3', 'party4', 'party5'],
-                    leaders: ['A', 'B', 'C', 'D', 'E'],
+                    candidates: ['A', 'B', 'C', 'D', 'E'],
                     votes: [115, 105, 77, 49, 28]
                 },
                 {
                     open: false,
-                    starts: '2024-11-08',
-                    ends: '2024-11-22',
+                    starts: '08-11-2024',
+                    ends: '22-11-2024',
                     parties: ['party1', 'party2', 'party3', 'party4', 'party5'],
-                    leaders: ['A', 'B', 'C', 'D', 'E'],
+                    candidates: ['A', 'B', 'C', 'D', 'E'],
                     votes: [125, 92, 81, 44, 26]
                 },
                 {
                     open: false,
-                    starts: '2024-12-23',
-                    ends: '2025-01-06',
+                    starts: '23-12-2024',
+                    ends: '06-01-2025',
                     parties: ['party1', 'party2', 'party3', 'party4', 'party5'],
-                    leaders: ['A', 'B', 'C', 'D', 'E'],
+                    candidates: ['A', 'B', 'C', 'D', 'E'],
                     votes: [108, 96, 73, 52, 31]
                 }
             ]
@@ -80,58 +80,58 @@ export function HistoryProvider({ children }) {
             data: [
                 {
                     open: false,
-                    starts: '2025-02-10',
-                    ends: '2025-02-24',
+                    starts: '10-02-2025',
+                    ends: '24-02-2025',
                     parties: ['party1', 'party2', 'party3', 'party4', 'party5'],
-                    leaders: ['A', 'B', 'C', 'D', 'E'],
+                    candidates: ['A', 'B', 'C', 'D', 'E'],
                     votes: [132, 101, 79, 47, 24]
                 },
                 {
                     open: false,
-                    starts: '2025-03-29',
-                    ends: '2025-04-12',
+                    starts: '29-03-2025',
+                    ends: '12-04-2025',
                     parties: ['party1', 'party2', 'party3', 'party4', 'party5'],
-                    leaders: ['A', 'B', 'C', 'D', 'E'],
+                    candidates: ['A', 'B', 'C', 'D', 'E'],
                     votes: [118, 107, 84, 43, 29]
                 },
                 {
                     open: false,
-                    starts: '2025-05-17',
-                    ends: '2025-05-31',
+                    starts: '17-05-2025',
+                    ends: '31-05-2025',
                     parties: ['party1', 'party2', 'party3', 'party4', 'party5'],
-                    leaders: ['A', 'B', 'C', 'D', 'E'],
+                    candidates: ['A', 'B', 'C', 'D', 'E'],
                     votes: [145, 99, 70, 55, 32]
                 },
                 {
                     open: false,
-                    starts: '2025-07-05',
-                    ends: '2025-07-19',
+                    starts: '05-07-2025',
+                    ends: '19-07-2025',
                     parties: ['party1', 'party2', 'party3', 'party4', 'party5'],
-                    leaders: ['A', 'B', 'C', 'D', 'E'],
+                    candidates: ['A', 'B', 'C', 'D', 'E'],
                     votes: [112, 103, 88, 46, 27]
                 },
                 {
                     open: false,
-                    starts: '2025-08-24',
-                    ends: '2025-09-07',
+                    starts: '24-08-2025',
+                    ends: '07-09-2025',
                     parties: ['party1', 'party2', 'party3', 'party4', 'party5'],
-                    leaders: ['A', 'B', 'C', 'D', 'E'],
+                    candidates: ['A', 'B', 'C', 'D', 'E'],
                     votes: [128, 94, 76, 50, 23]
                 },
                 {
                     open: false,
-                    starts: '2025-10-11',
-                    ends: '2025-10-25',
+                    starts: '11-10-2025',
+                    ends: '25-10-2025',
                     parties: ['party1', 'party2', 'party3', 'party4', 'party5'],
-                    leaders: ['A', 'B', 'C', 'D', 'E'],
+                    candidates: ['A', 'B', 'C', 'D', 'E'],
                     votes: [137, 108, 82, 41, 33]
                 },
                 {
                     open: false,
-                    starts: '2025-12-02',
-                    ends: '2025-12-16',
+                    starts: '02-12-2025',
+                    ends: '16-12-2025',
                     parties: ['party1', 'party2', 'party3', 'party4', 'party5'],
-                    leaders: ['A', 'B', 'C', 'D', 'E'],
+                    candidates: ['A', 'B', 'C', 'D', 'E'],
                     votes: [121, 97, 74, 53, 20]
                 }
             ]
@@ -141,66 +141,66 @@ export function HistoryProvider({ children }) {
             data: [
                 {
                     open: false,
-                    starts: '2026-01-20',
-                    ends: '2026-02-03',
+                    starts: '20-01-2026',
+                    ends: '03-02-2026',
                     parties: ['party1', 'party2', 'party3', 'party4', 'party5'],
-                    leaders: ['A', 'B', 'C', 'D', 'E'],
+                    candidates: ['A', 'B', 'C', 'D', 'E'],
                     votes: [116, 104, 78, 48, 25]
                 },
                 {
                     open: false,
-                    starts: '2026-03-09',
-                    ends: '2026-03-23',
+                    starts: '09-03-2026',
+                    ends: '23-03-2026',
                     parties: ['party1', 'party2', 'party3', 'party4', 'party5'],
-                    leaders: ['A', 'B', 'C', 'D', 'E'],
+                    candidates: ['A', 'B', 'C', 'D', 'E'],
                     votes: [134, 102, 86, 45, 28]
                 },
                 {
                     open: false,
-                    starts: '2026-04-27',
-                    ends: '2026-05-11',
+                    starts: '27-04-2026',
+                    ends: '11-05-2026',
                     parties: ['party1', 'party2', 'party3', 'party4', 'party5'],
-                    leaders: ['A', 'B', 'C', 'D', 'E'],
+                    candidates: ['A', 'B', 'C', 'D', 'E'],
                     votes: [123, 91, 83, 54, 30]
                 },
                 {
                     open: false,
-                    starts: '2026-06-15',
-                    ends: '2026-06-29',
+                    starts: '15-06-2026',
+                    ends: '29-06-2026',
                     parties: ['party1', 'party2', 'party3', 'party4', 'party5'],
-                    leaders: ['A', 'B', 'C', 'D', 'E'],
+                    candidates: ['A', 'B', 'C', 'D', 'E'],
                     votes: [141, 106, 71, 49, 26]
                 },
                 {
                     open: false,
-                    starts: '2026-08-03',
-                    ends: '2026-08-17',
+                    starts: '03-08-2026',
+                    ends: '17-08-2026',
                     parties: ['party1', 'party2', 'party3', 'party4', 'party5'],
-                    leaders: ['A', 'B', 'C', 'D', 'E'],
+                    candidates: ['A', 'B', 'C', 'D', 'E'],
                     votes: [119, 100, 89, 42, 31]
                 },
                 {
                     open: false,
-                    starts: '2026-09-22',
-                    ends: '2026-10-06',
+                    starts: '22-09-2026',
+                    ends: '06-10-2026',
                     parties: ['party1', 'party2', 'party3', 'party4', 'party5'],
-                    leaders: ['A', 'B', 'C', 'D', 'E'],
+                    candidates: ['A', 'B', 'C', 'D', 'E'],
                     votes: [129, 111, 75, 56, 22]
                 },
                 {
                     open: false,
-                    starts: '2026-11-10',
-                    ends: '2026-11-24',
+                    starts: '10-11-2026',
+                    ends: '24-11-2026',
                     parties: ['party1', 'party2', 'party3', 'party4', 'party5'],
-                    leaders: ['A', 'B', 'C', 'D', 'E'],
+                    candidates: ['A', 'B', 'C', 'D', 'E'],
                     votes: [136, 98, 80, 47, 29]
                 },
                 {
                     open: true,
-                    starts: '2026-12-28',
-                    ends: '2027-01-11',
+                    starts: '28-12-2026',
+                    ends: '11-01-2027',
                     parties: ['party1', 'party2', 'party3', 'party4', 'party5'],
-                    leaders: ['A', 'B', 'C', 'D', 'E'],
+                    candidates: ['A', 'B', 'C', 'D', 'E'],
                     votes: [124, 109, 77, 51, 27]
                 }
             ]
@@ -209,10 +209,10 @@ export function HistoryProvider({ children }) {
 
     const [useHistory, setHistory] = useState(electionHistory);
     const [useQuery, setQuery] = useState([]);
+    const [useYear, setYear] = useState(String(new Date().getFullYear()));
+    const [useDate, setDate] = useState(String(nowDate()));
 
-    const date = new Date().getFullYear();
-
-    const [useYear, setYear] = useState(String(date));
+    const latestDate = () => useQuery[useQuery.length - 1]?.starts;
 
     const updateQuery = () => {
         if (typeof useYear != 'string' || useYear.length < 4) return;
@@ -223,24 +223,25 @@ export function HistoryProvider({ children }) {
 
         if (Number.isNaN(newYear)) setYear(date);
 
-        if (useYear > 1900 && useYear <= 3000) {
-            // < pull on query from the server
-            console.log('size is ok');
+        if (newYear <= 1900 || newYear > 3000) return;
 
-            // temporary display
-            const clearedYear = useYear.trim();
+        // < pull on query from the server
+        console.log('size is ok');
 
-            const result = useHistory.find(item => item.date === clearedYear);
+        // temporary display
+        const clearedYear = useYear.trim();
 
-            setQuery(result?.data ?? []);
+        const result = useHistory.find(item => item.date === clearedYear);
 
+        setQuery(result?.data ?? []);
 
-            const params = new URLSearchParams(window.location.search);
+        if (!useQuery || !useQuery.length) return;
 
-            params.set('year', useYear);
+        const params = new URLSearchParams(window.location.search);
 
-            paramsReplacement(params);
-        }
+        params.set('date', latestDate());
+
+        paramsReplacement(params);
     }
     // for local search > temporary display initiation
     const findQuery = (year) => {
@@ -251,10 +252,16 @@ export function HistoryProvider({ children }) {
         const result = useHistory.find(item => item.date === clearedYear);
 
         setQuery(result?.data ?? []);
+
+        const params = new URLSearchParams(window.location.search);
+
+        params.set('date', !result || !result.length ? nowDate() : latestDate());
+
+        paramsReplacement(params);
     }
 
     return (
-        <HistoryContext.Provider value={{ year: useYear, setYear, useQuery, setQuery, updateQuery, findQuery }}>
+        <HistoryContext.Provider value={{ year: useYear, setYear, date: useDate, setDate, query: useQuery, setQuery, updateQuery, findQuery }}>
             {children}
         </HistoryContext.Provider>
     )

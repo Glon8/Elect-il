@@ -12,7 +12,7 @@ import Seperator from '../components/Seperator'
 
 function history() {
   const { translation } = useContext(LanguageContext);
-  const { useQuery, year, setYear, updateQuery } = useContext(HistoryContext);
+  const { query, year, setYear, updateQuery } = useContext(HistoryContext);
 
   const [isSmall] = useMediaQuery("(max-width: 768px)");
 
@@ -29,10 +29,10 @@ function history() {
         <Button onClick={updateQuery} bg={'#384480'} color={'white'} borderLeftRadius={0}><i className='pi pi-search'></i></Button>
       </Flex>
       <Flex h={!isSmall ? '30%' : '40%'} justifyContent={'center'}>
-        <Flex w={!isSmall ? '100%' : '80%'} h={'100%'} flexWrap={'wrap'} alignContent={'flex-start'} overflowY={'auto'} my={'1rem'} gapY={3} justifyContent={useQuery !== null && useQuery.length != 0 ? 'space-between' : 'center'} style={{ direction: 'ltr' }}>
+        <Flex w={!isSmall ? '100%' : '80%'} h={'100%'} flexWrap={'wrap'} alignContent={'flex-start'} overflowY={'auto'} my={'1rem'} gapY={3} justifyContent={query !== null && query.length != 0 ? 'space-between' : 'center'} style={{ direction: 'ltr' }}>
           {
-            useQuery !== null && useQuery.length != 0 ?
-              useQuery?.map((item, ind) => {
+            query !== null && query.length != 0 ?
+              query?.map((item, ind) => {
                 return (
                   <Flex key={`history${ind}`} w={!isSmall ? '19%' : '48%'} h={'3rem'} justifyContent={'center'} rounded={'1rem'} bg={'transparent'} borderWidth={1} borderColor={'gray.300'}>
                     <Link h={'3rem'} justifyContent={'space-around'} color={'black'} rounded={'md'} onClick={(e) => { e.preventDefault(); }}>
