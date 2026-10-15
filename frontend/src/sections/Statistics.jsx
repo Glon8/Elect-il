@@ -24,7 +24,8 @@ export default function Statistics() {
   const [useTop, setTop] = useState([]);
 
   const totalVotes = () => {
-    const sum = query[query.length - 1]?.votes.reduce((total, value) => total + value, 0);
+    const sum = parties.reduce((total, item) => total + item.votes, 0);
+    //const sum = query[query.length - 1]?.votes.reduce((total, value) => total + value, 0);
 
     setVotes(sum);
   }
