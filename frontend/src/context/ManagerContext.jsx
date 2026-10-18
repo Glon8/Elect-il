@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useState } from 'react'
+import { createContext, useContext, useEffect } from 'react'
 
 import { dateVerify, yearExtract, getPath, pathReplacement, paramsReplacement } from '../../util';
 
@@ -6,7 +6,6 @@ import { PageContext } from './PageContext';
 import { LanguageContext } from './LanguageContext';
 import { ModeContext } from './ModeContext';
 import { HistoryContext } from './HistoryContext';
-import { VotingContext } from './VotingContext';
 
 export const ManagerContext = createContext(null);
 
@@ -15,7 +14,6 @@ export const ManagerProvider = ({ children }) => {
     const { language, langSup, langUpdate } = useContext(LanguageContext);
     const { mode, modeSup, modeUpdate } = useContext(ModeContext);
     const { date, year, setYear, setDate, findQuery } = useContext(HistoryContext);
-    const { setParties, pullPartiesData, updateParties } = useContext(VotingContext);
 
     const path = window.location.pathname;
     const params = new URLSearchParams(window.location.search);
@@ -65,10 +63,6 @@ export const ManagerProvider = ({ children }) => {
             paramsReplacement(params);
             // history init \/
             findQuery(year);
-            // parties init \/
-            const parties = pullPartiesData();
-
-            updateParties(parties);
         }
         else {
             setDate(curDate);
@@ -78,10 +72,6 @@ export const ManagerProvider = ({ children }) => {
             setYear(year);
             // history init \/
             findQuery(year);
-            // parties init \/
-            const parties = pullPartiesData();
-
-            updateParties(parties);
         }
     }, []);
 

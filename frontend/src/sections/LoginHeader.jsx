@@ -1,6 +1,6 @@
-import React, { useContext } from 'react'
+import { useContext } from 'react'
 
-import { Flex, Text, useMediaQuery } from '@chakra-ui/react'
+import { Text, useMediaQuery } from '@chakra-ui/react'
 
 import HeadBody from '../components/HeadBody';
 import { SignContext } from '../context/SignContext';

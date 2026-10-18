@@ -3,7 +3,6 @@ import { useState, useContext, useEffect } from 'react'
 import { Button, Input, Flex, Text } from '@chakra-ui/react';
 
 import { PageContext } from '../context/PageContext';
-import { SignContext } from '../context/SignContext';
 import { LanguageContext } from '../context/LanguageContext';
 
 import { verify } from '../../util'
@@ -20,6 +19,8 @@ export default function SignIn() {
     const [useName, setName] = useState('');
     const [usePass, setPass] = useState('');
     const [useTypo, setTypo] = useState(false);
+
+    const dict = translation?.signin;
 
     const send = () => {
         if (!useName || !usePass) {
@@ -65,17 +66,17 @@ export default function SignIn() {
             </HeadBody>
             <Flex alignItems={'center'} w={'100%'} px={'1rem'} flexDir={'column'} gapY={3}>
 
-                <HeadA w={'100%'} mb={0}>{translation?.signin?.title}</HeadA>
+                <HeadA w={'100%'} mb={0}>{dict?.title}</HeadA>
                 <Seperator mt={2} mb={3} />
                 <Input value={useName}
-                    placeholder={translation?.signin?.username}
+                    placeholder={dict?.username}
                     onChange={nameChange}
                     type={"text"}
                     pattern={"[A-Za-z0-9!@#$%&_-?]*"}
                     maxLength={24}
                     color={'black'} />
                 <Input value={usePass}
-                    placeholder={translation?.signin?.password}
+                    placeholder={dict?.password}
                     onChange={passChange}
                     type={"text"}
                     pattern={"[A-Za-z0-9!@#$%&?]*"}
@@ -83,9 +84,9 @@ export default function SignIn() {
                     color={'black'} />
                 <Flex gap={3} p={1} w={'100%'} borderWidth={1} borderColor={'gray.300'} color={'gray'} rounded={'md'} alignItems={'center'}>
                     <Flex w={6} h={6} borderWidth={1} borderColor={'gray'} rounded={'full'} alignItems={'center'} justifyContent={'center'}><i className='pi pi-info' /></Flex>
-                    <Text>{translation?.signin?.warning}</Text>
+                    <Text>{dict?.warning}</Text>
                 </Flex>
-                <Button disabled={useName.length < 2 || usePass.length < 6 || useTypo} w={'100%'} bg={'#384480'} color={'white'} onClick={send}>{translation?.signin?.send}</Button>
+                <Button disabled={useName.length < 2 || usePass.length < 6 || useTypo} w={'100%'} bg={'#384480'} color={'white'} onClick={send}>{dict?.send}</Button>
 
             </Flex>
 

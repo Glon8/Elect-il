@@ -16,14 +16,16 @@ function history() {
 
   const [isSmall] = useMediaQuery("(max-width: 768px)");
 
+  const dict = translation?.history;
+
   return (
     <SectionBody tcpl pb={'1rem'} justifyContent={'center'}>
 
-      <HeadA mb={0}>{translation?.history?.title}</HeadA>
+      <HeadA mb={0}>{dict?.title}</HeadA>
       <Seperator />
-      <AText p={2} color={'gray'} rounded={'md'} borderWidth={1} borderColor={'gray.300'}>{translation?.history?.desc}</AText>
+      <AText p={2} color={'gray'} rounded={'md'} borderWidth={1} borderColor={'gray.300'}>{dict?.desc}</AText>
       <Flex w={'full'} justifyContent={'center'} mt={8} style={{ direction: 'ltr' }}>
-        <Input value={year} letterSpacing={4} w={'10rem'} borderColor={'gray.300'} borderRightWidth={0} borderRightRadius={0} placeholder={translation?.history?.search} maxLength={4} textAlign={'center'} inputMode='numeric'
+        <Input value={year} letterSpacing={4} w={'10rem'} borderColor={'gray.300'} borderRightWidth={0} borderRightRadius={0} placeholder={dict?.search} maxLength={4} textAlign={'center'} inputMode='numeric'
           onChange={(e) => setYear(e.target.value)}
           onKeyDown={(e) => e.key === 'Enter' ? updateQuery() : null}></Input>
         <Button onClick={updateQuery} bg={'#384480'} color={'white'} borderLeftRadius={0}><i className='pi pi-search'></i></Button>
@@ -40,7 +42,7 @@ function history() {
                     </Link>
                   </Flex>
                 )
-              }) : (<Missing >{translation?.history?.nohistory}</Missing>)
+              }) : (<Missing >{dict?.nohistory}</Missing>)
           }
         </Flex>
       </Flex>

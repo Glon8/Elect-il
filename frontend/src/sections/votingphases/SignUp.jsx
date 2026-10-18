@@ -9,15 +9,17 @@ import HeadB from '../../components/headers/HeadB'
 import { PseudoLink as Link } from '../../components/PseudoLink'
 
 export default function SignUp({ signSet, ...props }) {
-    const [isSmall] = useMediaQuery("(max-width: 768px)");
-
     const { orientation, translation } = useContext(LanguageContext);
+
+    const [isSmall] = useMediaQuery("(max-width: 768px)");
 
     const [usePhase, setPhase] = useState(true);
     const [useId, setId] = useState('');
     const [useCode, setcode] = useState('');
     const [useTypo, setTypo] = useState(false);
     const [useSent, setSent] = useState(false);
+
+    const dict = translation?.votingSignUp;
 
     const phaseSwitch = () => setPhase(!usePhase);
     const send = () => {
@@ -48,28 +50,20 @@ export default function SignUp({ signSet, ...props }) {
             <Flex alignItems={'center'}>
 
                 <Link disabled={usePhase} onClick={phaseSwitch}>
-                    {
-                        usePhase ?
-                            <HeadB>{translation?.votingSignUp?.signUp}</HeadB> :
-                            translation?.votingSignUp?.signUp
-                    }
+                    {usePhase ? <HeadB>{dict?.signUp}</HeadB> : dict?.signUp}
                 </Link>
                 <i className={`pi pi-angle-${orientation === 'ltr' ? 'right' : 'left'}`} />
                 <Link disabled={!usePhase} onClick={() => !useTypo && useId.length === 9 ? phaseSwitch() : null}>
-                    {
-                        !usePhase ?
-                            <HeadB>{translation?.votingSignUp?.verify}</HeadB> :
-                            translation?.votingSignUp?.verify
-                    }
+                    {!usePhase ? <HeadB>{dict?.verify}</HeadB> : dict?.verify}
                 </Link>
 
             </Flex>
             <Flex h={'auto'} flexDir={'column'} gapY={3}>
 
                 <Text minH={'5rem'} h={'auto'} p={2} rounded={'md'} borderWidth={1} borderColor={'gray.300'} color={'gray'}>
-                    {usePhase ? translation?.votingSignUp?.sug : translation?.votingSignUp?.vg}
+                    {usePhase ? dict?.sug : dict?.vg}
                 </Text>
-                <Input placeholder={usePhase ? translation?.votingSignUp?.sup : translation?.votingSignUp?.vp}
+                <Input placeholder={usePhase ? dict?.sup : dict?.vp}
                     value={usePhase ? useId : useCode}
                     onChange={change}
                     type={"text"}
@@ -78,7 +72,7 @@ export default function SignUp({ signSet, ...props }) {
                     maxLength={usePhase ? 9 : 6}
                     color={useTypo ? 'red' : 'black'} />
                 <Flex w={'full'} justifyContent={'center'}>
-                    <Button disabled={useSent} bgColor={'black'} color={'white'} w={'100%'} h={'2rem'} onClick={send}>{translation?.votingSignUp?.send}</Button>
+                    <Button disabled={useSent} bgColor={'black'} color={'white'} w={'100%'} h={'2rem'} onClick={send}>{dict?.send}</Button>
                 </Flex>
 
             </Flex>

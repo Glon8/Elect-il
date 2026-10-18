@@ -12,13 +12,15 @@ import Seperator from '../components/Seperator'
 export default function Opening() {
     const { translation } = useContext(LanguageContext);
 
+    const dict = translation?.opening;
+
     return (
         <SectionBody bcpr pt={'4rem'} justifyContent={'center'} alignItems={'center'}>
-            <HeadA mb={0}>{translation?.opening?.title}</HeadA>
+            <HeadA mb={0}>{dict?.title}</HeadA>
             <Seperator />
             <Flex flexDir={'column'} gapY={5}>
-                <AText>{translation?.opening?.p1}</AText>
-                <AText>{translation?.opening?.p2}</AText>
+                <AText>{dict?.p1}</AText>
+                <AText>{dict?.p2}</AText>
             </Flex>
         </SectionBody>
     )

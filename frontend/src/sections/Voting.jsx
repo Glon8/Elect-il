@@ -3,7 +3,7 @@ import { useState, useContext } from 'react'
 import { Button, Flex } from '@chakra-ui/react';
 
 import { LanguageContext } from '../context/LanguageContext'
-import { VotingContext } from '../context/VotingContext'
+import { HistoryContext } from '../context/HistoryContext'
 
 import SectionBody from '../components/SectionBody'
 import HeadA from '../components/headers/HeadA';
@@ -16,11 +16,13 @@ import Seperator from '../components/Seperator';
 
 export default function Voting() {
     const { translation } = useContext(LanguageContext);
-    const { parties } = useContext(VotingContext);
+    const { dateObj } = useContext(HistoryContext);
 
     const [usePageState, setPageState] = useState(1);
     const [usePolicyState, setPolicyState] = useState(false);
     const [useSignState, setSignState] = useState(false);
+
+    const dict = translation?.voting;
 
     const cancel = () => { setPageState(1); setSignState(false); setPolicyState(false); }
     const nextPhase = () => setPageState(usePageState === 4 ? 1 : usePageState + 1);
@@ -31,10 +33,10 @@ export default function Voting() {
     return (
         <SectionBody tcpl bcpl justifyContent={'center'} alignContent={'center'} my={'3rem'}>
 
-            <HeadA mb={0}>{translation?.voting?.title}</HeadA>
+            <HeadA mb={0}>{dict?.title}</HeadA>
             <Seperator />
             {
-                parties != null && parties.length != 0 ? (
+                !!dateObj && Object.keys(dateObj).length !== 0 ? (
                     <>
                         {usePageState === 1 ? <Greeting /> : ''}
                         {usePageState === 2 ? <Policy policySwitch={policyState} /> : ''}
@@ -44,17 +46,17 @@ export default function Voting() {
                         <Flex mt={'1rem'} gapX={5} justifyContent={'space-around'}>
                             {usePageState === 1 ? '' : (
                                 <Button w={'45%'} bg={'#384480'} color={'white'} onClick={() => { cancel(); setPolicyState(false); }}>
-                                    {usePageState === 1 ? '' : translation?.voting?.cancel}
+                                    {usePageState === 1 ? '' : dict?.cancel}
                                 </Button>
                             )}
                             {usePageState === 4 ? '' : (
                                 <Button disabled={usePageState == 2 && !usePolicyState || usePageState == 3 && !useSignState} w={'45%'} bg={'#384480'} color={'white'} onClick={nextPhase}>
-                                    {usePageState === 4 ? '' : translation?.voting?.continue}
+                                    {usePageState === 4 ? '' : dict?.continue}
                                 </Button>
                             )}
                         </Flex>
                     </>
-                ) : (<Missing >{translation?.voting?.error}</Missing>)
+                ) : (<Missing >{dict?.error}</Missing>)
             }
 
         </SectionBody>

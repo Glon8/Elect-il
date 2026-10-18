@@ -12,26 +12,28 @@ import AText from '../components/AText'
 import Seperator from '../components/Seperator';
 
 export default function Encryption() {
+    const { translation } = useContext(LanguageContext);
+
     const [isSmall] = useMediaQuery("(max-width: 768px)");
 
-    const { translation } = useContext(LanguageContext);
+    const dict = translation?.encryption;
 
     return (
         <SectionBody justifyContent={'bottom'} overflowY={'auto'} gapY={3} my={'2rem'}>
-            <HeaderA mb={0} mt={isSmall ? 2 : 0}>{translation?.encryption?.title}</HeaderA>
+            <HeaderA mb={0} mt={isSmall ? 2 : 0}>{dict?.title}</HeaderA>
             <Seperator mt={2} mb={3} />
-            <AText> {translation?.encryption?.p1} </AText>
-            <HeaderB>{translation?.encryption?.subTitle1}</HeaderB>
-            <AText> {translation?.encryption?.p2} </AText>
-            <AText> {translation?.encryption?.p3} </AText>
-            <AText> {translation?.encryption?.p4} </AText>
-            <HeaderC> {translation?.encryption?.p5} </HeaderC>
-            <AText> {translation?.encryption?.p6} </AText>
-            <HeaderB>{translation?.encryption?.subTitle2}</HeaderB>
-            <AText> {translation?.encryption?.p7} </AText>
-            <AText> {translation?.encryption?.p8} </AText>
-            <AText> {translation?.encryption?.p9} </AText>
-            <HeaderC> {translation?.encryption?.p10} </HeaderC>
+            <AText> {dict?.p1} </AText>
+            <HeaderB>{dict?.subTitle1}</HeaderB>
+            <AText> {dict?.p2} </AText>
+            <AText> {dict?.p3} </AText>
+            <AText> {dict?.p4} </AText>
+            <HeaderC> {dict?.p5} </HeaderC>
+            <AText> {dict?.p6} </AText>
+            <HeaderB>{dict?.subTitle2}</HeaderB>
+            <AText> {dict?.p7} </AText>
+            <AText> {dict?.p8} </AText>
+            <AText> {dict?.p9} </AText>
+            <HeaderC> {dict?.p10} </HeaderC>
         </SectionBody>
     )
 }

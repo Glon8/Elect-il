@@ -2,7 +2,6 @@ import { useEffect, useState, useContext } from 'react'
 
 import { Flex, Text, useMediaQuery } from '@chakra-ui/react'
 import { LanguageContext } from '../context/LanguageContext'
-import { VotingContext } from '../context/VotingContext'
 import { HistoryContext } from '../context/HistoryContext'
 
 import SectionBody from '../components/SectionBody'
@@ -15,61 +14,54 @@ import Seperator from '../components/Seperator'
 
 export default function Statistics() {
   const { translation } = useContext(LanguageContext);
-  const { parties } = useContext(VotingContext);
-  const { date, query } = useContext(HistoryContext);
+  const { dateObj } = useContext(HistoryContext);
 
   const [isSmall] = useMediaQuery("(max-width: 768px)");
 
   const [useVotes, setVotes] = useState(0);
-  const [useTop, setTop] = useState([]);
 
-  const totalVotes = () => {
-    const sum = parties.reduce((total, item) => total + item.votes, 0);
-    //const sum = query[query.length - 1]?.votes.reduce((total, value) => total + value, 0);
+  const totalVotes = (object) => object?.votes.reduce((total, value) => total + value, 0);
 
-    setVotes(sum);
-  }
-
-  const topPartys = () => {
-    const partyList = [...parties]
-      .sort((a, b) => { a.votes - b.votes })
-      .slice(0, 3);
-
-    setTop(partyList);
-  }
+  const dict = translation?.statistics;
 
   useEffect(() => {
-    totalVotes();
-    topPartys();
-  }, [parties, date, query]);
+    if (!dateObj) return;
+
+    const sum = totalVotes(dateObj);
+
+    setVotes(sum);
+  }, [dateObj]);
 
   return (
     <SectionBody tcpr bcpr justifyContent={'center'} my={'3rem'}>
 
-      <HeadA mb={0}>{translation?.statistics?.title}</HeadA>
+      <HeadA mb={0}>{dict?.title}</HeadA>
       <Seperator />
       {
-        parties != null && parties.length != 0 ?
+        !!dateObj ?
           (<> <HeadBody h={'auto'} position={'initial'} flexDir={'column'} justifyContent={'space-evenly'} rounded={'md'} borderWidth={1} borderColor={'gray.300'}>
-            <HeadB>{translation?.statistics?.totalvotes}</HeadB>
+            <HeadB>{dict?.totalvotes}</HeadB>
             <StValues color={'#4E5EB1'} letterSpacing={2} fontSize={'2rem'} fontWeight={'bolder'}>{useVotes}</StValues>
           </HeadBody>
-            <HeadB mt={3} textAlign={'center'}>{translation?.statistics?.graphtitle}</HeadB>
+            <HeadB mt={3} textAlign={'center'}>{dict?.graphtitle}</HeadB>
             <Flex w={'100%'} h={!isSmall ? 'auto' : 'auto'} flexDir={'column'} gapY={1} overflowY={'auto'} style={{ direction: 'ltr' }}>
               {
-                parties?.map((item, ind) => {
-                  const width = Math.floor((item.votes * 100) / useVotes);
+                dateObj?.parties.map((party, ind) => {
+                  const key = `stats${ind}`
 
-                  return <Flex w={'100%'} borderXWidth={3} borderColor={'black'} bg={'blue.100'} position={'relative'}>
+                  const vote = dateObj.votes[ind];
+                  const width = Math.floor((vote * 100) / useVotes);
+
+                  return <Flex key={key} w={'100%'} borderXWidth={3} borderColor={'black'} bg={'blue.100'} position={'relative'}>
                     <Flex w={`${width}%`} minH={'3rem'} bg={'blue.500'}> </Flex>
-                    <Text position={'absolute'} left={5} top={3} px={1} textAlign={'center'} bg={'white'} rounded={'md'} borderColor={'gray.300'}>{item.party}</Text>
-                    <Text position={'absolute'} right={5} top={3} px={1} textAlign={'center'} bg={'white'} rounded={'md'} borderColor={'gray.300'}>{item.votes}</Text>
+                    <Text position={'absolute'} left={5} top={3} px={1} textAlign={'center'} bg={'white'} rounded={'md'} borderColor={'gray.300'}>{party}</Text>
+                    <Text position={'absolute'} right={5} top={3} px={1} textAlign={'center'} bg={'white'} rounded={'md'} borderColor={'gray.300'}>{vote}</Text>
                   </Flex>
                 })
               }
             </Flex>
           </>)
-          : (<Missing spinner >{translation?.statistics?.error}</Missing>)
+          : (<Missing spinner >{dict?.error}</Missing>)
       }
 
     </SectionBody>

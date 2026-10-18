@@ -10,11 +10,13 @@ import Seperator from '../components/Seperator';
 export default function License() {
     const { translation } = useContext(LanguageContext);
 
+    const dict = translation?.license;
+
     return (
         <SectionBody justifyContent={'center'}>
-            <HeaderA mb={0}>{translation?.license?.title}</HeaderA>
+            <HeaderA mb={0}>{dict?.title}</HeaderA>
             <Seperator mt={2} mb={3} />
-            <AText>{translation?.license?.p1}</AText>
+            <AText>{dict?.p1}</AText>
         </SectionBody>
     )
 }

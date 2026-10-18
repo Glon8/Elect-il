@@ -1,4 +1,4 @@
-import { createContext, useState } from 'react'
+import { createContext, useState, useEffect } from 'react'
 
 import { nowDate, paramsReplacement } from '../../util';
 
@@ -211,8 +211,14 @@ export function HistoryProvider({ children }) {
     const [useQuery, setQuery] = useState([]);
     const [useYear, setYear] = useState(String(new Date().getFullYear()));
     const [useDate, setDate] = useState(String(nowDate()));
+    const [useSelected, setSelected] = useState(-1);
+    const [useDateObj, setDateObj] = useState(null);
+
+    const findDate = (date) => useQuery?.find(item => item.starts === date);
 
     const latestDate = () => useQuery[useQuery.length - 1]?.starts;
+
+    const vote = () => console.log('Vote sent');
 
     const updateQuery = () => {
         if (typeof useYear != 'string' || useYear.length < 4) return;
@@ -260,8 +266,16 @@ export function HistoryProvider({ children }) {
         paramsReplacement(params);
     }
 
+    useEffect(() => {
+        const newDateObj = findDate(useDate);
+
+        if (useDateObj?.starts === newDateObj?.starts) return;
+
+        setDateObj(newDateObj);
+    }, [useDate]);
+
     return (
-        <HistoryContext.Provider value={{ year: useYear, setYear, date: useDate, setDate, query: useQuery, setQuery, updateQuery, findQuery }}>
+        <HistoryContext.Provider value={{ year: useYear, setYear, date: useDate, setDate, query: useQuery, setQuery, selected: useSelected, setSelected, dateObj: useDateObj, updateQuery, findQuery, vote }}>
             {children}
         </HistoryContext.Provider>
     )

@@ -10,16 +10,19 @@ import Seperator from '../components/Seperator';
 
 export default function Us() {
     const { translation } = useContext(LanguageContext);
+
     const [isSmall] = useMediaQuery("(max-width: 768px)");
 
+    const dict = translation?.us;
+
     return (
-        <SectionBody  justifyContent={isSmall ? 'bottom' : 'center'} overflowY={'auto'} gapY={3} my={'2rem'}>
-            <HeaderA mb={0}>{translation?.us?.title}</HeaderA>
+        <SectionBody justifyContent={isSmall ? 'bottom' : 'center'} overflowY={'auto'} gapY={3} my={'2rem'}>
+            <HeaderA mb={0}>{dict?.title}</HeaderA>
             <Seperator mt={2} mb={3} />
             <Flex flexDir={'column'} gapY={3}>
-                <AText>{translation?.us?.p1}</AText>
-                <AText>{translation?.us?.p2}</AText>
-                <AText>{translation?.us?.p3}</AText>
+                <AText>{dict?.p1}</AText>
+                <AText>{dict?.p2}</AText>
+                <AText>{dict?.p3}</AText>
             </Flex>
         </SectionBody>
     )

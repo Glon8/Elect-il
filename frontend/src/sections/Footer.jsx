@@ -11,6 +11,8 @@ export default function Footer() {
   const { pageUpdate } = useContext(PageContext);
   const { translation } = useContext(LanguageContext);
 
+  const dict = translation?.footer;
+
   const navigate = (path) => {
     pageUpdate(path);
 
@@ -18,9 +20,9 @@ export default function Footer() {
   }
 
   const options = [
-    { name: translation?.footer?.us, onClick: () => navigate('us') },
-    { name: translation?.footer?.encr, onClick: () => navigate('encryption') },
-    { name: translation?.footer?.appr, onClick: () => navigate('license') },
+    { name: dict?.us, onClick: () => navigate('us') },
+    { name: dict?.encr, onClick: () => navigate('encryption') },
+    { name: dict?.appr, onClick: () => navigate('license') },
   ]
   return (
     <FootBody flexDir={{ base: 'column', smToMd: 'column', md: 'row' }} alignItems={'center'} justifyContent={'center'} bg={'#0E2739'} gapX={'5rem'} gapY={'8px'} >

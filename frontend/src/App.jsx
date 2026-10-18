@@ -1,5 +1,3 @@
-import { useState } from 'react'
-
 import { Provider } from './components/ui/provider'
 
 import { ManagerProvider } from './context/ManagerContext'
@@ -8,7 +6,6 @@ import { SignProvider } from './context/SignContext'
 import { ModeProvider } from './context/ModeContext'
 import { LanguageProvider } from './context/LanguageContext'
 import { HistoryProvider } from './context/HistoryContext'
-import { VotingProvider } from './context/VotingContext'
 
 import Body from './pages/Body'
 
@@ -24,19 +21,15 @@ function App() {
 
             <SignProvider>
 
-              <VotingProvider>
+              <PageProvider>
 
-                <PageProvider>
+                <ManagerProvider>
 
-                  <ManagerProvider>
+                  <Body />
 
-                    <Body />
+                </ManagerProvider>
 
-                  </ManagerProvider>
-
-                </PageProvider>
-
-              </VotingProvider>
+              </PageProvider>
 
             </SignProvider>
 
