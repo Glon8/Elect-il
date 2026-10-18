@@ -4,6 +4,8 @@ import { Flex, Link, Text, Input, useMediaQuery, Button } from '@chakra-ui/react
 import { LanguageContext } from '../context/LanguageContext'
 import { HistoryContext } from '../context/HistoryContext'
 
+import { paramsReplacement } from '../../util'
+
 import SectionBody from '../components/SectionBody'
 import HeadA from '../components/headers/HeadA'
 import AText from '../components/AText'
@@ -12,7 +14,7 @@ import Seperator from '../components/Seperator'
 
 function history() {
   const { translation } = useContext(LanguageContext);
-  const { query, year, setYear, updateQuery } = useContext(HistoryContext);
+  const { query, year, date, setDate, setYear, updateQuery } = useContext(HistoryContext);
 
   const [isSmall] = useMediaQuery("(max-width: 768px)");
 
@@ -36,8 +38,22 @@ function history() {
             query !== null && query.length != 0 ?
               query?.map((item, ind) => {
                 return (
-                  <Flex key={`history${ind}`} w={!isSmall ? '19%' : '48%'} h={'3rem'} justifyContent={'center'} rounded={'1rem'} bg={'transparent'} borderWidth={1} borderColor={'gray.300'}>
-                    <Link h={'3rem'} justifyContent={'space-around'} color={'black'} rounded={'md'} onClick={(e) => { e.preventDefault(); }}>
+                  <Flex key={`history${ind}`} w={!isSmall ? '19%' : '48%'} h={'3rem'} justifyContent={'center'} rounded={'1rem'} bg={item.starts === date ? 'gray.100' : 'transparent'} borderWidth={1} borderColor={'gray.300'}>
+                    <Link h={'3rem'} justifyContent={'space-around'} color={'black'} rounded={'md'} onClick={(e) => {
+                      e.preventDefault();
+
+                      const latest = item.starts;
+
+                      if (latest === date) return;
+
+                      const params = new URLSearchParams(window.location.search);
+
+                      params.set('date', latest);
+
+                      paramsReplacement(params);
+
+                      setDate(latest);
+                    }}>
                       <Text fontWeight={'medium'} textAlign={'center'} textOverflow={'ellipsis'} overflow={'hidden'} whiteSpace={'nowrap'}>{item.starts}</Text>
                     </Link>
                   </Flex>

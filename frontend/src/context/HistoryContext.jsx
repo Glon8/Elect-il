@@ -245,9 +245,13 @@ export function HistoryProvider({ children }) {
 
         const params = new URLSearchParams(window.location.search);
 
-        params.set('date', latestDate());
+        const latest = latestDate();
+
+        params.set('date', latest);
 
         paramsReplacement(params);
+
+        //if (result && result.length) setDate(latest);
     }
     // for local search > temporary display initiation
     const findQuery = (year) => {
@@ -261,9 +265,13 @@ export function HistoryProvider({ children }) {
 
         const params = new URLSearchParams(window.location.search);
 
-        params.set('date', !result || !result.length ? nowDate() : latestDate());
+        const latest = latestDate();
+
+        params.set('date', !result || !result.length ? nowDate() : latest);
 
         paramsReplacement(params);
+
+        //if (result && result.length) setDate(latest);
     }
 
     useEffect(() => {
