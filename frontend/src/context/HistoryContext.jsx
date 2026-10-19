@@ -213,6 +213,7 @@ export function HistoryProvider({ children }) {
     const [useDate, setDate] = useState(String(nowDate()));
     const [useSelected, setSelected] = useState(-1);
     const [useDateObj, setDateObj] = useState(null);
+    const [useVoteObj, setVoteObj] = useState(null);
 
     const findDate = (date) => useQuery?.find(item => item.starts === date);
 
@@ -247,9 +248,17 @@ export function HistoryProvider({ children }) {
 
         setQuery(result ?? []);
 
-        const dateExist = result.some(item => item.starts === tDate);
+        const dateExist = result?.some(item => item.starts === tDate);
 
         if (result && result?.length) setDate(dateExist ? tDate : latestDate(result));
+    }
+
+    const getVoting = () => {
+        const votingResult = useHistory.find(item => item.date === String(new Date().getFullYear()))?.data;
+
+        const votingDate = votingResult.find(item => item.starts === latestDate(votingResult));
+
+        setVoteObj(votingDate);
     }
 
     useEffect(() => {
@@ -267,7 +276,7 @@ export function HistoryProvider({ children }) {
     }, [useDate]);
 
     return (
-        <HistoryContext.Provider value={{ year: useYear, setYear, date: useDate, setDate, query: useQuery, setQuery, selected: useSelected, setSelected, dateObj: useDateObj, updateQuery, findQuery, vote }}>
+        <HistoryContext.Provider value={{ year: useYear, setYear, date: useDate, setDate, query: useQuery, setQuery, selected: useSelected, setSelected, dateObj: useDateObj, voteObj: useVoteObj, getVoting, updateQuery, findQuery, vote }}>
             {children}
         </HistoryContext.Provider>
     )

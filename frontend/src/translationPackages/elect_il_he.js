@@ -28,7 +28,7 @@ export const content = {
         warning: 'לשימוש מנהלים בלבד!',
     },
     statistics: {
-        title: 'סטטיסטיקה עדכנית',
+        title: 'סטטיסטיקה',
         totalvotes: ':ס"הכ משתתפים עד כה',
         graphtitle: 'קולות עבור מפלגה:',
         topleaders: ':שלושה מובילים',
@@ -41,10 +41,13 @@ export const content = {
         continue: "המשך",
     },
     votinGreeting: {
-        title: "הצבעה נוכחית",
+        title: "הצבעה אחרונה",
         greeting: "לקול שלך יש חשיבות! הקדש רגע כדי להצביע ולהשמיע את דעתך. לכל קול יש משמעות.",
-        began: "התחלת הצבעה",
-        finish: "סיום הצבעה",
+        began: "מ",
+        finish: "עד",
+        status: "מצב",
+        open: "פעילה",
+        closed: "נסגרה",
         summary: "הצביעו לפני שההצבעה מסתיימת וקחו חלק בקבלת ההחלטה!",
     },
     votingPolicy: {

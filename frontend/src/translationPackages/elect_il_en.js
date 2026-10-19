@@ -28,7 +28,7 @@ export const content = {
         warning: 'For moderators use ONLY!',
     },
     statistics: {
-        title: 'Updated Statistics',
+        title: 'Statistics',
         totalvotes: 'Total voting participants:',
         graphtitle: 'Votes per party:',
         topleaders: 'Top leaders:',
@@ -41,10 +41,13 @@ export const content = {
         continue: "Continue",
     },
     votinGreeting: {
-        title: "On Going Voting",
+        title: "Recent Voting",
         greeting: "Your voice matters! Take a moment to cast your vote and let your opinion be heard. Every vote counts.",
-        began: "Began on date",
-        finish: "About to finish on date",
+        began: "From",
+        finish: "To",
+        status: "Status",
+        open: "Ongoing",
+        closed: "Finished",
         summary: "Cast your vote before the voting closes and be part of the decision!",
     },
     votingPolicy: {

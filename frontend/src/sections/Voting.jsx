@@ -16,7 +16,7 @@ import Seperator from '../components/Seperator';
 
 export default function Voting() {
     const { translation } = useContext(LanguageContext);
-    const { dateObj } = useContext(HistoryContext);
+    const { voteObj } = useContext(HistoryContext);
 
     const [usePageState, setPageState] = useState(1);
     const [usePolicyState, setPolicyState] = useState(false);
@@ -36,25 +36,28 @@ export default function Voting() {
             <HeadA mb={0}>{dict?.title}</HeadA>
             <Seperator />
             {
-                !!dateObj && Object.keys(dateObj).length !== 0 ? (
+                !!voteObj && Object.keys(voteObj).length !== 0 ? (
                     <>
                         {usePageState === 1 ? <Greeting /> : ''}
                         {usePageState === 2 ? <Policy policySwitch={policyState} /> : ''}
                         {usePageState === 3 ? <SignUp signSet={signState} /> : ''}
                         {usePageState === 4 ? <Vote /> : ''}
 
-                        <Flex mt={'1rem'} gapX={5} justifyContent={'space-around'}>
-                            {usePageState === 1 ? '' : (
-                                <Button w={'45%'} bg={'#384480'} color={'white'} onClick={() => { cancel(); setPolicyState(false); }}>
-                                    {usePageState === 1 ? '' : dict?.cancel}
-                                </Button>
-                            )}
-                            {usePageState === 4 ? '' : (
-                                <Button disabled={usePageState == 2 && !usePolicyState || usePageState == 3 && !useSignState} w={'45%'} bg={'#384480'} color={'white'} onClick={nextPhase}>
-                                    {usePageState === 4 ? '' : dict?.continue}
-                                </Button>
-                            )}
-                        </Flex>
+                        {
+                            voteObj?.open ?
+                                (<Flex mt={'1rem'} gapX={5} justifyContent={'space-around'}>
+                                    {usePageState === 1 ? '' : (
+                                        <Button w={'45%'} bg={'#384480'} color={'white'} onClick={() => { cancel(); setPolicyState(false); }}>
+                                            {usePageState === 1 ? '' : dict?.cancel}
+                                        </Button>
+                                    )}
+                                    {usePageState === 4 ? '' : (
+                                        <Button disabled={usePageState == 2 && !usePolicyState || usePageState == 3 && !useSignState} w={'45%'} bg={'#384480'} color={'white'} onClick={nextPhase}>
+                                            {usePageState === 4 ? '' : dict?.continue}
+                                        </Button>
+                                    )}
+                                </Flex>) : ''
+                        }
                     </>
                 ) : (<Missing >{dict?.error}</Missing>)
             }

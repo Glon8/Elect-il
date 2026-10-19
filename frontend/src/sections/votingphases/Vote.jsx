@@ -12,7 +12,7 @@ import HeadC from '../../components/headers/HeadC'
 
 export default function Vote({ ...props }) {
     const { translation } = useContext(LanguageContext);
-    const { dateObj, setSelected } = useContext(HistoryContext);
+    const { voteObj, setSelected } = useContext(HistoryContext);
     const { votePopFlip } = useContext(PageContext);
 
     const dict = translation?.votingVote;
@@ -29,7 +29,7 @@ export default function Vote({ ...props }) {
             </Flex>
             <Flex flexDir={'column'} h={'95%'} overflowY={'auto'} mt={2} gapY={3} style={{ direction: 'ltr' }}>
                 {
-                    dateObj?.parties?.map((party, ind) => {
+                    voteObj?.parties?.map((party, ind) => {
                         const key = `vote${ind}`;
                         const even = ind % 2 == 0;
 
@@ -37,7 +37,7 @@ export default function Vote({ ...props }) {
                             <HeadBody bg={even ? 'blue.100' : 'wite'} minH={'5rem'} h={'auto'} position={'initial'} key={key} py={2} borderYWidth={1} borderColor={'gray.300'}>
                                 <Image></Image>
                                 <Text w={'40%'} overflow={'hidden'} textOverflow={'ellipsis'} whiteSpace={'nowrap'}>{party}</Text>
-                                <Text w={'40%'} overflow={'hidden'} textOverflow={'ellipsis'} whiteSpace={'nowrap'}>{dateObj?.candidates[ind]}</Text>
+                                <Text w={'40%'} overflow={'hidden'} textOverflow={'ellipsis'} whiteSpace={'nowrap'}>{voteObj?.candidates[ind]}</Text>
                                 <Button w={0} rounded={'full'} bg={'white'} color={'black'} borderColor={'gray.300'} fontWeight={'bolder'} fontSize={'xl'} onClick={() => { setSelected(ind); votePopFlip(); }}><i className='pi pi-check'></i></Button>
                             </HeadBody>
                         )

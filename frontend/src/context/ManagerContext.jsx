@@ -13,9 +13,8 @@ export const ManagerProvider = ({ children }) => {
     const { page, pageSup, pageUpdate } = useContext(PageContext);
     const { langSup, langUpdate } = useContext(LanguageContext);
     const { mode, modeSup, modeUpdate } = useContext(ModeContext);
-    const { date, findQuery } = useContext(HistoryContext);
+    const { date, findQuery, getVoting } = useContext(HistoryContext);
 
-    const path = window.location.pathname;
     const params = new URLSearchParams(window.location.search);
 
     const curPage = getPath(1);
@@ -60,6 +59,8 @@ export const ManagerProvider = ({ children }) => {
         // history init \/
         if (!curDate || !dateVerify(curDate)) findQuery(date);
         else findQuery(curDate);
+
+        getVoting();
     }, []);
 
     return (

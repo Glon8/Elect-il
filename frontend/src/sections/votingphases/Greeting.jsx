@@ -10,7 +10,7 @@ import AText from '../../components/AText'
 
 export default function Greeting({ ...props }) {
     const { translation } = useContext(LanguageContext);
-    const { dateObj } = useContext(HistoryContext);
+    const { voteObj } = useContext(HistoryContext);
 
     const dict = translation?.votinGreeting;
 
@@ -23,12 +23,18 @@ export default function Greeting({ ...props }) {
             <Flex gapY={5} flexDir={'column'} p={2} rounded={'md'} borderWidth={1} borderColor={'gray.300'}>
                 <AText>{dict?.greeting}</AText>
                 <Flex gapX={3}>
-                    <HeadC>{dict?.began}:</HeadC>
-                    <AText>{readify(dateObj?.starts)}</AText>
+                    <Flex gapX={1}>
+                        <HeadC>{dict?.began} - </HeadC>
+                        <AText>{readify(voteObj?.starts)}</AText>
+                    </Flex>
+                    <Flex gapX={1}>
+                        <HeadC>{dict?.finish} - </HeadC>
+                        <AText>{readify(voteObj?.ends)}</AText>
+                    </Flex>
                 </Flex>
                 <Flex gapX={3}>
-                    <HeadC>{dict?.finish}:</HeadC>
-                    <AText>{readify(dateObj?.ends)}</AText>
+                    <HeadC>{dict?.status}:</HeadC>
+                    <AText>{voteObj?.open ? dict?.open : dict?.closed}</AText>
                 </Flex>
                 <AText>{dict?.summary}</AText>
             </Flex>
