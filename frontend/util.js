@@ -37,4 +37,6 @@ export const yearExtract = (date) => {
     else return String(new Date().getFullYear());
 }
 
+export const dateReadify = (date) => date?.replace(/-/g, '.');
+
 export const dateVerify = (string) => typeof string === 'string' && string.length === 10 && /^\d{2}-\d{2}-\d{4}$/.test(string);

@@ -29,6 +29,7 @@ export const content = {
     },
     statistics: {
         title: 'Statistics',
+        date: 'Date',
         totalvotes: 'Total voting participants:',
         graphtitle: 'Votes per party:',
         topleaders: 'Top leaders:',

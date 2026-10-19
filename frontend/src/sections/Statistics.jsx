@@ -4,17 +4,21 @@ import { Flex, Text, useMediaQuery } from '@chakra-ui/react'
 import { LanguageContext } from '../context/LanguageContext'
 import { HistoryContext } from '../context/HistoryContext'
 
+import { dateReadify } from '../../util'
+
 import SectionBody from '../components/SectionBody'
 import HeadBody from '../components/HeadBody'
 import HeadA from '../components/headers/HeadA'
 import HeadB from '../components/headers/HeadB'
+import HeadC from '../components/headers/HeadC'
+import AText from '../components/AText'
 import StValues from '../components/StValues'
 import Missing from '../components/Missing'
 import Seperator from '../components/Seperator'
 
 export default function Statistics() {
   const { translation } = useContext(LanguageContext);
-  const { dateObj } = useContext(HistoryContext);
+  const { date, dateObj } = useContext(HistoryContext);
 
   const [isSmall] = useMediaQuery("(max-width: 768px)");
 
@@ -39,10 +43,15 @@ export default function Statistics() {
       <Seperator />
       {
         !!dateObj ?
-          (<> <HeadBody h={'auto'} position={'initial'} flexDir={'column'} justifyContent={'space-evenly'} rounded={'md'} borderWidth={1} borderColor={'gray.300'}>
-            <HeadB>{dict?.totalvotes}</HeadB>
-            <StValues color={'#4E5EB1'} letterSpacing={2} fontSize={'2rem'} fontWeight={'bolder'}>{useVotes}</StValues>
-          </HeadBody>
+          (<>
+            <Flex gapX={3} mb={3}>
+              <HeadC>{dict?.date}:</HeadC>
+              <AText>{dateReadify(date) ?? "404"}</AText>
+            </Flex>
+            <HeadBody h={'auto'} position={'initial'} flexDir={'column'} justifyContent={'space-evenly'} rounded={'md'} borderWidth={1} borderColor={'gray.300'}>
+              <HeadB>{dict?.totalvotes}</HeadB>
+              <StValues color={'#4E5EB1'} letterSpacing={2} fontSize={'2rem'} fontWeight={'bolder'}>{useVotes}</StValues>
+            </HeadBody>
             <HeadB mt={3} textAlign={'center'}>{dict?.graphtitle}</HeadB>
             <Flex w={'100%'} h={!isSmall ? 'auto' : 'auto'} flexDir={'column'} gapY={1} overflowY={'auto'} style={{ direction: 'ltr' }}>
               {

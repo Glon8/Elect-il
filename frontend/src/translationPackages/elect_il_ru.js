@@ -29,6 +29,7 @@ export const content = {
     },
     statistics: {
         title: 'Статистика',
+        date: 'Дата',
         totalvotes: 'Всего участвующих:',
         graphtitle: 'Голоса за партию:',
         topleaders: 'Ведущие лидеры:',

@@ -29,6 +29,7 @@ export const content = {
     },
     statistics: {
         title: 'סטטיסטיקה',
+        date: 'תאריך',
         totalvotes: ':ס"הכ משתתפים עד כה',
         graphtitle: 'קולות עבור מפלגה:',
         topleaders: ':שלושה מובילים',

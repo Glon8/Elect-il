@@ -8,13 +8,13 @@ import HeadB from '../../components/headers/HeadB'
 import HeadC from '../../components/headers/HeadC'
 import AText from '../../components/AText'
 
+import { dateReadify } from '../../../util'
+
 export default function Greeting({ ...props }) {
     const { translation } = useContext(LanguageContext);
     const { voteObj } = useContext(HistoryContext);
 
     const dict = translation?.votinGreeting;
-
-    const readify = (obj) => obj?.replace(/-/g, '.')
 
     return (
         <Flex w={'100%'} flexDir={'column'} justifyContent={'center'} gapY={3} mb={5} {...props}>
@@ -25,11 +25,11 @@ export default function Greeting({ ...props }) {
                 <Flex gapX={3}>
                     <Flex gapX={1}>
                         <HeadC>{dict?.began} - </HeadC>
-                        <AText>{readify(voteObj?.starts)}</AText>
+                        <AText>{dateReadify(voteObj?.starts)}</AText>
                     </Flex>
                     <Flex gapX={1}>
                         <HeadC>{dict?.finish} - </HeadC>
-                        <AText>{readify(voteObj?.ends)}</AText>
+                        <AText>{dateReadify(voteObj?.ends)}</AText>
                     </Flex>
                 </Flex>
                 <Flex gapX={3}>
