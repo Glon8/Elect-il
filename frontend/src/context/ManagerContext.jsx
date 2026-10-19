@@ -57,21 +57,18 @@ export const ManagerProvider = ({ children }) => {
         }
         else modeUpdate(curMode);
 
-        if (!curDate || !dateVerify(curDate)) {
-            // param set \/
-            params.set('date', date);
-            paramsReplacement(params);
+        if (!curDate || !dateVerify(curDate)) { // < if params date  invalid
             // history init \/
-            findQuery(year);
+            findQuery(year); // < find a query using current(default) year
         }
-        else {
-            setDate(curDate);
+        else { // < if params are good
+            setDate(curDate); // < update the date
 
-            const year = yearExtract(curDate);
+            const year = yearExtract(curDate); // < strip the year out
 
-            setYear(year);
+            setYear(year); // < set the year on
             // history init \/
-            findQuery(year);
+            findQuery(year); // < find a query using given year
         }
     }, []);
 

@@ -216,14 +216,12 @@ export function HistoryProvider({ children }) {
 
     const findDate = (date) => useQuery?.find(item => item.starts === date);
 
-    const latestDate = () => useQuery[useQuery.length - 1]?.starts;
+    const latestDate = (query) => query[query.length - 1]?.starts;
 
     const vote = () => console.log('Vote sent');
 
     const updateQuery = () => {
         if (typeof useYear != 'string' || useYear.length < 4) return;
-
-        console.log('entered');
 
         const newYear = Number(useYear);
 
@@ -231,47 +229,41 @@ export function HistoryProvider({ children }) {
 
         if (newYear <= 1900 || newYear > 3000) return;
 
-        // < pull on query from the server
-        console.log('size is ok');
-
-        // temporary display
         const clearedYear = useYear.trim();
 
-        const result = useHistory.find(item => item.date === clearedYear);
+        const result = useHistory.find(item => item.date === clearedYear)?.data; // < pull on query from the server
 
-        setQuery(result?.data ?? []);
+        setQuery(result ?? []);
 
-        if (!useQuery || !useQuery.length) return;
+        if (!result || !result?.length) return;
 
         const params = new URLSearchParams(window.location.search);
 
-        const latest = latestDate();
+        const latest = latestDate(result ?? []);
 
         params.set('date', latest);
 
         paramsReplacement(params);
 
-        //if (result && result.length) setDate(latest);
+        if (result && result?.length) setDate(latest);
     }
-    // for local search > temporary display initiation
+
     const findQuery = (year) => {
         if (typeof year != 'string' || year.length < 4) return;
 
-        const clearedYear = year.trim();
+        const result = useHistory.find(item => item.date === year.trim())?.data; // < pull on query from the server
 
-        const result = useHistory.find(item => item.date === clearedYear);
-
-        setQuery(result?.data ?? []);
+        setQuery(result ?? []);
 
         const params = new URLSearchParams(window.location.search);
 
-        const latest = latestDate();
+        const latest = latestDate(result ?? []);
 
-        params.set('date', !result || !result.length ? nowDate() : latest);
+        params.set('date', !result || !result?.length ? nowDate() : latest);
 
         paramsReplacement(params);
 
-        //if (result && result.length) setDate(latest);
+        if (result && result?.length) setDate(latest);
     }
 
     useEffect(() => {
