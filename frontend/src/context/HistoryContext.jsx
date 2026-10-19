@@ -1,6 +1,6 @@
 import { createContext, useState, useEffect } from 'react'
 
-import { nowDate, paramsReplacement } from '../../util';
+import { dateVerify, nowDate, paramsReplacement, yearExtract } from '../../util';
 
 export const HistoryContext = createContext(null);
 
@@ -229,41 +229,27 @@ export function HistoryProvider({ children }) {
 
         if (newYear <= 1900 || newYear > 3000) return;
 
-        const clearedYear = useYear.trim();
-
-        const result = useHistory.find(item => item.date === clearedYear)?.data; // < pull on query from the server
+        const result = useHistory.find(item => item.date === useYear.trim())?.data; // < pull on query from the server
 
         setQuery(result ?? []);
-
-        if (!result || !result?.length) return;
-
-        const params = new URLSearchParams(window.location.search);
-
-        const latest = latestDate(result ?? []);
-
-        params.set('date', latest);
-
-        paramsReplacement(params);
-
-        if (result && result?.length) setDate(latest);
     }
 
-    const findQuery = (year) => {
-        if (typeof year != 'string' || year.length < 4) return;
+    const findQuery = (date) => {
+        let tDate = date;
+        let tYear = useYear;
 
-        const result = useHistory.find(item => item.date === year.trim())?.data; // < pull on query from the server
+        if (!dateVerify(date)) tDate = useDate;
+        else tYear = yearExtract(date);
+
+        setYear(tYear);
+
+        const result = useHistory.find(item => item.date === tYear)?.data; // < pull on query from the server
 
         setQuery(result ?? []);
 
-        const params = new URLSearchParams(window.location.search);
+        const dateExist = result.some(item => item.starts === tDate);
 
-        const latest = latestDate(result ?? []);
-
-        params.set('date', !result || !result?.length ? nowDate() : latest);
-
-        paramsReplacement(params);
-
-        if (result && result?.length) setDate(latest);
+        if (result && result?.length) setDate(dateExist ? tDate : latestDate(result));
     }
 
     useEffect(() => {
@@ -272,6 +258,12 @@ export function HistoryProvider({ children }) {
         if (useDateObj?.starts === newDateObj?.starts) return;
 
         setDateObj(newDateObj);
+
+        const params = new URLSearchParams(window.location.search);
+
+        params.set('date', useDate);
+
+        paramsReplacement(params);
     }, [useDate]);
 
     return (

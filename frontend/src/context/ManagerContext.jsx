@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect } from 'react'
 
-import { dateVerify, yearExtract, getPath, pathReplacement, paramsReplacement } from '../../util';
+import { dateVerify, getPath, pathReplacement, paramsReplacement } from '../../util';
 
 import { PageContext } from './PageContext';
 import { LanguageContext } from './LanguageContext';
@@ -11,9 +11,9 @@ export const ManagerContext = createContext(null);
 
 export const ManagerProvider = ({ children }) => {
     const { page, pageSup, pageUpdate } = useContext(PageContext);
-    const { language, langSup, langUpdate } = useContext(LanguageContext);
+    const { langSup, langUpdate } = useContext(LanguageContext);
     const { mode, modeSup, modeUpdate } = useContext(ModeContext);
-    const { date, year, setYear, setDate, findQuery } = useContext(HistoryContext);
+    const { date, findQuery } = useContext(HistoryContext);
 
     const path = window.location.pathname;
     const params = new URLSearchParams(window.location.search);
@@ -57,19 +57,9 @@ export const ManagerProvider = ({ children }) => {
         }
         else modeUpdate(curMode);
 
-        if (!curDate || !dateVerify(curDate)) { // < if params date  invalid
-            // history init \/
-            findQuery(year); // < find a query using current(default) year
-        }
-        else { // < if params are good
-            setDate(curDate); // < update the date
-
-            const year = yearExtract(curDate); // < strip the year out
-
-            setYear(year); // < set the year on
-            // history init \/
-            findQuery(year); // < find a query using given year
-        }
+        // history init \/
+        if (!curDate || !dateVerify(curDate)) findQuery(date);
+        else findQuery(curDate);
     }, []);
 
     return (

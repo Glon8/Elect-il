@@ -4,8 +4,6 @@ import { Flex, Link, Text, Input, useMediaQuery, Button } from '@chakra-ui/react
 import { LanguageContext } from '../context/LanguageContext'
 import { HistoryContext } from '../context/HistoryContext'
 
-import { paramsReplacement } from '../../util'
-
 import SectionBody from '../components/SectionBody'
 import HeadA from '../components/headers/HeadA'
 import AText from '../components/AText'
@@ -45,12 +43,6 @@ function history() {
                       const latest = item.starts;
 
                       if (latest === date) return;
-
-                      const params = new URLSearchParams(window.location.search);
-
-                      params.set('date', latest);
-
-                      paramsReplacement(params);
 
                       setDate(latest);
                     }}>
