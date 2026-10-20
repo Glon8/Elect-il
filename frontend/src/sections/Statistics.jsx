@@ -61,7 +61,7 @@ export default function Statistics() {
                   const vote = dateObj.votes[ind];
                   const width = Math.floor((vote * 100) / useVotes);
 
-                  return <Flex key={key} w={'100%'} borderXWidth={3} borderColor={'black'} bg={'blue.100'} position={'relative'}>
+                  return <Flex key={key} w={'100%'} borderXWidth={3} borderColor={'black'} bg={'#C8D9EE/55'} position={'relative'}>
                     <Flex w={`${width}%`} minH={'3rem'} bg={'blue.500'}> </Flex>
                     <Text position={'absolute'} left={5} top={3} px={1} textAlign={'center'} bg={'white'} rounded={'md'} borderColor={'gray.300'}>{party}</Text>
                     <Text position={'absolute'} right={5} top={3} px={1} textAlign={'center'} bg={'white'} rounded={'md'} borderColor={'gray.300'}>{vote}</Text>

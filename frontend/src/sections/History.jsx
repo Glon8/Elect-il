@@ -36,8 +36,8 @@ function history() {
             query !== null && query.length != 0 ?
               query?.map((item, ind) => {
                 return (
-                  <Flex key={`history${ind}`} w={!isSmall ? '19%' : '48%'} h={'3rem'} justifyContent={'center'} rounded={'1rem'} bg={item.starts === date ? 'gray.100' : 'transparent'} borderWidth={1} borderColor={'gray.300'}>
-                    <Link h={'3rem'} justifyContent={'space-around'} color={'black'} rounded={'md'} onClick={(e) => {
+                  <Flex key={`history${ind}`} w={!isSmall ? '19%' : '48%'} h={'3rem'} justifyContent={'center'} rounded={'1rem'} bg={item.starts === date ? 'blue.500' : 'transparent'} borderWidth={1} borderColor={item.starts === date ? 'blue.600' : 'gray.300'}>
+                    <Link h={'3rem'} justifyContent={'space-around'} color={item.starts === date ? 'white' : 'black'} rounded={'md'} onClick={(e) => {
                       e.preventDefault();
 
                       const latest = item.starts;
