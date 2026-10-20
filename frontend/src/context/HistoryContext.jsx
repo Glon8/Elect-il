@@ -104,7 +104,7 @@ export function HistoryProvider({ children }) {
                     ]
                 },
                 {
-                    open: false,
+                    open: true,
                     starts: '04-11-2026',
                     ends: '11-11-2026',
                     parties: [
