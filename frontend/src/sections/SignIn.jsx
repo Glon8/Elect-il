@@ -32,6 +32,8 @@ export default function SignIn() {
 
         // ON FAIL POP UP COULD HELP!
 
+        console.log(`[Moderation page testing credentials]\r\n[Name]  Shutgun333\r\n[Password]  pAllet222`);
+
         setName('');
         setPass('');
     }
