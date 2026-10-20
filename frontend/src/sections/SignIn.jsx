@@ -11,10 +11,12 @@ import PopUpBody from '../components/PopUpBody'
 import HeadBody from '../components/HeadBody';
 import HeadA from '../components/headers/HeadA';
 import Seperator from '../components/Seperator';
+import { SignContext } from '../context/SignContext';
 
 export default function SignIn() {
-    const { signPop, signPopFlip } = useContext(PageContext);
+    const { pageUpdate, signPop, signPopFlip } = useContext(PageContext);
     const { translation } = useContext(LanguageContext);
+    const { signIn } = useContext(SignContext);
 
     const [useName, setName] = useState('');
     const [usePass, setPass] = useState('');
@@ -22,27 +24,19 @@ export default function SignIn() {
 
     const dict = translation?.signin;
 
+    const close = () => { signPopFlip(); setName(''); setPass(''); }
     const send = () => {
-        if (!useName || !usePass) {
-            if (!useName) console.log('Error: User name invalid');
-            if (!usePass) console.log('Error: Pasword invalid');
+        const success = signIn(useName, usePass);
 
-            return;
-        }
+        if (success) { pageUpdate('moderation'); close(); return; }
 
-        console.log('sent');
+        // ON FAIL POP UP COULD HELP!
 
         setName('');
         setPass('');
     }
     const nameChange = (e) => { const val = e.target.value; if (val != useName) setName(val); }
     const passChange = (e) => { const val = e.target.value; if (val != usePass) setPass(val); }
-    const close = () => {
-        signPopFlip();
-
-        setName('');
-        setPass('');
-    }
 
     useEffect(() => {
         const check = verify(useName, /^[A-Za-z0-9!@#$%&_?-]+$/, 24);

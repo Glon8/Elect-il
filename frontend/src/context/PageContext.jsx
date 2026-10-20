@@ -9,7 +9,7 @@ export const PageProvider = ({ children }) => {
     const [useSignPop, setSignPop] = useState(false);
     const [useVotePop, setVotePop] = useState(false);
 
-    const supported = ['election', 'us', 'encryption', 'license'];
+    const supported = ['election', 'us', 'encryption', 'license', 'moderation'];
     // must add params check/update on page change or first load
     const signPopFlip = () => setSignPop(!useSignPop);
     const votePopFlip = () => setVotePop(!useVotePop);
@@ -22,6 +22,8 @@ export const PageProvider = ({ children }) => {
         setPage(path);
 
         if (getPath(1) != path) pathReplacement(path, 1);
+
+        window.scrollTo(0, 0);
     }
 
     return (

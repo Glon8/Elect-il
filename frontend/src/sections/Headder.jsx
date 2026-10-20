@@ -19,16 +19,10 @@ export default function Headder({ ...props }) {
 
   const [isSmall] = useMediaQuery("(max-width: 768px)");
 
-  const navigate = (path) => {
-    pageUpdate(path);
-
-    window.scrollTo(0, 0);
-  }
-
   return (
     <HeadBody zIndex={1000} borderBottomStyle={'solid'} borderBottomWidth={1} borderBottomColor={'border.emphasized'} justifyContent={'space-between'} {...props} >
 
-      <Link textDecorationLine={'none'} rounded={'full'} borderWidth={1} borderColor={'gray.300'} color={'black'} px={3} minW={'20px'} h={'70%'} py={2} onClick={(e) => { e.preventDefault(); navigate('election'); }}>
+      <Link textDecorationLine={'none'} rounded={'full'} borderWidth={1} borderColor={'gray.300'} color={'black'} px={3} minW={'20px'} h={'70%'} py={2} onClick={(e) => { e.preventDefault(); pageUpdate('election'); }}>
         <Text fontWeight={'bold'} color={'gray.600'}>Elect-il</Text>
         <Text fontSize={'2xl'} color={'blue.600'} fontFamily={"Segoe UI"}>{'\u{2721}'}</Text>
       </Link>
@@ -41,7 +35,13 @@ export default function Headder({ ...props }) {
             <i className={`pi ${mode == 'light' ? 'pi-moon' : 'pi-sun'}`}></i>
           </Button>
           <LangSelect />
-          <Button width={0} rounded={'full'} bg={'transparent'} color={'black'} borderColor={'gray.300'} onClick={!userData?.token ? signPopFlip : signOut}><i className={`pi ${!userData?.token ? 'pi-sign-in' : 'pi-sign-out'}`}></i></Button>
+          {
+            userData?.token ? // < BETTER VERIFICATION REQUIRED
+              <Button w={0} rounded={'full'} bg={'transparent'} color={'black'} borderColor={'gray.300'} fontWeight={'bolder'} fontSize={'xl'} onClick={() => pageUpdate('moderation')}>
+                <i className={`pi pi-cog`}></i>
+              </Button> : ''
+          }
+          <Button width={0} rounded={'full'} bg={'transparent'} color={'black'} borderColor={'gray.300'} onClick={!userData?.token ? signPopFlip : () => { signOut(); pageUpdate('election'); }}><i className={`pi ${!userData?.token ? 'pi-sign-in' : 'pi-sign-out'}`}></i></Button>
         </Flex>
       </Flex>
 

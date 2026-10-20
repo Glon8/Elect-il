@@ -17,6 +17,7 @@ import VoteConfirm from '../sections/VoteConfirm'
 
 import { PageContext } from '../context/PageContext'
 import { SignContext } from '../context/SignContext'
+import Moderation from '../sections/Moderation'
 
 
 function Body() {
@@ -43,6 +44,9 @@ function Body() {
             {page === 'license' ? <License /> : null}
 
             {page === 'encryption' ? <Encryption /> : null}
+
+            {/*Lock on required for moderation page*/}
+            {page === 'moderation' && userData ? <Moderation /> : null}
 
             <Footer />
 

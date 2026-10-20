@@ -13,16 +13,10 @@ export default function Footer() {
 
   const dict = translation?.footer;
 
-  const navigate = (path) => {
-    pageUpdate(path);
-
-    window.scrollTo(0, 0);
-  }
-
   const options = [
-    { name: dict?.us, onClick: () => navigate('us') },
-    { name: dict?.encr, onClick: () => navigate('encryption') },
-    { name: dict?.appr, onClick: () => navigate('license') },
+    { name: dict?.us, onClick: () => pageUpdate('us') },
+    { name: dict?.encr, onClick: () => pageUpdate('encryption') },
+    { name: dict?.appr, onClick: () => pageUpdate('license') },
   ]
   return (
     <FootBody flexDir={{ base: 'column', smToMd: 'column', md: 'row' }} alignItems={'center'} justifyContent={'center'} bg={'#0E2739'} gapX={'5rem'} gapY={'8px'} >
