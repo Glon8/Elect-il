@@ -1,209 +1,273 @@
 const electionHistory = [
-        {
-            date: '2024',
-            data: [
-                {
-                    open: false,
-                    starts: '2024-01-15',
-                    ends: '2024-01-29',
-                    parties: ['party1', 'party2', 'party3', 'party4', 'party5'],
-                    leaders: ['A', 'B', 'C', 'D', 'E'],
-                    votes: [120, 85, 64, 42, 19]
-                },
-                {
-                    open: false,
-                    starts: '2024-03-04',
-                    ends: '2024-03-18',
-                    parties: ['party1', 'party2', 'party3', 'party4', 'party5'],
-                    leaders: ['A', 'B', 'C', 'D', 'E'],
-                    votes: [95, 110, 72, 38, 21]
-                },
-                {
-                    open: false,
-                    starts: '2024-04-26',
-                    ends: '2024-05-10',
-                    parties: ['party1', 'party2', 'party3', 'party4', 'party5'],
-                    leaders: ['A', 'B', 'C', 'D', 'E'],
-                    votes: [130, 90, 75, 48, 25]
-                },
-                {
-                    open: false,
-                    starts: '2024-06-12',
-                    ends: '2024-06-26',
-                    parties: ['party1', 'party2', 'party3', 'party4', 'party5'],
-                    leaders: ['A', 'B', 'C', 'D', 'E'],
-                    votes: [105, 98, 80, 45, 22]
-                },
-                {
-                    open: false,
-                    starts: '2024-08-01',
-                    ends: '2024-08-15',
-                    parties: ['party1', 'party2', 'party3', 'party4', 'party5'],
-                    leaders: ['A', 'B', 'C', 'D', 'E'],
-                    votes: [140, 100, 68, 51, 30]
-                },
-                {
-                    open: false,
-                    starts: '2024-09-19',
-                    ends: '2024-10-03',
-                    parties: ['party1', 'party2', 'party3', 'party4', 'party5'],
-                    leaders: ['A', 'B', 'C', 'D', 'E'],
-                    votes: [115, 105, 77, 49, 28]
-                },
-                {
-                    open: false,
-                    starts: '2024-11-08',
-                    ends: '2024-11-22',
-                    parties: ['party1', 'party2', 'party3', 'party4', 'party5'],
-                    leaders: ['A', 'B', 'C', 'D', 'E'],
-                    votes: [125, 92, 81, 44, 26]
-                },
-                {
-                    open: false,
-                    starts: '2024-12-23',
-                    ends: '2025-01-06',
-                    parties: ['party1', 'party2', 'party3', 'party4', 'party5'],
-                    leaders: ['A', 'B', 'C', 'D', 'E'],
-                    votes: [108, 96, 73, 52, 31]
-                }
-            ]
-        },
-        {
-            date: '2025',
-            data: [
-                {
-                    open: false,
-                    starts: '2025-02-10',
-                    ends: '2025-02-24',
-                    parties: ['party1', 'party2', 'party3', 'party4', 'party5'],
-                    leaders: ['A', 'B', 'C', 'D', 'E'],
-                    votes: [132, 101, 79, 47, 24]
-                },
-                {
-                    open: false,
-                    starts: '2025-03-29',
-                    ends: '2025-04-12',
-                    parties: ['party1', 'party2', 'party3', 'party4', 'party5'],
-                    leaders: ['A', 'B', 'C', 'D', 'E'],
-                    votes: [118, 107, 84, 43, 29]
-                },
-                {
-                    open: false,
-                    starts: '2025-05-17',
-                    ends: '2025-05-31',
-                    parties: ['party1', 'party2', 'party3', 'party4', 'party5'],
-                    leaders: ['A', 'B', 'C', 'D', 'E'],
-                    votes: [145, 99, 70, 55, 32]
-                },
-                {
-                    open: false,
-                    starts: '2025-07-05',
-                    ends: '2025-07-19',
-                    parties: ['party1', 'party2', 'party3', 'party4', 'party5'],
-                    leaders: ['A', 'B', 'C', 'D', 'E'],
-                    votes: [112, 103, 88, 46, 27]
-                },
-                {
-                    open: false,
-                    starts: '2025-08-24',
-                    ends: '2025-09-07',
-                    parties: ['party1', 'party2', 'party3', 'party4', 'party5'],
-                    leaders: ['A', 'B', 'C', 'D', 'E'],
-                    votes: [128, 94, 76, 50, 23]
-                },
-                {
-                    open: false,
-                    starts: '2025-10-11',
-                    ends: '2025-10-25',
-                    parties: ['party1', 'party2', 'party3', 'party4', 'party5'],
-                    leaders: ['A', 'B', 'C', 'D', 'E'],
-                    votes: [137, 108, 82, 41, 33]
-                },
-                {
-                    open: false,
-                    starts: '2025-12-02',
-                    ends: '2025-12-16',
-                    parties: ['party1', 'party2', 'party3', 'party4', 'party5'],
-                    leaders: ['A', 'B', 'C', 'D', 'E'],
-                    votes: [121, 97, 74, 53, 20]
-                }
-            ]
-        },
-        {
-            date: '2026',
-            data: [
-                {
-                    open: false,
-                    starts: '2026-01-20',
-                    ends: '2026-02-03',
-                    parties: ['party1', 'party2', 'party3', 'party4', 'party5'],
-                    leaders: ['A', 'B', 'C', 'D', 'E'],
-                    votes: [116, 104, 78, 48, 25]
-                },
-                {
-                    open: false,
-                    starts: '2026-03-09',
-                    ends: '2026-03-23',
-                    parties: ['party1', 'party2', 'party3', 'party4', 'party5'],
-                    leaders: ['A', 'B', 'C', 'D', 'E'],
-                    votes: [134, 102, 86, 45, 28]
-                },
-                {
-                    open: false,
-                    starts: '2026-04-27',
-                    ends: '2026-05-11',
-                    parties: ['party1', 'party2', 'party3', 'party4', 'party5'],
-                    leaders: ['A', 'B', 'C', 'D', 'E'],
-                    votes: [123, 91, 83, 54, 30]
-                },
-                {
-                    open: false,
-                    starts: '2026-06-15',
-                    ends: '2026-06-29',
-                    parties: ['party1', 'party2', 'party3', 'party4', 'party5'],
-                    leaders: ['A', 'B', 'C', 'D', 'E'],
-                    votes: [141, 106, 71, 49, 26]
-                },
-                {
-                    open: false,
-                    starts: '2026-08-03',
-                    ends: '2026-08-17',
-                    parties: ['party1', 'party2', 'party3', 'party4', 'party5'],
-                    leaders: ['A', 'B', 'C', 'D', 'E'],
-                    votes: [119, 100, 89, 42, 31]
-                },
-                {
-                    open: false,
-                    starts: '2026-09-22',
-                    ends: '2026-10-06',
-                    parties: ['party1', 'party2', 'party3', 'party4', 'party5'],
-                    leaders: ['A', 'B', 'C', 'D', 'E'],
-                    votes: [129, 111, 75, 56, 22]
-                },
-                {
-                    open: false,
-                    starts: '2026-11-10',
-                    ends: '2026-11-24',
-                    parties: ['party1', 'party2', 'party3', 'party4', 'party5'],
-                    leaders: ['A', 'B', 'C', 'D', 'E'],
-                    votes: [136, 98, 80, 47, 29]
-                },
-                {
-                    open: true,
-                    starts: '2026-12-28',
-                    ends: '2027-01-11',
-                    parties: ['party1', 'party2', 'party3', 'party4', 'party5'],
-                    leaders: ['A', 'B', 'C', 'D', 'E'],
-                    votes: [124, 109, 77, 51, 27]
-                }
-            ]
-        }
-    ];
+    {
+        date: '2024',
+        data: [
+            {
+                open: false,
+                starts: '15-01-2024',
+                ends: '29-01-2024',
+                parties: ['party1', 'party2', 'party3', 'party4', 'party5'],
+                candidates: ['A', 'B', 'C', 'D', 'E'],
+                votes: [482631, 365218, 298417, 214963, 138752]
+            },
+            {
+                open: false,
+                starts: '01-03-2024',
+                ends: '08-03-2024',
+                parties: ['party1', 'party2', 'party3', 'party4', 'party5'],
+                candidates: ['A', 'B', 'C', 'D', 'E'],
+                votes: [451782, 382649, 312584, 226173, 146892]
+            },
+            {
+                open: false,
+                starts: '10-04-2024',
+                ends: '17-04-2024',
+                parties: ['party1', 'party2', 'party3', 'party4', 'party5'],
+                candidates: ['A', 'B', 'C', 'D', 'E'],
+                votes: [497263, 354821, 289736, 231458, 152694]
+            },
+            {
+                open: false,
+                starts: '20-05-2024',
+                ends: '27-05-2024',
+                parties: ['party1', 'party2', 'party3', 'party4', 'party5'],
+                candidates: ['A', 'B', 'C', 'D', 'E'],
+                votes: [468521, 376294, 321857, 208643, 143786]
+            },
+            {
+                open: false,
+                starts: '01-07-2024',
+                ends: '08-07-2024',
+                parties: ['party1', 'party2', 'party3', 'party4', 'party5'],
+                candidates: ['A', 'B', 'C', 'D', 'E'],
+                votes: [512847, 347629, 294183, 219576, 157438]
+            },
+            {
+                open: false,
+                starts: '12-08-2024',
+                ends: '19-08-2024',
+                parties: ['party1', 'party2', 'party3', 'party4', 'party5'],
+                candidates: ['A', 'B', 'C', 'D', 'E'],
+                votes: [476318, 391572, 305846, 223197, 149682]
+            },
+            {
+                open: false,
+                starts: '23-09-2024',
+                ends: '30-09-2024',
+                parties: ['party1', 'party2', 'party3', 'party4', 'party5'],
+                candidates: ['A', 'B', 'C', 'D', 'E'],
+                votes: [489621, 368475, 317294, 207836, 154927]
+            },
+            {
+                open: false,
+                starts: '04-11-2024',
+                ends: '11-11-2024',
+                parties: ['party1', 'party2', 'party3', 'party4', 'party5'],
+                candidates: ['A', 'B', 'C', 'D', 'E'],
+                votes: [458732, 384196, 326571, 216843, 147529]
+            },
+            {
+                open: false,
+                starts: '16-12-2024',
+                ends: '23-12-2024',
+                parties: ['party1', 'party2', 'party3', 'party4', 'party5'],
+                candidates: ['A', 'B', 'C', 'D', 'E'],
+                votes: [503184, 359627, 291468, 228351, 151796]
+            },
+        ]
+    },
+    {
+        date: '2025',
+        data: [
+            {
+                open: false,
+                starts: '27-01-2025',
+                ends: '03-02-2025',
+                parties: ['party1', 'party2', 'party3', 'party4', 'party5'],
+                candidates: ['A', 'B', 'C', 'D', 'E'],
+                votes: [481936, 373582, 309147, 221684, 145729]
+            },
+            {
+                open: false,
+                starts: '10-03-2025',
+                ends: '17-03-2025',
+                parties: ['party1', 'party2', 'party3', 'party4', 'party5'],
+                candidates: ['A', 'B', 'C', 'D', 'E'],
+                votes: [495217, 362841, 301695, 234176, 148923]
+            },
+            {
+                open: false,
+                starts: '21-04-2025',
+                ends: '28-04-2025',
+                parties: ['party1', 'party2', 'party3', 'party4', 'party5'],
+                candidates: ['A', 'B', 'C', 'D', 'E'],
+                votes: [462839, 389174, 318562, 212497, 153618]
+            },
+            {
+                open: false,
+                starts: '02-06-2025',
+                ends: '09-06-2025',
+                parties: ['party1', 'party2', 'party3', 'party4', 'party5'],
+                candidates: ['A', 'B', 'C', 'D', 'E'],
+                votes: [508361, 351927, 296483, 225719, 142865]
+            },
+            {
+                open: false,
+                starts: '14-07-2025',
+                ends: '21-07-2025',
+                parties: ['party1', 'party2', 'party3', 'party4', 'party5'],
+                candidates: ['A', 'B', 'C', 'D', 'E'],
+                votes: [473825, 378416, 314792, 218563, 150274]
+            },
+            {
+                open: false,
+                starts: '25-08-2025',
+                ends: '01-09-2025',
+                parties: ['party1', 'party2', 'party3', 'party4', 'party5'],
+                candidates: ['A', 'B', 'C', 'D', 'E'],
+                votes: [486193, 366758, 307421, 229184, 155632]
+            },
+            {
+                open: false,
+                starts: '06-10-2025',
+                ends: '13-10-2025',
+                parties: ['party1', 'party2', 'party3', 'party4', 'party5'],
+                candidates: ['A', 'B', 'C', 'D', 'E'],
+                votes: [499572, 358216, 299843, 217695, 146381]
+            },
+            {
+                open: false,
+                starts: '17-11-2025',
+                ends: '24-11-2025',
+                parties: ['party1', 'party2', 'party3', 'party4', 'party5'],
+                candidates: ['A', 'B', 'C', 'D', 'E'],
+                votes: [467284, 387591, 323168, 210476, 152839]
+            },
+            {
+                open: false,
+                starts: '29-12-2025',
+                ends: '05-01-2026',
+                parties: ['party1', 'party2', 'party3', 'party4', 'party5'],
+                candidates: ['A', 'B', 'C', 'D', 'E'],
+                votes: [505618, 349732, 303857, 232164, 149285]
+            }
+        ]
+    },
+    {
+        date: '2026',
+        data: [
+
+            {
+                open: false,
+                starts: '09-02-2026',
+                ends: '16-02-2026',
+                parties: ['party1', 'party2', 'party3', 'party4', 'party5'],
+                candidates: ['A', 'B', 'C', 'D', 'E'],
+                votes: [479351, 375826, 315492, 220637, 154183]
+            },
+            {
+                open: false,
+                starts: '23-03-2026',
+                ends: '30-03-2026',
+                parties: ['party1', 'party2', 'party3', 'party4', 'party5'],
+                candidates: ['A', 'B', 'C', 'D', 'E'],
+                votes: [491728, 364193, 308576, 226941, 147362]
+            },
+            {
+                open: false,
+                starts: '04-05-2026',
+                ends: '11-05-2026',
+                parties: ['party1', 'party2', 'party3', 'party4', 'party5'],
+                candidates: ['A', 'B', 'C', 'D', 'E'],
+                votes: [464817, 392465, 319284, 213758, 151936]
+            },
+            {
+                open: false,
+                starts: '15-06-2026',
+                ends: '22-06-2026',
+                parties: ['party1', 'party2', 'party3', 'party4', 'party5'],
+                candidates: ['A', 'B', 'C', 'D', 'E'],
+                votes: [501263, 356841, 297512, 230486, 144729]
+            },
+            {
+                open: false,
+                starts: '27-07-2026',
+                ends: '03-08-2026',
+                parties: ['party1', 'party2', 'party3', 'party4', 'party5'],
+                candidates: ['A', 'B', 'C', 'D', 'E'],
+                votes: [477692, 381547, 311826, 219374, 156218]
+            },
+            {
+                open: false,
+                starts: '07-09-2026',
+                ends: '14-09-2026',
+                parties: ['party1', 'party2', 'party3', 'party4', 'party5'],
+                candidates: ['A', 'B', 'C', 'D', 'E'],
+                votes: [493816, 369254, 304781, 224693, 148572]
+            },
+            {
+                open: true,
+                starts: '07-10-2026',
+                ends: '26-10-2026',
+                parties: [
+                    'Likud',
+                    'Yashar!',
+                    'Beyachad',
+                    'The Democrats',
+                    'Otzma Yehudit',
+                    'Shas',
+                    'United Torah Judaism',
+                    'Yisrael Beiteinu',
+                    'Joint List',
+                    "Ra'am",
+                    'Religious Zionist Party & Zehut',
+                    'Amcha Yisrael',
+                    'The Reservists & Economic Party',
+                    'Israel First',
+                    'Ahi Movement',
+                    'Ani VeAta'
+                ],
+                candidates: [
+                    'Benjamin Netanyahu',
+                    'Gadi Eisenkot',
+                    'Naftali Bennett',
+                    'Yair Golan',
+                    'Itamar Ben-Gvir',
+                    'Aryeh Deri',
+                    'Yaakov Asher',
+                    'Avigdor Liberman',
+                    'Yousef Jabareen',
+                    'Mansour Abbas',
+                    'Bezalel Smotrich / Moshe Feiglin',
+                    'Avigdor Winter',
+                    'Yoaz Hendel / Yaron Zelekha',
+                    'Sharren Haskel',
+                    'Ahi Movement leader',
+                    'Ani VeAta leader'
+                ],
+                votes: [
+                    712483, 526194, 391827, 298641,
+                    225376, 231594, 193827, 198462,
+                    161738, 100284, 95163, 46382,
+                    38471, 18264, 14183, 19782
+                ]
+            }
+        ]
+    },
+];
 
 export const getHistory = (req, res) => {
     const year = req.query.year;
 
     const history = electionHistory.find(election => election.date === year);
 
-    res.json(history);
+    res.json(history.data);
+}
+
+export const getVoting = (req, res) => {
+    const latest_data = electionHistory.at(-1);
+
+    const latest_voting = latest_data.data.at(-1);
+
+    res.json(latest_voting);
 }

@@ -23,4 +23,3 @@ export default function SectionBody({ tcpr, tcpl, bcpl, bcpr, children, ...props
         </Flex >
     )
 }
-// maxH={isSmall ? '100vh' : '55rem'}

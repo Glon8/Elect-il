@@ -11,7 +11,7 @@ const port = process.env.PORT || 5000;
 app.use(
     cors({
         origin: [
-            'http://localhost:5000',
+            import.meta.env.LOCAL_FRONTEND_API_URL,
         ],
         credentials: true,
     })
@@ -20,7 +20,7 @@ app.use(
 app.use(express.json());
 
 app.use('/api', utilRouter);
-app.use('/api/elect', historyRouter);
+app.use('/api/history', historyRouter);
 app.use('/api/sign', signRouter);
 
 app.listen(port, () => {
