@@ -20,7 +20,18 @@ export function HistoryProvider({ children }) {
 
     const latestDate = (query) => query[query.length - 1]?.starts;
 
-    const vote = () => console.log('Vote sent');
+    const vote = async () => {
+        try {
+            //const res = await api.post('/api/sign/up', {id, token, useSelected});
+
+            console.log('[Voting request] Success');
+        }
+        catch (error) {
+            console.log('[Voting request] Failed\r\n}-------------------------{\r\n', error);
+
+            return null;
+        }
+    }
 
     const requestHistory = async (year) => {
         try {
@@ -42,7 +53,7 @@ export function HistoryProvider({ children }) {
             return res.data;
         }
         catch (error) {
-            console.log('[History request] Failed\r\n}-------------------------{\r\n', error);
+            console.log('[Voting-latest request] Failed\r\n}-------------------------{\r\n', error);
 
             return null;
         }

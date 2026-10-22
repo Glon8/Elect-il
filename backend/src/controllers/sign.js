@@ -37,5 +37,5 @@ export const signUp = (req, res) => {
 
     // user must send the token assigned to him, hashed id with platform terms to make his vote to count.
 
-    return res.status(200).json({ state: 'Voting sign-up works' }).send();
+    return res.sendStatus(204);
 }
